@@ -1,0 +1,104 @@
+<manifest alg="2" build="2015.1.1.343" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="champ.com" resolutions="1x" timestamp="1459323327398">
+  <folder name="css">
+    <file name="site_global.css" crc="131700929"/>
+    <file name="master_a-master.css" crc="336593918" ref="overview_product:new_product:home:new_customer:overview_recive:overview_po:overview_customer:new_recive:history-search:new_po:cut_stock:overview_stock:z:overview_mo:new_mo"/>
+    <file name="overview_product.css" crc="195030646" ref="overview_product"/>
+    <file name="new_product.css" crc="13223855" ref="new_product"/>
+    <file name="home.css" crc="240122017" ref="home"/>
+    <file name="new_customer.css" crc="487541153" ref="new_customer"/>
+    <file name="index.css" crc="176109598" ref="index"/>
+    <file name="overview_recive.css" crc="274036443" ref="overview_recive"/>
+    <file name="print_mo.css" crc="343598093" ref="print_mo"/>
+    <file name="overview_po.css" crc="473186807" ref="overview_po"/>
+    <file name="print_po.css" crc="256815909" ref="print_po"/>
+    <file name="overview_customer.css" crc="194339949" ref="overview_customer"/>
+    <file name="new_recive.css" crc="287436447" ref="new_recive"/>
+    <file name="history-search.css" crc="29483539" ref="history-search"/>
+    <file name="new_po.css" crc="305633547" ref="new_po"/>
+    <file name="cut_stock.css" crc="422453788" ref="cut_stock"/>
+    <file name="overview_stock.css" crc="143438673" ref="overview_stock"/>
+    <file name="z.css" crc="3789192880" ref="z"/>
+    <file name="overview_mo.css" crc="3957191662" ref="overview_mo"/>
+    <file name="new_mo.css" crc="3797289647" ref="new_mo"/>
+  </folder>
+  <folder name="fonts">
+    <file name="thaisansneue-bold-webfont.woff" crc="330987415"/>
+    <file name="thaisansneue-bold-webfont.eot" crc="3810525270"/>
+    <file name="thaisansneue-bold-webfont.svg" crc="4249770336"/>
+    <file name="thaisansneue-regular-webfont.woff" crc="384927639"/>
+    <file name="thaisansneue-regular-webfont.eot" crc="4084535311"/>
+    <file name="thaisansneue-regular-webfont.svg" crc="3932210263"/>
+    <file name="thaisansneue-semibold-webfont.woff" crc="469956822"/>
+    <file name="thaisansneue-semibold-webfont.eot" crc="214886626"/>
+    <file name="thaisansneue-semibold-webfont.svg" crc="199261175"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="484278746" ref="home:new_product:new_customer:new_po:print_po:index:overview_po:history-search:z:overview_mo:new_mo:print_mo:overview_recive:new_recive:overview_stock:cut_stock:overview_product:overview_customer"/>
+    <file name="museutils.js" crc="531812214" ref="home:new_product:new_customer:new_po:print_po:index:overview_po:history-search:z:overview_mo:new_mo:print_mo:overview_recive:new_recive:overview_stock:cut_stock:overview_product:overview_customer"/>
+    <file name="whatinput.js" crc="84559013" ref="home:new_product:new_customer:new_po:print_po:index:overview_po:history-search:z:overview_mo:new_mo:print_mo:overview_recive:new_recive:overview_stock:cut_stock:overview_product:overview_customer"/>
+    <file name="pie.js" crc="3827607177" ref="home:index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="120190942" ref="home:new_product:new_customer:new_po:index:overview_po:history-search:z:overview_mo:new_mo:overview_recive:new_recive:overview_stock:cut_stock:overview_product:overview_customer"/>
+    <file name="jquery.watch.js" crc="3866665977" ref="home:new_product:new_customer:new_po:print_po:index:overview_po:history-search:z:overview_mo:new_mo:print_mo:overview_recive:new_recive:overview_stock:cut_stock:overview_product:overview_customer"/>
+  </folder>
+  <folder name="images">
+    <file name="pasted-svg-201.svg" crc="3769271584" ref="home:new_product:new_customer:new_po:index:overview_po:history-search:z:overview_mo:new_mo:overview_recive:new_recive:overview_stock:cut_stock:overview_product:overview_customer"/>
+    <file name="pasted svg 201_poster_.png" crc="470909727" ref="home"/>
+    <file name="menu-01.png" crc="4123544485" ref="home"/>
+    <file name="invoice.png" crc="484349342" seo="true" ref="home"/>
+    <file name="made_oder_img-05.png" crc="4241807280" ref="home"/>
+    <file name="made_oder_but.png" crc="434181384" seo="true" ref="home"/>
+    <file name="recive_img-05.png" crc="120645340" ref="home"/>
+    <file name="recive_but.png" crc="4019606379" seo="true" ref="home"/>
+    <file name="cut_stock_img-05.png" crc="3864077605" ref="home"/>
+    <file name="cut_stock_but.png" crc="4116105620" seo="true" ref="home"/>
+    <file name="menu-02.png" crc="493210263" ref="home"/>
+    <file name="product b.png" crc="4072580560" seo="true" ref="home"/>
+    <file name="menu-03.png" crc="305679510" ref="home"/>
+    <file name="customer b.png" crc="86959722" seo="true" ref="home"/>
+    <file name="menu-04.png" crc="234391250" ref="home"/>
+    <file name="report_but.png" crc="3829029359" seo="true" ref="home"/>
+    <file name="bg-04.jpg" crc="4119669747" ref="home:new_product:new_customer:new_po:index:overview_po:history-search:z:overview_mo:new_mo:overview_recive:new_recive:overview_stock:cut_stock:overview_product:overview_customer"/>
+    <file name="vector smart object.png" crc="180483306" ref="new_product"/>
+    <file name="cancle_but.png" crc="4195054428" seo="true" ref="new_product:new_customer:new_po:new_mo:new_recive:cut_stock"/>
+    <file name="pasted-svg-200x60.svg" crc="196954498" ref="new_product:new_customer"/>
+    <file name="pasted svg 200x60_poster_.png" crc="36744605" ref="new_product"/>
+    <file name="save_but.png" crc="441978690" seo="true" ref="new_po:new_mo:new_recive:cut_stock"/>
+    <file name="pasted-svg-202959x40.svg" crc="101133898" ref="print_po:print_mo"/>
+    <file name="pasted svg 202959x40_poster_.png" crc="357308990" ref="print_po"/>
+    <file name="pasted-svg-23.svg" crc="4054992238" ref="index"/>
+    <file name="pasted svg 23_poster_.png" crc="4066313798" ref="index"/>
+    <file name="pasted-svg-26x12.svg" crc="4018236497" ref="index"/>
+    <file name="pasted svg 26x12_poster_.png" crc="4205599638" ref="index"/>
+    <file name="back_but.png" crc="309037904" seo="true" ref="overview_po:history-search:overview_mo:overview_recive:overview_stock:overview_product:overview_customer"/>
+    <file name="newpo_but.png" crc="3847223112" seo="true" ref="overview_po"/>
+    <file name="searchreport_but.png" crc="502007997" seo="true" ref="overview_po:overview_mo:overview_recive:overview_stock"/>
+    <file name="search_but.png" crc="375324651" seo="true" ref="history-search"/>
+    <file name="printhistory_but.png" crc="3998916867" seo="true" ref="history-search:overview_product:overview_customer"/>
+    <file name="edit.png" crc="158295703" seo="true" ref="z"/>
+    <file name="print.png" crc="390287050" seo="true" ref="z"/>
+    <file name="view.png" crc="265898753" seo="true" ref="z"/>
+    <file name="newmo_but.png" crc="262222312" seo="true" ref="overview_mo"/>
+    <file name="newrecive_but.png" crc="226082446" seo="true" ref="overview_recive"/>
+    <file name="cutstock_but.png" crc="3999462451" seo="true" ref="overview_stock"/>
+    <file name="newproduct_but.png" crc="339469593" seo="true" ref="overview_product"/>
+    <file name="newcustomer_but.png" crc="4190433259" seo="true" ref="overview_customer"/>
+  </folder>
+  <file name="home.php" crc="4140800220" seo="true" mt="1459322668664" redirect="true"/>
+  <file name="new_product.php" crc="4072220400" seo="true" mt="1459323276892" redirect="true"/>
+  <file name="new_customer.php" crc="36916469" seo="true" mt="1459284654748" redirect="true"/>
+  <file name="new_po.php" crc="4220347332" seo="true" mt="1459323072124" redirect="true"/>
+  <file name="print_po.html" crc="4015790952" seo="true" mt="1459279981660" redirect="true"/>
+  <file name="index.html" crc="269291158" seo="true" mt="1459282863392" redirect="true"/>
+  <file name="overview_po.php" crc="190694589" seo="true" mt="1459322787010" redirect="true"/>
+  <file name="history-search.html" crc="4131359043" seo="true" mt="1459322896807" redirect="true"/>
+  <file name="z.html" crc="494535725" seo="true" mt="1459277959337" redirect="true"/>
+  <file name="overview_mo.html" crc="3913222323" seo="true" mt="1459322787114" redirect="true"/>
+  <file name="new_mo.html" crc="133934553" seo="true" mt="1459322958262" redirect="true"/>
+  <file name="print_mo.html" crc="4104680520" seo="true" mt="1459323044339" redirect="true"/>
+  <file name="overview_recive.html" crc="3957725656" seo="true" mt="1459322786844" redirect="true"/>
+  <file name="new_recive.html" crc="4031293861" seo="true" mt="1459284656699" redirect="true"/>
+  <file name="overview_stock.html" crc="227463813" seo="true" mt="1459322787266" redirect="true"/>
+  <file name="cut_stock.html" crc="3983416217" seo="true" mt="1459284656568" redirect="true"/>
+  <file name="overview_product.php" crc="3879033937" seo="true" mt="1459322918571" redirect="true"/>
+  <file name="overview_customer.php" crc="258946083" seo="true" mt="1459322928779" redirect="true"/>
+</manifest>

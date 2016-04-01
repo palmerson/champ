@@ -1,0 +1,539 @@
+/*
+
+*/
+
+.version.new_customer /* version checker */
+{
+	color: #00001D;
+	background-color: #0F49A1;
+}
+
+#muse_css_mq
+{
+	background-color: #FFFFFF;
+}
+
+#page
+{
+	z-index: 1;
+	width: 1080px;
+	min-height: 713px;
+	background-image: none;
+	border-width: 0px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#page_position_content
+{
+	margin-bottom: -80px;
+	padding-top: 30px;
+	width: 0.01px;/* should not cover content below */
+}
+
+#pu156
+{
+	width: 0.01px;
+	margin-left: 20px;
+}
+
+#u156
+{
+	z-index: 2;
+	width: 201px;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u154
+{
+	z-index: 3;
+}
+
+#u164-6
+{
+	z-index: 4;
+	width: 495px;
+	min-height: 50px;
+	position: relative;
+	margin-right: -10000px;
+	left: 545px;
+}
+
+#u169
+{
+	z-index: 10;
+	width: 1080px;
+	height: 1px;
+	margin-top: 17px;
+	position: relative;
+}
+
+#u826-4
+{
+	z-index: 18;
+	width: 1081px;
+	min-height: 50px;
+	background-color: transparent;
+	line-height: 36px;
+	font-size: 40px;
+	text-align: center;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	left: -1px;
+	margin-top: 39px;
+	position: relative;
+}
+
+#pu849-4
+{
+	width: 0.01px;
+	margin-left: 120px;
+	margin-top: 41px;
+}
+
+#u849-4
+{
+	z-index: 52;
+	width: 79px;
+	min-height: 22px;
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u960-4
+{
+	z-index: 56;
+	width: 105px;
+	min-height: 22px;
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	left: 93px;
+}
+
+#u840-3
+{
+	z-index: 22;
+	width: 79px;
+	min-height: 40px;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u963-3
+{
+	z-index: 25;
+	width: 145px;
+	min-height: 40px;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+	left: 92px;
+}
+
+#u963-3-1
+{
+	z-index: 25;
+	width: 145px;
+	min-height: 40px;
+	/*background-color: #FFFFFF;*/
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+	left: 92px;
+}
+
+#u825-4
+{
+	z-index: 80;
+	width: 411px;
+	min-height: 22px;
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u975-4
+{
+	z-index: 88;
+	width: 411px;
+	min-height: 22px;
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	left: 430px;
+}
+
+#pu825-4,#pu837-3
+{
+	width: 0.01px;
+	margin-left: 120px;
+	margin-top: 20px;
+}
+
+#u837-3
+{
+	z-index: 43;
+	width: 410px;
+	min-height: 40px;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u972-3
+{
+	z-index: 49;
+	width: 410px;
+	min-height: 40px;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+	left: 430px;
+}
+
+#u867-4
+{
+	z-index: 60;
+	width: 411px;
+	min-height: 22px;
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u969-4
+{
+	z-index: 84;
+	width: 92px;
+	min-height: 22px;
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	left: 430px;
+}
+
+#u987-4
+{
+	z-index: 95;
+	width: 92px;
+	min-height: 22px;
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	left: 537px;
+}
+
+#u891-4
+{
+	z-index: 76;
+	width: 50px;
+	min-height: 22px;
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	left: 643px;
+}
+
+#pu840-3,#pu864-3
+{
+	width: 0.01px;
+	margin-left: 120px;
+	margin-top: 5px;
+}
+
+#u864-3
+{
+	z-index: 28;
+	width: 410px;
+	min-height: 80px;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u966-3
+{
+	z-index: 46;
+	width: 92px;
+	min-height: 40px;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+	left: 430px;
+}
+
+#u984-3
+{
+	z-index: 92;
+	width: 92px;
+	min-height: 40px;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+	left: 536px;
+}
+
+#u888-3
+{
+	z-index: 40;
+	width: 50px;
+	min-height: 40px;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+	left: 642px;
+}
+
+#pu867-4,#pu873-4
+{
+	width: 0.01px;
+	margin-left: 119px;
+	margin-top: 20px;
+}
+
+#u873-4
+{
+	z-index: 72;
+	width: 128px;
+	min-height: 22px;
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u894-4
+{
+	z-index: 64;
+	width: 119px;
+	min-height: 22px;
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	left: 141px;
+}
+
+#u954-4
+{
+	z-index: 68;
+	width: 100px;
+	min-height: 22px;
+	background-color: transparent;
+	line-height: 22px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	left: 272px;
+}
+
+#pu870-3
+{
+	width: 0.01px;
+	margin-left: 119px;
+	margin-top: 5px;
+}
+
+#u870-3
+{
+	z-index: 37;
+	width: 128px;
+	min-height: 40px;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u897-3
+{
+	z-index: 31;
+	width: 120px;
+	min-height: 40px;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+	left: 140px;
+}
+
+#u957-3
+{
+	z-index: 34;
+	width: 101px;
+	min-height: 40px;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+	left: 271px;
+}
+
+#u840,#u963,#u837,#u972,#u864,#u966,#u984,#u888,#u870,#u897,#u957
+{
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+#pu5153
+{
+	width: 0.01px;
+	margin-left: 119px;
+	margin-top: 40px;
+}
+
+#u5153
+{
+	z-index: 101;
+	width: 180px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u1625
+{
+	z-index: 99;
+	width: 183px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	left: 657px;
+}
+
+#u1626
+{
+	z-index: 100;
+	display: block;
+}
+
+#u258-7
+{
+	z-index: 11;
+	width: 1080px;
+	min-height: 45px;
+	margin-top: 30px;
+	position: relative;
+}
+
+.html
+{
+	background: #FFFFFF url("../images/bg-04.jpg") no-repeat center top scroll;
+	background-size: cover;
+}
+
+body
+{
+	position: relative;
+	min-width: 1080px;
+	padding-bottom: 95px;
+}
+
+@font-face
+{
+	font-family: '__ThaiSans Neue_5';
+	src: url('../fonts/thaisansneue-bold-webfont.eot');
+	src: local('☺'), url('../fonts/thaisansneue-bold-webfont.woff') format('woff'), url('../fonts/thaisansneue-bold-webfont.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: '__ThaiSans Neue_5';
+	src: url('../fonts/thaisansneue-regular-webfont.eot');
+	src: local('☺'), url('../fonts/thaisansneue-regular-webfont.woff') format('woff'), url('../fonts/thaisansneue-regular-webfont.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
