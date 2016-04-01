@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 01, 2016 at 06:23 AM
+-- Generation Time: Apr 01, 2016 at 02:26 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -139,10 +139,18 @@ CREATE TABLE `po` (
   `code` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `customer_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `total` float(11,2) NOT NULL,
-  `tax` float(11,2) NOT NULL,
-  `total_tax` float(11,2) NOT NULL,
-  `created` date NOT NULL
+  `vat` float(11,2) NOT NULL,
+  `total_vat` float(11,2) NOT NULL,
+  `created` date NOT NULL,
+  `duedate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `po`
+--
+
+INSERT INTO `po` (`po_id`, `code`, `customer_id`, `total`, `vat`, `total_vat`, `created`, `duedate`) VALUES
+(1, 'PO-001/59', 'A0011', 8470.00, 592.90, 9062.90, '2016-03-28', '2016-04-30');
 
 -- --------------------------------------------------------
 
@@ -159,6 +167,15 @@ CREATE TABLE `po_details` (
   `duedate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `po_details`
+--
+
+INSERT INTO `po_details` (`code`, `product_id`, `unit_price`, `qty`, `amount`, `duedate`) VALUES
+('PO-001/59', 'V012', 102, 20, 2040.00, '2016-04-30'),
+('PO-001/59', 'V022-R1', 105, 30, 3150.00, '2016-04-30'),
+('PO-001/59', 'V023', 82, 40, 3280.00, '2016-04-30');
+
 -- --------------------------------------------------------
 
 --
@@ -166,12 +183,12 @@ CREATE TABLE `po_details` (
 --
 
 CREATE TABLE `products` (
-  `product_id` varchar(7) CHARACTER SET utf8 NOT NULL,
-  `name` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `unit` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
+  `product_id` varchar(7) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `unit` varchar(3) COLLATE utf8_unicode_ci DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
-  `remark` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
-  `pic` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `remark` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pic` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -295,10 +312,22 @@ ALTER TABLE `mo`
   ADD PRIMARY KEY (`mo_id`);
 
 --
+-- Indexes for table `mo_details`
+--
+ALTER TABLE `mo_details`
+  ADD UNIQUE KEY `mo_id` (`mo_id`,`pruduct_id`);
+
+--
 -- Indexes for table `po`
 --
 ALTER TABLE `po`
   ADD PRIMARY KEY (`po_id`);
+
+--
+-- Indexes for table `po_details`
+--
+ALTER TABLE `po_details`
+  ADD UNIQUE KEY `code` (`code`,`product_id`);
 
 --
 -- Indexes for table `products`
@@ -313,10 +342,23 @@ ALTER TABLE `ro`
   ADD PRIMARY KEY (`ro_id`);
 
 --
+-- Indexes for table `ro_details`
+--
+ALTER TABLE `ro_details`
+  ADD UNIQUE KEY `product_id` (`product_id`),
+  ADD UNIQUE KEY `ro_id` (`ro_id`);
+
+--
 -- Indexes for table `so`
 --
 ALTER TABLE `so`
   ADD PRIMARY KEY (`so_id`);
+
+--
+-- Indexes for table `so_details`
+--
+ALTER TABLE `so_details`
+  ADD UNIQUE KEY `so_id` (`so_id`,`product_id`);
 
 --
 -- Indexes for table `users`
@@ -337,7 +379,7 @@ ALTER TABLE `mo`
 -- AUTO_INCREMENT for table `po`
 --
 ALTER TABLE `po`
-  MODIFY `po_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `po_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `ro`
 --

@@ -18,7 +18,7 @@
   $zip = $_POST['zip'];
   $customer_id = $_POST['customer_id'];
 
-  $sql = "INSERT INTO $Customers VALUES('$customer_id', '$type','$company','$address','$town', '$city' , 'zip', '$phone', '$fax', '$contact', '$credit')";
+  $sql = "INSERT INTO $Customers VALUES('$customer_id', '$type','$company','$address','$town', '$city' , '$zip', '$phone', '$fax', '$contact', '$credit')";
   // echo $sql;
   $result = mysql_db_query($db_name, $sql);
   if ($result) {

@@ -8,6 +8,7 @@
   $code = $_POST['code'];
   $customer_id = $_POST['customer_id'];
   $created = toMysql($_POST['created']);
+  $due_date = toMysql($_POST['due_date']);
   $total = $_POST['total'];
   $vat = $_POST['vat'];
   $total_vat = $_POST['total_vat'];
@@ -22,7 +23,7 @@
 
 
 
-  $insertPo = "INSERT INTO $Po VALUES(null, '$code','$customer_id','$total','$vat', '$total_vat' , '$created')";
+  $insertPo = "INSERT INTO $Po VALUES(null, '$code','$customer_id','$total','$vat', '$total_vat' , '$created', '$due_date')";
   $resultPo = mysql_db_query($db_name, $insertPo);
   if ($resultPo) {
     // if ($result) {
@@ -31,7 +32,7 @@
     $loop = count($pd_amount);
     for($i = 0; $i<$loop; $i++){
       $date = toMysql($duedate[$i]);
-      $insertPoDetail = "INSERT INTO $PoDetail VALUES('$code', '$pid[$i]','$price[$i]','$qty[$i]','$pd_amount[$i]', '$date')";
+      $insertPoDetail = "INSERT INTO $PoDetails VALUES('$code', '$pid[$i]','$price[$i]','$qty[$i]','$pd_amount[$i]', '$date')";
       $resultPoDetail = mysql_db_query($db_name, $insertPoDetail);
       if (!$resultPoDetail) {
        die('Invalid query: ' . mysql_error());

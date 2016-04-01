@@ -1,6 +1,6 @@
 $(function() {
 
-  var ids=1
+  var ids= $('#tg-0YX8L > tbody  > tr').not(":first").length + 1;
 
   $(document).on('focus',".datepicker", function(){ //multi datepickers
     $(this).datepicker({
