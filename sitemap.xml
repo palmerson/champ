@@ -187,13 +187,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://champ.com/overview_mo.html</loc>
+    <loc>http://champ.com/overview_mo.php</loc>
     <lastmod>2016-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://champ.com/new_mo.html</loc>
+    <loc>http://champ.com/new_mo.php</loc>
     <lastmod>2016-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -205,13 +205,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://champ.com/overview_recive.html</loc>
+    <loc>http://champ.com/overview_recive.php</loc>
     <lastmod>2016-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://champ.com/new_recive.html</loc>
+    <loc>http://champ.com/new_recive.php</loc>
     <lastmod>2016-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

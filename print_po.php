@@ -1,3 +1,29 @@
+  <?php 
+
+  include('session.php');
+  include('inc/conf.php');
+
+  $id = $_GET['id'];
+
+  $sql = "SELECT a.*, b.* FROM $Po a LEFT JOIN $Customers b ON a.customer_id=b.customer_id  WHERE po_id = '$id'";
+
+  $query = mysql_db_query($db_name, $sql);
+  $row = mysql_fetch_row($query);
+
+  // checkPost($row);
+
+
+  $sql = "SELECT a.*, b.name as name FROM $PoDetails a "; 
+  $sql .= " LEFT JOIN $Products b ON a.product_id=b.product_id ";
+  $sql .= " WHERE code = '$row[1]' ORDER BY code ASC";
+  $query = mysql_db_query($db_name, $sql);
+  $counter = 1;
+  while($lists = mysql_fetch_array($query)) {
+    // checkPost($lists);
+  }
+  // checkPost($row);
+  ?>
+
 <!DOCTYPE html>
 <html class="nojs html" lang="en-US">
  <head>
@@ -51,7 +77,7 @@
       <p>เลขที่ใบ</p>
      </div>
      <div class="clearfix grpelem" id="u1859-4"><!-- content -->
-      <p>01</p>
+      <p><? echo $row[0]?></p>
      </div>
     </div>
     <div class="clearfix colelem" id="pu1865-4"><!-- group -->
@@ -59,7 +85,7 @@
       <p>เลขที่ใบสั่งขาย</p>
      </div>
      <div class="clearfix grpelem" id="u1862-4"><!-- content -->
-      <p>01</p>
+      <p><? echo $row[0]?></p>
      </div>
     </div>
     <div class="clearfix colelem" id="pu1898-4"><!-- group -->
@@ -73,7 +99,7 @@
       <p>0105547156356</p>
      </div>
      <div class="clearfix grpelem" id="u1868-4"><!-- content -->
-      <p>01 / 02 / 2559</p>
+      <p><? echo toDatepicker($row[6])?></p>
      </div>
     </div>
     <div class="clearfix colelem" id="pu1874-4"><!-- group -->
@@ -87,14 +113,14 @@
       <p>วัน / Day</p>
      </div>
      <div class="clearfix grpelem" id="u1919-4"><!-- content -->
-      <p>01</p>
+      <p><? echo dateDifference($row[6],$row[7])?></p>
      </div>
     </div>
     <div class="clearfix colelem" id="pu1880-8"><!-- group -->
      <div class="clearfix grpelem" id="u1880-8"><!-- content -->
-      <p>บจก. เอเชีย แมชชีนพาร์ท (สำนักงานใหญ่)</p>
-      <p>222/11 ถนนวิภาวดีรังสิต ซอย 60 แขวงตลาดบางเขน เขตหลักสี่</p>
-      <p>กทม. 10210</p>
+      <p><? echo $row[10]?></p>
+      <p><? echo $row[11]?></p>
+      <!-- <p>กทม. 10210</p> -->
      </div>
      <div class="clearfix grpelem" id="pu1922-4"><!-- column -->
       <div class="clearfix colelem" id="u1922-4"><!-- content -->
@@ -106,10 +132,10 @@
      </div>
      <div class="clearfix grpelem" id="pu1925-4"><!-- column -->
       <div class="clearfix colelem" id="u1925-4"><!-- content -->
-       <p>01</p>
+       <p><? echo toDatepicker($row[7])?></p>
       </div>
       <div class="clearfix colelem" id="u1931-4"><!-- content -->
-       <p>01 / 02 / 2559</p>
+       <p><? echo $row[1]?></p>
       </div>
      </div>
     </div>
@@ -130,12 +156,12 @@
       <p>จำนวนเงิน</p>
       <p>Total Amount</p>
      </div>
-     <div class="grpelem" id="u2815"><!-- simple frame --></div>
-    </div>
+     <div class="grpelem" id="u2815"> <p class="cal"> 1</p><p class="cal"> 2</p><!-- simple frame --></div>
+      </div>
     <div class="clearfix colelem" id="u2818"><!-- group -->
-     <div class="grpelem" id="u2821"><!-- simple frame --></div>
-     <div class="grpelem" id="u2836"><!-- simple frame --></div>
-     <div class="grpelem" id="u2845"><!-- simple frame --></div>
+     <div class="grpelem" id="u2821"> rr<!-- simple frame --></div>
+     <div class="grpelem" id="u2836"> tt<!-- simple frame --></div>
+     <div class="grpelem" id="u2845"> uu<!-- simple frame --></div>
     </div>
     <div class="clearfix colelem" id="ppu2293-4"><!-- group -->
      <div class="clearfix grpelem" id="pu2293-4"><!-- column -->
@@ -176,10 +202,17 @@
       <p>&nbsp;Total Amount</p>
      </div>
      <div class="grpelem" id="u2749"><!-- simple frame --></div>
-     <div class="grpelem" id="u2824"><!-- simple frame --></div>
-     <div class="grpelem" id="u2827"><!-- simple frame --></div>
-     <div class="grpelem" id="u2830"><!-- simple frame --></div>
+     <div class="grpelem" id="u2824"><p class="cal"><? echo $row[3]?></p><!-- net --></div>
+     <div class="grpelem" id="u2827"><p class="cal"><? echo $row[4]?></p><!-- vat --></div>
+     <div class="grpelem" id="u2830"><p class="cal"><? echo $row[5]?></p><!-- total --></div>
      <div class="grpelem" id="u2833"><!-- simple frame --></div>
+     <style>
+      .cal{
+        text-align: right;
+        padding-top: 15px;
+        padding-right: 50px;
+      }
+     </style>
     </div>
     <div class="clearfix colelem" id="u2308-4"><!-- content -->
      <p>ลงวันที่ ............../..................../....................</p>
@@ -224,7 +257,8 @@
    $(document).ready(function() { try {
 (function(){var a={},b=function(a){if(a.match(/^rgb/))return a=a.replace(/\s+/g,"").match(/([\d\,]+)/gi)[0].split(","),(parseInt(a[0])<<16)+(parseInt(a[1])<<8)+parseInt(a[2]);if(a.match(/^\#/))return parseInt(a.substr(1),16);return 0};(function(){$('link[type="text/css"]').each(function(){var b=($(this).attr("href")||"").match(/\/?css\/([\w\-]+\.css)\?(\d+)/);b&&b[1]&&b[2]&&(a[b[1]]=b[2])})})();(function(){$("body").append('<div class="version" style="display:none; width:1px; height:1px;"></div>');
 for(var c=$(".version"),d=0;d<Muse.assets.required.length;){var f=Muse.assets.required[d],g=f.match(/([\w\-\.]+)\.(\w+)$/),k=g&&g[1]?g[1]:null,g=g&&g[2]?g[2]:null;switch(g.toLowerCase()){case "css":k=k.replace(/\W/gi,"_").replace(/^([^a-z])/gi,"_$1");c.addClass(k);var g=b(c.css("color")),h=b(c.css("background-color"));g!=0||h!=0?(Muse.assets.required.splice(d,1),"undefined"!=typeof a[f]&&(g!=a[f]>>>24||h!=(a[f]&16777215))&&Muse.assets.outOfDate.push(f)):d++;c.removeClass(k);break;case "js":k.match(/^jquery-[\d\.]+/gi)&&
-typeof $!="undefined"?Muse.assets.required.splice(d,1):d++;break;default:throw Error("Unsupported file type: "+g);}}c.remove();if(Muse.assets.outOfDate.length||Muse.assets.required.length)c="Some files on the server may be missing or incorrect. Clear browser cache and try again. If the problem persists please contact website author.",(d=location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi))&&Muse.assets.outOfDate.length&&(c+="\nOut of date: "+Muse.assets.outOfDate.join(",")),d&&Muse.assets.required.length&&(c+="\nMissing: "+Muse.assets.required.join(",")),alert(c)})()})();/* body */
+typeof $!="undefined"?Muse.assets.required.splice(d,1):d++;break;default:throw Error("Unsupported file type: "+g);}}c.remove();if(Muse.assets.outOfDate.length||Muse.assets.required.length)c="Some files on the server may be missing or incorrect. Clear browser cache and try again. If the problem persists please contact website author.",(d=location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi))&&Muse.assets.outOfDate.length&&(c+="\nOut of date: "+Muse.assets.outOfDate.join(",")),d&&Muse.assets.required.length&&(c+="\nMissing: "+Muse.assets.required.join(",")),alert(c)})()})();
+/* body */
 Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.prepHyperlinks(true);/* body */
 Muse.Utils.fullPage('#page');/* 100% height page */

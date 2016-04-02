@@ -1,30 +1,82 @@
+<? 
+  include('session.php');
+  include('inc/conf.php');
+?>
+
 <!DOCTYPE html>
 <html class="nojs html" lang="en-US">
  <head>
 
   <script type="text/javascript">
-   if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["jquery-1.8.3.min.js", "museutils.js", "jquery.musepolyfill.bgsize.js", "jquery.watch.js", "overview_mo.css"], "outOfDate":[]};
+   if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["jquery-1.8.3.min.js", "museutils.js", "jquery.musepolyfill.bgsize.js", "jquery.watch.js", "new_mo.css"], "outOfDate":[]};
 </script>
   
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="generator" content="2015.1.1.343"/>
-  <title>Overview_Mo</title>
+  <title>New_MO</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?131700929"/>
   <link rel="stylesheet" type="text/css" href="css/master_a-master.css?336593918"/>
-  <link rel="stylesheet" type="text/css" href="css/overview_mo.css?3957191662" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/new_mo.css?3797289647" id="pagesheet"/>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <!-- Other scripts -->
   <script type="text/javascript">
    document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
 </script>
   <!-- JS includes -->
   <script type="text/javascript">
-   document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//use.typekit.net/ik/D7GpAri8L-kBK5RiEhkk0X5mGI2kSCSzQcXYTc0EC6Sfec3JCG_bMsJGwDb35QSUFBvkZ2JtZQSUjD8cFQj3w29DwDwtjR9Xw2JoFcjhZ2bXFgGmjhyydWM0jhNlOfG0jhyydWM0jhNlJ6U3ScNt-AuyOAozicI7fbKzMsMMeMb6MqGIQWmDZZMg0jV0l39.js" type="text/javascript">\x3C/script>');
+   document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//use.typekit.net/ik/l4v2_qeZmWXoChPmgpAKaM9F3MEjcyEh3A0GFywE6uIfec3JCG_bMsJGwDb35QSUFBvkZ2JtZQSUjD8cFQj3w29DwDwtjR9Xw2JoFcjhZ2bXFgGmjhyydWM0jhNlOfG0jhyydWM0jhNlJ6U3ScNt-AuyOAozicI7fbKzMsMMeMb6MqGIQWmDZZMg0GV0l39.js" type="text/javascript">\x3C/script>');
 </script>
   <!-- Other scripts -->
   <script type="text/javascript">
    try {Typekit.load();} catch(e) {}
 </script>
+
+<style> 
+  .textbox{ 
+    outline:0; 
+    height:40px; 
+    width: 187px; 
+  }
+  .vat ,.total_vat, .total { 
+    outline:0; 
+    height:40px; 
+    width: 187px;
+    text-align: center;
+  }
+  .inp{
+    border-color: #515151;
+    border-width: 2px;
+    width: 75px;
+  }
+  select {
+    width: 187px;
+    line-height: 40px;
+    height: 40px;
+    -webkit-appearance: menulist-button;
+    border-radius: 0;
+  }
+  a.myButton {
+    background-color:#007dc1;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:17px;
+    padding:16px 35px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #154682;
+  }
+  a.myButton:hover {
+    background-color:#0061a7;
+  }
+  a.myButton:active {
+    position:relative;
+    top:1px;
+  }
+</style> 
     <!--/*
 
 */
@@ -41,82 +93,139 @@
       <p>CHAMP MECHANIC FACTORY CO.,LTD.</p>
      </div>
     </div>
+     <form enctype="multipart/form-data" action="action_add_mo.php" method="POST" id="add_mo">
     <div class="colelem" id="u169"><!-- simple frame --></div>
-    <div class="clearfix colelem" id="u3977-4"><!-- content -->
-     <p>ใบสั่งผลิต</p>
+    <div class="clearfix colelem" id="u4038-4"><!-- content -->
+     <p>สร้างใบสั่งผลิต</p>
     </div>
-    <div class="clearfix colelem" id="pu3980"><!-- group -->
-     <a class="nonblock nontext clip_frame grpelem" id="u3980" href="home.php"><!-- image --><img class="block" id="u3980_img" src="images/back_but.png" alt="" width="180" height="55"/></a>
-     <a class="nonblock nontext clip_frame grpelem" id="u4090" href="new_mo.html"><!-- image --><img class="block" id="u4090_img" src="images/newmo_but.png" alt="" width="180" height="55"/></a>
-     <a class="nonblock nontext clip_frame grpelem" id="u3983" href="history-search.html"><!-- image --><img class="block" id="u3983_img" src="images/searchreport_but.png" alt="" width="180" height="55"/></a>
+    <div class="clearfix colelem" id="pu4031-4"><!-- group -->
+     <div class="clearfix grpelem" id="u4031-4"><!-- content -->
+      <p>เลขที่ใบสั่งขาย</p>
+     </div>
+     <div class="clearfix grpelem" id="u5479-4"><!-- content -->
+      <p>เลขที่ใบสั่งผลิต</p>
+     </div>
+     <div class="clearfix grpelem" id="u4037-4"><!-- content -->
+      <p>ชื่อลูกค้า</p>
+     </div>
+     <div class="clearfix grpelem" id="u4035-4"><!-- content -->
+      <p>วันที่</p>
+     </div>
     </div>
-    <div class="colelem" id="u3982"><!-- custom html -->
+    <div class="clearfix colelem" id="pu4036"><!-- group -->
+     <div class="grpelem" id="u4036"><!-- custom html -->
+  <select class="po_id" name="po_id">
+    <option>เลือกใบสั่งขาย</option>
+    <?php
+      $type = "SELECT po_id, code FROM $Po";
+      $query_type = mysql_db_query($db_name, $type);
+      while($ct = mysql_fetch_array($query_type)) {
+        echo "<option value=\"$ct[0]\"> $ct[1]</option>";   
+      }
+      mysql_close();
+    ?>
+    </select> 
+
+
+</div>
+     <div class="grpelem" id="u5482"><!-- custom html -->
+      <input class="textbox"type="text" name="code"> 
+      <input class="textbox po_code"type="hidden" name="po_code"> 
+<style> 
+ .textbox { 
+    outline:0; 
+    height:40px; 
+    width: 187px; 
+  } 
+</style> 
+
+
+</div>
+     <div class="grpelem" id="u4030"><!-- custom html -->
+      <input class="customer_id"type="hidden" name="customer_id">
+      <input class="textbox customer_name"type="text" name="customer_name" readonly>  
+<style> 
+ .textbox { 
+    outline:0; 
+    height:40px; 
+    width: 187px; 
+  } 
+</style> 
+
+
+</div>
+     <div class="grpelem" id="u4033"><!-- custom html -->
+      <input class="textbox datepicker"type="text"name="created"> 
+<style> 
+ .textbox { 
+    outline:0; 
+    height:40px; 
+    width: 187px; 
+  } 
+</style> 
+
+
+</div>
+    </div>
+    <div class="colelem" id="u4029"><!-- custom html -->
      <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
 
 .tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;width:150px;}
 .tg .tg-vn4c{background-color:#D2E4FC}
 th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::selection      { background:transparent; }th.tg-sort-header { cursor:pointer; }table th.tg-sort-header:after {  content:'';  float:right;  margin-top:7px;  border-width:0 4px 4px;  border-style:solid;  border-color:#404040 transparent;  visibility:hidden;  }table th.tg-sort-header:hover:after {  visibility:visible;  }table th.tg-sort-desc:after,table th.tg-sort-asc:after,table th.tg-sort-asc:hover:after {  visibility:visible;  opacity:0.4;  }table th.tg-sort-desc:after {  border-bottom:none;  border-width:4px 4px 0;  }@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
   <tr>
     <th class="tg-031e">ลำดับ</th>
-    <th class="tg-031e">เลขที่ใบสั่งขาย</th>
-    <th class="tg-031e">วันที่สั่ง</th>
-    <th class="tg-031e">วันที่เสร็จ</th>
-    <th class="tg-031e"></th>
-    <th class="tg-031e"></th>
-    <th class="tg-031e"></th>
+    <th class="tg-031e">รหัสสินค้า</th>
+    <th class="tg-031e">ชื่อสินค้า</th>
+    <th class="tg-031e">จำนวน</th>
+    <th class="tg-031e">กำหนดเสร็จ</th>
+  </tr>
+<!--   <tr>
+    <td class="tg-vn4c"></td>
+    <td class="tg-vn4c"></td>
+    <td class="tg-vn4c"></td>
+    <td class="tg-vn4c"></td>
+    <td class="tg-vn4c"></td>
+  </tr>
+  <tr>
+    <td class="tg-031e"></td>
+    <td class="tg-031e"></td>
+    <td class="tg-031e"></td>
+    <td class="tg-031e"></td>
+    <td class="tg-031e"></td>
   </tr>
   <tr>
     <td class="tg-vn4c"></td>
     <td class="tg-vn4c"></td>
     <td class="tg-vn4c"></td>
     <td class="tg-vn4c"></td>
-    <td class="tg-vn4c"><a href="/Preview/website-1/print_mo.html"><img src="images/view.png" alt="ดู" width="17" height="16"></a></td>
-    <td class="tg-vn4c"><a href="/Preview/website-1/new_mo.html"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
-    <td class="tg-vn4c"><a href="/Preview/website-1/print_mo.html"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
+    <td class="tg-vn4c"></td>
   </tr>
   <tr>
-   <td class="tg-031e"></td>
     <td class="tg-031e"></td>
     <td class="tg-031e"></td>
     <td class="tg-031e"></td>
-    <td class="tg-031e"><a href="/Preview/website-1/print_mo.html"><img src="images/view.png" alt="ดู" width="17" height="16"></a></td>
-    <td class="tg-031e"><a href="/Preview/website-1/new_mo.html"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
-    <td class="tg-031e"><a href="/Preview/website-1/print_mo.html"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
+    <td class="tg-031e"></td>
+    <td class="tg-031e"></td>
   </tr>
   <tr>
     <td class="tg-vn4c"></td>
     <td class="tg-vn4c"></td>
     <td class="tg-vn4c"></td>
     <td class="tg-vn4c"></td>
-    <td class="tg-vn4c"><a href="/Preview/website-1/print_mo.html"><img src="images/view.png" alt="ดู" width="17" height="16"></a></td>
-    <td class="tg-vn4c"><a href="/Preview/website-1/new_mo.html"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
-    <td class="tg-vn4c"><a href="/Preview/website-1/print_mo.html"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
-  </tr>
-  <tr>
-   <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"><a href="/Preview/website-1/print_mo.html"><img src="images/view.png" alt="ดู" width="17" height="16"></a></td>
-    <td class="tg-031e"><a href="/Preview/website-1/new_mo.html"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
-    <td class="tg-031e"><a href="/Preview/website-1/print_mo.html"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
-  </tr>
-  <tr>
     <td class="tg-vn4c"></td>
-    <td class="tg-vn4c"></td>
-    <td class="tg-vn4c"></td>
-    <td class="tg-vn4c"></td>
-    <td class="tg-vn4c"><a href="/Preview/website-1/print_mo.html"><img src="images/view.png" alt="ดู" width="17" height="16"></a></td>
-    <td class="tg-vn4c"><a href="/Preview/website-1/new_mo.html"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
-    <td class="tg-vn4c"><a href="/Preview/website-1/print_mo.html"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
-  </tr>
+  </tr> -->
 </table></div>
 <script type="text/javascript" charset="utf-8">var TgTableSort=window.TgTableSort||function(n,t){"use strict";function r(n,t){for(var e=[],o=n.childNodes,i=0;i<o.length;++i){var u=o[i];if("."==t.substring(0,1)){var a=t.substring(1);f(u,a)&&e.push(u)}else u.nodeName.toLowerCase()==t&&e.push(u);var c=r(u,t);e=e.concat(c)}return e}function e(n,t){var e=[],o=r(n,"tr");return o.forEach(function(n){var o=r(n,"td");t>=0&&t<o.length&&e.push(o[t])}),e}function o(n){return n.textContent||n.innerText||""}function i(n){return n.innerHTML||""}function u(n,t){var r=e(n,t);return r.map(o)}function a(n,t){var r=e(n,t);return r.map(i)}function c(n){var t=n.className||"";return t.match(/\S+/g)||[]}function f(n,t){return-1!=c(n).indexOf(t)}function s(n,t){f(n,t)||(n.className+=" "+t)}function d(n,t){if(f(n,t)){var r=c(n),e=r.indexOf(t);r.splice(e,1),n.className=r.join(" ")}}function v(n){d(n,L),d(n,E)}function l(n,t,e){r(n,"."+E).map(v),r(n,"."+L).map(v),e==T?s(t,E):s(t,L)}function g(n){return function(t,r){var e=n*t.str.localeCompare(r.str);return 0==e&&(e=t.index-r.index),e}}function h(n){return function(t,r){var e=+t.str,o=+r.str;return e==o?t.index-r.index:n*(e-o)}}function m(n,t,r){var e=u(n,t),o=e.map(function(n,t){return{str:n,index:t}}),i=e&&-1==e.map(isNaN).indexOf(!0),a=i?h(r):g(r);return o.sort(a),o.map(function(n){return n.index})}function p(n,t,r,o){for(var i=f(o,E)?N:T,u=m(n,r,i),c=0;t>c;++c){var s=e(n,c),d=a(n,c);s.forEach(function(n,t){n.innerHTML=d[u[t]]})}l(n,o,i)}function x(n,t){var r=t.length;t.forEach(function(t,e){t.addEventListener("click",function(){p(n,r,e,t)}),s(t,"tg-sort-header")})}var T=1,N=-1,E="tg-sort-asc",L="tg-sort-desc";return function(t){var e=n.getElementById(t),o=r(e,"tr"),i=o.length>0?r(o[0],"td"):[];0==i.length&&(i=r(o[0],"th"));for(var u=1;u<o.length;++u){var a=r(o[u],"td");if(a.length!=i.length)return}x(e,i)}}(document);document.addEventListener("DOMContentLoaded",function(n){TgTableSort("tg-0YX8L")});</script>
 
 </div>
+    <div class="clearfix colelem" id="pu4024"><!-- group -->
+     <a class="nonblock nontext clip_frame grpelem" id="u4024" href="overview_mo.php"><!-- image --><img class="block" id="u4024_img" src="images/cancle_but.png" alt="" width="180" height="55"/></a>
+     <button type="submit" form="add_mo" value="Submit" class="nonblock nontext clip_frame grpelem" id="u4026" href="overview_mo.php"><!-- image --><img class="block" id="u4026_img" src="images/save_but.png" alt="" width="180" height="55"/></button>
+    </div>
     <div class="verticalspacer"></div>
     <div class="clearfix colelem" id="u258-7"><!-- content -->
      <p id="u258-2">48 ซ. อ่อนนุช 66 แยก 19 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250 โทร. 02-1385539-41 โทรสาร. 02-1385542</p>
@@ -150,5 +259,8 @@ Muse.Utils.showWidgetsWhenReady();/* body */
 Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 } catch(e) { if (e && 'function' == typeof e.notify) e.notify(); else Muse.Assert.fail('Error calling selector function:' + e); }});
 </script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="scripts/mo.js"></script>
    </body>
 </html>

@@ -44,10 +44,10 @@
       <a class="nonblock nontext rgba-background rounded-corners clip_frame grpelem" id="u389" href="overview_po.php"><!-- image --><img class="block" id="u389_img" src="images/invoice.png" alt="" width="180" height="55"/></a>
      </div>
      <div class="rounded-corners clearfix grpelem" id="u3545"><!-- group -->
-      <a class="nonblock nontext clip_frame grpelem" id="u3562" href="overview_mo.html"><!-- image --><img class="block" id="u3562_img" src="images/made_oder_but.png" alt="" width="180" height="55"/></a>
+      <a class="nonblock nontext clip_frame grpelem" id="u3562" href="overview_mo.php"><!-- image --><img class="block" id="u3562_img" src="images/made_oder_but.png" alt="" width="180" height="55"/></a>
      </div>
      <div class="rounded-corners clearfix grpelem" id="u3542"><!-- group -->
-      <a class="nonblock nontext clip_frame grpelem" id="u3569" href="overview_recive.html"><!-- image --><img class="block" id="u3569_img" src="images/recive_but.png" alt="" width="180" height="55"/></a>
+      <a class="nonblock nontext clip_frame grpelem" id="u3569" href="overview_recive.php"><!-- image --><img class="block" id="u3569_img" src="images/recive_but.png" alt="" width="180" height="55"/></a>
      </div>
      <div class="rounded-corners clearfix grpelem" id="u3525"><!-- group -->
       <a class="nonblock nontext clip_frame grpelem" id="u3555" href="overview_stock.html"><!-- image --><img class="block" id="u3555_img" src="images/cut_stock_but.png" alt="" width="180" height="55"/></a>

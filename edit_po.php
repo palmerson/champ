@@ -103,7 +103,7 @@
     <form enctype="multipart/form-data" action="action_edit_po.php?id=<?php echo $row[0];?>" method="POST" id="edit_po">
     <div class="colelem" id="u169"><!-- simple frame --></div>
     <div class="clearfix colelem" id="u1055-4"><!-- content -->
-     <p>สร้างใบสั่งขาย / ใบเสร็จรับเงิน</p>
+     <p>แก้ไขใบสั่งขาย / ใบเสร็จรับเงิน</p>
     </div>
     <div class="clearfix colelem" id="pu1156-4"><!-- group -->
      <div class="clearfix grpelem" id="u1156-4"><!-- content -->

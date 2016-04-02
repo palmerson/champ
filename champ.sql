@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 01, 2016 at 02:26 PM
+-- Generation Time: Apr 01, 2016 at 04:45 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -79,7 +79,8 @@ INSERT INTO `customers` (`customer_id`, `customer_type`, `company_name`, `addres
 ('A0032', 1, 'บจก ที.เอ็ม.ซี. แมนูแฟคเจอริ่ง', '68/1 หมู่ 5 ต.หนองรี อ.เมืองชลบุรี ชลบุรี 20000', 'อ.เมืองชลบุรี', 'ชลบุรี', 20000, '038-799495', '038-799-567', '', 30),
 ('A0033', 1, 'บริษัท ถังเหล็กสากล จำกัด', '99 หมู่ 17 ถนนสามวา แขวงมีนบุรี เขตมีนบุรี กทม. 10510', 'เขตมีนบุรี', 'กทม.', 10510, '02-517-2977-8', '02-5179-587', 'คุณวรวิทย์ MD', 30),
 ('A0034', 1, 'บมจ ยูนิคแก๊สแอนด์ปิโตรเคมิคัลส์(สำนักงานใหญ่)', '553 อาคารเดอะพาลาเดียม ชั้น 30 ถนนราชปรารภ แขวงมักกะสัน เขตราชเทวี  กทม. 10400', 'เขตราชเทวี  ', 'กทม.', 10400, '02-120-9799', '02- 250-6014', 'คุณชูสิทธิ์', 30),
-('A0035', 1, 'ปตท. จำกัด (มหาชน)', '555 ถ.วิภาวดีรังสิต แขวงจัตุจักร เขตจตุจักร 10900', 'เขตจตุจักร', 'กทม.', 10900, '02-537-2259', '', 'คุณยิ่งยศ ชลิโต', 30);
+('A0035', 1, 'ปตท. จำกัด (มหาชน)', '555 ถ.วิภาวดีรังสิต แขวงจัตุจักร เขตจตุจักร 10900', 'เขตจตุจักร', 'กทม.', 10900, '02-537-2259', '', 'คุณยิ่งยศ ชลิโต', 30),
+('C45', 1, 'นาโอมิ', '       419 ซ.เจริญนคร 40 แขวงบางลำภูล่าง     ', 'คลองสาน', 'กรุงเทพ', 10600, '0894740145', '024377432', 'นายปะแล่ม', 100);
 
 -- --------------------------------------------------------
 
@@ -224,22 +225,9 @@ INSERT INTO `products` (`product_id`, `name`, `unit`, `price`, `remark`, `pic`, 
 
 CREATE TABLE `ro` (
   `ro_id` int(11) NOT NULL,
-  `code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created` date NOT NULL,
-  `updated` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `ro_details`
---
-
-CREATE TABLE `ro_details` (
-  `ro_id` int(11) NOT NULL,
-  `product_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `due_date` date NOT NULL
+  `product_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `qty` int(11) NOT NULL,
+  `created` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -340,13 +328,6 @@ ALTER TABLE `products`
 --
 ALTER TABLE `ro`
   ADD PRIMARY KEY (`ro_id`);
-
---
--- Indexes for table `ro_details`
---
-ALTER TABLE `ro_details`
-  ADD UNIQUE KEY `product_id` (`product_id`),
-  ADD UNIQUE KEY `ro_id` (`ro_id`);
 
 --
 -- Indexes for table `so`

@@ -102,8 +102,8 @@
 </div>
     </div>
     <div class="clearfix colelem" id="pu4694"><!-- group -->
-     <a class="nonblock nontext clip_frame grpelem" id="u4694" href="overview_recive.html"><!-- image --><img class="block" id="u4694_img" src="images/cancle_but.png" alt="" width="180" height="55"/></a>
-     <a class="nonblock nontext clip_frame grpelem" id="u4698" href="overview_recive.html"><!-- image --><img class="block" id="u4698_img" src="images/save_but.png" alt="" width="180" height="55"/></a>
+     <a class="nonblock nontext clip_frame grpelem" id="u4694" href="overview_recive.php"><!-- image --><img class="block" id="u4694_img" src="images/cancle_but.png" alt="" width="180" height="55"/></a>
+     <a class="nonblock nontext clip_frame grpelem" id="u4698" href="overview_recive.php"><!-- image --><img class="block" id="u4698_img" src="images/save_but.png" alt="" width="180" height="55"/></a>
     </div>
     <div class="verticalspacer"></div>
     <div class="clearfix colelem" id="u258-7"><!-- content -->

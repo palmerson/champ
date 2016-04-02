@@ -92,11 +92,11 @@
   <file name="overview_po.php" crc="190694589" seo="true" mt="1459322787010" redirect="true"/>
   <file name="history-search.html" crc="4131359043" seo="true" mt="1459322896807" redirect="true"/>
   <file name="z.html" crc="494535725" seo="true" mt="1459277959337" redirect="true"/>
-  <file name="overview_mo.html" crc="3913222323" seo="true" mt="1459322787114" redirect="true"/>
-  <file name="new_mo.html" crc="133934553" seo="true" mt="1459322958262" redirect="true"/>
+  <file name="overview_mo.php" crc="3913222323" seo="true" mt="1459322787114" redirect="true"/>
+  <file name="new_mo.php" crc="133934553" seo="true" mt="1459322958262" redirect="true"/>
   <file name="print_mo.html" crc="4104680520" seo="true" mt="1459323044339" redirect="true"/>
-  <file name="overview_recive.html" crc="3957725656" seo="true" mt="1459322786844" redirect="true"/>
-  <file name="new_recive.html" crc="4031293861" seo="true" mt="1459284656699" redirect="true"/>
+  <file name="overview_recive.php" crc="3957725656" seo="true" mt="1459322786844" redirect="true"/>
+  <file name="new_recive.php" crc="4031293861" seo="true" mt="1459284656699" redirect="true"/>
   <file name="overview_stock.html" crc="227463813" seo="true" mt="1459322787266" redirect="true"/>
   <file name="cut_stock.html" crc="3983416217" seo="true" mt="1459284656568" redirect="true"/>
   <file name="overview_product.php" crc="3879033937" seo="true" mt="1459322918571" redirect="true"/>
