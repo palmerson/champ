@@ -4,8 +4,8 @@
 
 .version.print_po /* version checker */
 {
-	color: #00000F;
-	background-color: #4EB325;
+	color: #000007;
+	background-color: #7A0132;
 }
 
 #muse_css_mq
@@ -29,15 +29,10 @@
 #u2526
 {
 	z-index: 2;
-	width: 982px;
+	width: 980px;
 	background-color: #FFFFFF;
 	position: relative;
-	padding: 40px 48px 63.480000000000246px 50px;
-}
-
-#pu1826
-{
-	width: 0.01px;
+	padding: 40px 50px 93.48000000000025px;
 }
 
 #u1826
@@ -61,10 +56,10 @@
 	width: 541px;
 	min-height: 44px;
 	background-color: transparent;
-	line-height: 25px;
+	color: #000012;
 	font-size: 19px;
 	text-align: right;
-	color: #000012;
+	line-height: 25px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
@@ -82,14 +77,14 @@
 
 #u1850-6
 {
-	z-index: 15;
+	z-index: 23;
 	width: 476px;
 	min-height: 87px;
 	background-color: transparent;
-	line-height: 39px;
+	color: #D60D00;
 	font-size: 30px;
 	text-align: left;
-	color: #D60D00;
+	line-height: 39px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
@@ -99,14 +94,14 @@
 
 #u1846-10
 {
-	z-index: 135;
+	z-index: 143;
 	width: 573px;
 	min-height: 57px;
 	background-color: transparent;
-	line-height: 20px;
+	color: #0C0100;
 	font-size: 14px;
 	text-align: right;
-	color: #0C0100;
+	line-height: 20px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 600;
 	position: relative;
@@ -123,13 +118,13 @@
 
 #u1853-4
 {
-	z-index: 75;
+	z-index: 83;
 	width: 126px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
 	font-size: 14px;
 	text-align: right;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
@@ -138,14 +133,14 @@
 
 #u1859-4
 {
-	z-index: 107;
+	z-index: 115;
 	width: 144px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000D00;
 	font-size: 14px;
 	text-align: right;
-	color: #000D00;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	position: relative;
@@ -162,13 +157,13 @@
 
 #u1865-4
 {
-	z-index: 91;
+	z-index: 99;
 	width: 126px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
 	font-size: 14px;
 	text-align: right;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
@@ -177,14 +172,14 @@
 
 #u1862-4
 {
-	z-index: 119;
+	z-index: 127;
 	width: 144px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000D00;
 	font-size: 14px;
 	text-align: right;
-	color: #000D00;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	position: relative;
@@ -201,13 +196,13 @@
 
 #u1898-4
 {
-	z-index: 87;
+	z-index: 95;
 	width: 231px;
 	min-height: 24px;
 	background-color: transparent;
-	line-height: 21px;
 	font-size: 16px;
 	text-align: left;
+	line-height: 21px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
@@ -216,13 +211,13 @@
 
 #u1871-4
 {
-	z-index: 99;
+	z-index: 107;
 	width: 126px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
 	font-size: 14px;
 	text-align: right;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
@@ -233,14 +228,14 @@
 
 #u1901-4
 {
-	z-index: 115;
+	z-index: 123;
 	width: 248px;
 	min-height: 24px;
 	background-color: transparent;
-	line-height: 21px;
+	color: #000D00;
 	font-size: 16px;
 	text-align: left;
-	color: #000D00;
+	line-height: 21px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	position: relative;
@@ -250,14 +245,14 @@
 
 #u1868-4
 {
-	z-index: 127;
+	z-index: 135;
 	width: 144px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000D00;
 	font-size: 14px;
 	text-align: right;
-	color: #000D00;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	position: relative;
@@ -275,14 +270,14 @@
 
 #u1874-4
 {
-	z-index: 21;
+	z-index: 29;
 	width: 268px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: left;
-	color: #000000;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
@@ -291,13 +286,13 @@
 
 #u1916-4
 {
-	z-index: 79;
+	z-index: 87;
 	width: 175px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
 	font-size: 14px;
 	text-align: right;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
@@ -307,13 +302,13 @@
 
 #u1937-4
 {
-	z-index: 83;
+	z-index: 91;
 	width: 76px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
 	font-size: 14px;
 	text-align: right;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
@@ -323,14 +318,14 @@
 
 #u1919-4
 {
-	z-index: 111;
+	z-index: 119;
 	width: 43px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000D00;
 	font-size: 14px;
 	text-align: center;
-	color: #000D00;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	position: relative;
@@ -347,14 +342,14 @@
 
 #u1880-8
 {
-	z-index: 67;
+	z-index: 75;
 	width: 469px;
 	min-height: 62px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: left;
-	color: #000000;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	position: relative;
@@ -372,13 +367,13 @@
 
 #u1922-4
 {
-	z-index: 95;
+	z-index: 103;
 	width: 175px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 17px;
 	font-size: 13px;
 	text-align: right;
+	line-height: 17px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	margin-left: 63px;
@@ -387,13 +382,13 @@
 
 #u1928-4
 {
-	z-index: 103;
+	z-index: 111;
 	width: 238px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
 	font-size: 14px;
 	text-align: right;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	margin-top: 11px;
@@ -411,14 +406,14 @@
 
 #u1925-4
 {
-	z-index: 123;
+	z-index: 131;
 	width: 85px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 17px;
+	color: #000D00;
 	font-size: 13px;
 	text-align: right;
-	color: #000D00;
+	line-height: 17px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	margin-left: 18px;
@@ -427,177 +422,283 @@
 
 #u1931-4
 {
-	z-index: 131;
+	z-index: 139;
 	width: 103px;
 	min-height: 20px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000D00;
 	font-size: 14px;
 	text-align: right;
-	color: #000D00;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	margin-top: 13px;
 	position: relative;
 }
 
-#pu1949-6
+#pu2815
 {
 	width: 0.01px;
 	margin-left: 5px;
 	margin-top: 13px;
 }
 
+#u2815
+{
+	z-index: 15;
+	width: 74px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	padding-bottom: 6px;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+}
+
 #u1949-6
 {
-	z-index: 25;
+	z-index: 33;
 	width: 71px;
 	min-height: 50px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: center;
-	color: #000000;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
 	margin-right: -10000px;
-	margin-top: 22px;
+	margin-top: 18px;
+	left: 1px;
+}
+
+#u5513
+{
+	z-index: 17;
+	width: 108px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	padding-bottom: 6px;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+	left: 75px;
 }
 
 #u1964-6
 {
-	z-index: 31;
+	z-index: 39;
 	width: 71px;
 	min-height: 50px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: center;
-	color: #000000;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
 	margin-right: -10000px;
-	margin-top: 22px;
-	left: 102px;
+	margin-top: 18px;
+	left: 18px;
+}
+
+#u5516
+{
+	z-index: 19;
+	width: 545px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	padding-bottom: 6px;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+	left: 184px;
 }
 
 #u1970-6
 {
-	z-index: 37;
+	z-index: 45;
 	width: 71px;
 	min-height: 50px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: center;
-	color: #000000;
-	font-family: '__ThaiSans Neue_5';
-	font-weight: 700;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: 22px;
-	left: 392px;
-}
-
-#u1976-6
-{
-	z-index: 43;
-	width: 125px;
-	min-height: 50px;
-	background-color: transparent;
 	line-height: 18px;
-	font-size: 14px;
-	text-align: right;
-	color: #000000;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
 	margin-right: -10000px;
-	margin-top: 22px;
-	left: 848px;
-}
-
-#u2815
-{
-	z-index: 198;
-	width: 975px;
-	height: 74px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000000;
-	background-color: transparent;
-	margin-bottom: -1px;
-	position: relative;
-	margin-right: -10000px;
-}
-
-#u2818
-{
-	z-index: 199;
-	width: 975px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000000;
-	background-color: transparent;
-	margin-left: 5px;
-	position: relative;
-}
-
-#u2821
-{
-	z-index: 200;
-	width: 109px;
-	height: 457px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000000;
-	background-color: transparent;
-	margin-bottom: -1px;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: -76px;
-	left: 85px;
-}
-
-#u2836
-{
-	z-index: 201;
-	width: 533px;
-	height: 457px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000000;
-	background-color: transparent;
-	margin-bottom: -1px;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: -76px;
-	left: 195px;
+	margin-top: 18px;
+	left: 227px;
 }
 
 #u2845
 {
-	z-index: 206;
+	z-index: 21;
 	width: 244px;
-	height: 602px;
 	border-style: solid;
 	border-width: 1px;
 	border-color: #000000;
 	background-color: transparent;
-	margin-bottom: -146px;
+	padding-bottom: 6px;
+	margin-bottom: -1px;
 	position: relative;
 	margin-right: -10000px;
-	margin-top: -76px;
-	left: 729px;
+	left: 730px;
 }
 
-#ppu2293-4
+#u1976-6
+{
+	z-index: 51;
+	width: 125px;
+	min-height: 50px;
+	background-color: transparent;
+	color: #000000;
+	font-size: 14px;
+	text-align: right;
+	line-height: 18px;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 18px;
+	left: 103px;
+}
+
+#u5546
+{
+	z-index: 16;
+	width: 74px;
+	height: 382px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u5543
+{
+	z-index: 18;
+	width: 108px;
+	height: 382px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+	left: 75px;
+}
+
+#u5540
+{
+	z-index: 20;
+	width: 545px;
+	height: 382px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+	left: 184px;
+}
+
+#u5537
+{
+	z-index: 22;
+	width: 244px;
+	height: 382px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+	left: 730px;
+}
+
+#u2242-6
+{
+	z-index: 57;
+	width: 134px;
+	min-height: 35px;
+	background-color: transparent;
+	color: #000000;
+	font-size: 12px;
+	text-align: right;
+	line-height: 16px;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 9px;
+	left: 558px;
+}
+
+#u2824
+{
+	z-index: 205;
+	width: 234px;
+	height: 47px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+	left: 495px;
+}
+
+#u5528
+{
+	z-index: 206;
+	width: 244px;
+	height: 47px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+	left: 730px;
+}
+
+#u5552
+{
+	z-index: 207;
+	width: 494px;
+	height: 47px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#pu5546,#pu2242-6,#ppu2293-4
 {
 	width: 0.01px;
 	margin-left: 5px;
-	margin-top: -1px;
 }
 
 #pu2293-4
@@ -605,19 +706,19 @@
 	width: 0.01px;
 	padding-bottom: 0px;
 	margin-right: -10000px;
-	margin-top: 20px;
+	margin-top: 32px;
 }
 
 #u2293-4
 {
-	z-index: 172;
+	z-index: 179;
 	width: 474px;
 	min-height: 28px;
 	background-color: transparent;
-	line-height: 21px;
+	color: #000000;
 	font-size: 16px;
 	text-align: left;
-	color: #000000;
+	line-height: 21px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	margin-left: 1px;
@@ -632,7 +733,7 @@
 
 #u2791
 {
-	z-index: 177;
+	z-index: 184;
 	width: 24px;
 	height: 24px;
 	border-style: solid;
@@ -645,14 +746,14 @@
 
 #u2284-4
 {
-	z-index: 168;
+	z-index: 175;
 	width: 438px;
 	min-height: 24px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: left;
-	color: #000000;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	position: relative;
@@ -661,15 +762,122 @@
 	left: 37px;
 }
 
+#ppu2266-6
+{
+	width: 0.01px;
+	margin-right: -10000px;
+	margin-left: 495px;
+}
+
+#u2266-6
+{
+	z-index: 63;
+	width: 134px;
+	min-height: 35px;
+	background-color: transparent;
+	color: #000000;
+	font-size: 12px;
+	text-align: right;
+	line-height: 16px;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 9px;
+	left: 63px;
+}
+
+#u2827
+{
+	z-index: 208;
+	width: 234px;
+	height: 47px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u5531
+{
+	z-index: 209;
+	width: 244px;
+	height: 47px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+	left: 235px;
+}
+
+#pu1826,#pu2266-6,#pu2275-6
+{
+	width: 0.01px;
+}
+
+#u2275-6
+{
+	z-index: 69;
+	width: 134px;
+	min-height: 35px;
+	background-color: transparent;
+	color: #000000;
+	font-size: 12px;
+	text-align: right;
+	line-height: 16px;
+	font-family: '__ThaiSans Neue_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 7px;
+	left: 68px;
+}
+
+#u2830
+{
+	z-index: 210;
+	width: 234px;
+	height: 47px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u5534
+{
+	z-index: 211;
+	width: 244px;
+	height: 47px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	background-color: transparent;
+	margin-bottom: -1px;
+	position: relative;
+	margin-right: -10000px;
+	left: 235px;
+}
+
 #pu2287
 {
 	width: 0.01px;
+	margin-left: 5px;
 	margin-top: 12px;
 }
 
 #u2287
 {
-	z-index: 176;
+	z-index: 183;
 	width: 24px;
 	height: 24px;
 	border-style: solid;
@@ -682,14 +890,14 @@
 
 #u2288-4
 {
-	z-index: 178;
+	z-index: 185;
 	width: 438px;
 	min-height: 24px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: left;
-	color: #000000;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	position: relative;
@@ -701,20 +909,20 @@
 #pu2299-4
 {
 	width: 0.01px;
-	margin-left: 37px;
+	margin-left: 42px;
 	margin-top: -4px;
 }
 
 #u2299-4
 {
-	z-index: 190;
+	z-index: 197;
 	width: 82px;
 	min-height: 24px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: left;
-	color: #000000;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
@@ -724,14 +932,14 @@
 
 #u2305-4
 {
-	z-index: 194;
+	z-index: 201;
 	width: 82px;
 	min-height: 24px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: left;
-	color: #000000;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 700;
 	position: relative;
@@ -739,143 +947,16 @@
 	left: 214px;
 }
 
-#u2242-6
-{
-	z-index: 49;
-	width: 134px;
-	min-height: 35px;
-	background-color: transparent;
-	line-height: 16px;
-	font-size: 12px;
-	text-align: right;
-	color: #000000;
-	font-family: '__ThaiSans Neue_5';
-	font-weight: 700;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: 9px;
-	left: 558px;
-}
-
-#u2266-6
-{
-	z-index: 55;
-	width: 134px;
-	min-height: 35px;
-	background-color: transparent;
-	line-height: 16px;
-	font-size: 12px;
-	text-align: right;
-	color: #000000;
-	font-family: '__ThaiSans Neue_5';
-	font-weight: 700;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: 58px;
-	left: 558px;
-}
-
-#u2275-6
-{
-	z-index: 61;
-	width: 134px;
-	min-height: 35px;
-	background-color: transparent;
-	line-height: 16px;
-	font-size: 12px;
-	text-align: right;
-	color: #000000;
-	font-family: '__ThaiSans Neue_5';
-	font-weight: 700;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: 104px;
-	left: 562px;
-}
-
-#u2749
-{
-	z-index: 145;
-	width: 1px;
-	height: 145px;
-	background-color: #000000;
-	position: relative;
-	margin-right: -10000px;
-	left: 495px;
-}
-
-#u2824
-{
-	z-index: 202;
-	width: 480px;
-	height: 47px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000000;
-	background-color: transparent;
-	position: relative;
-	margin-right: -10000px;
-	left: 495px;
-}
-
-#u2827
-{
-	z-index: 203;
-	width: 480px;
-	height: 47px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000000;
-	background-color: transparent;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: 48px;
-	left: 495px;
-}
-
-#u2830
-{
-	z-index: 204;
-	width: 480px;
-	height: 47px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000000;
-	background-color: transparent;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: 97px;
-	left: 495px;
-}
-
-#u2833
-{
-	z-index: 205;
-	width: 225px;
-	height: 145px;
-	position: relative;
-	margin-right: -10000px;
-	left: 495px;
-}
-
-.ie #u2833
-{
-	background-color: #FFFFFF;
-	opacity: 0.01;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
-	filter: alpha(opacity=1);
-}
-
 #u2308-4
 {
-	z-index: 186;
+	z-index: 193;
 	width: 438px;
 	min-height: 24px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: left;
-	color: #000000;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	margin-left: 42px;
@@ -883,20 +964,33 @@
 	position: relative;
 }
 
+#ppu2317-4
+{
+	width: 0.01px;
+	margin-left: 5px;
+	margin-top: 15px;
+}
+
+#pu2317-4
+{
+	width: 0.01px;
+	margin-right: -10000px;
+	margin-top: 8px;
+}
+
 #u2317-4
 {
-	z-index: 182;
+	z-index: 189;
 	width: 438px;
 	min-height: 24px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: left;
-	color: #000000;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
-	margin-left: 42px;
-	margin-top: 23px;
+	margin-left: 37px;
 	position: relative;
 }
 
@@ -906,20 +1000,19 @@
 	width: 445px;
 	min-height: 24px;
 	background-color: transparent;
-	line-height: 18px;
+	color: #000000;
 	font-size: 14px;
 	text-align: left;
-	color: #000000;
+	line-height: 18px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
-	margin-left: 5px;
-	margin-top: 22px;
+	margin-top: 23px;
 	position: relative;
 }
 
 #u2335-8
 {
-	z-index: 152;
+	z-index: 159;
 	width: 478px;
 	min-height: 84px;
 	background-color: transparent;
@@ -927,28 +1020,28 @@
 	text-align: center;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
-	margin-left: 500px;
-	margin-top: 42px;
 	position: relative;
+	margin-right: -10000px;
+	left: 495px;
 }
 
 #pu2329-6
 {
 	width: 0.01px;
 	margin-left: 5px;
-	margin-top: 82px;
+	margin-top: 112px;
 }
 
 #u2329-6
 {
-	z-index: 146;
+	z-index: 153;
 	width: 475px;
 	min-height: 82px;
 	background-color: transparent;
-	line-height: 28px;
+	color: #000000;
 	font-size: 14px;
 	text-align: left;
-	color: #000000;
+	line-height: 28px;
 	font-family: '__ThaiSans Neue_5';
 	font-weight: 400;
 	position: relative;
@@ -958,7 +1051,7 @@
 
 #u2338-8
 {
-	z-index: 160;
+	z-index: 167;
 	width: 478px;
 	min-height: 84px;
 	background-color: transparent;
@@ -1005,18 +1098,18 @@ body
 @font-face
 {
 	font-family: '__ThaiSans Neue_5';
-	src: url('../fonts/thaisansneue-semibold-webfont.eot');
-	src: local('☺'), url('../fonts/thaisansneue-semibold-webfont.woff') format('woff'), url('../fonts/thaisansneue-semibold-webfont.svg') format('svg');
-	font-weight: 600;
+	src: url('../fonts/thaisansneue-regular-webfont.eot');
+	src: local('☺'), url('../fonts/thaisansneue-regular-webfont.woff') format('woff'), url('../fonts/thaisansneue-regular-webfont.svg') format('svg');
+	font-weight: 400;
 	font-style: normal;
 }
 
 @font-face
 {
 	font-family: '__ThaiSans Neue_5';
-	src: url('../fonts/thaisansneue-regular-webfont.eot');
-	src: local('☺'), url('../fonts/thaisansneue-regular-webfont.woff') format('woff'), url('../fonts/thaisansneue-regular-webfont.svg') format('svg');
-	font-weight: 400;
+	src: url('../fonts/thaisansneue-semibold-webfont.eot');
+	src: local('☺'), url('../fonts/thaisansneue-semibold-webfont.woff') format('woff'), url('../fonts/thaisansneue-semibold-webfont.svg') format('svg');
+	font-weight: 600;
 	font-style: normal;
 }
 

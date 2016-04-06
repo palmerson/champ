@@ -50,7 +50,7 @@
      <a class="nonblock nontext clip_frame grpelem" id="u5116" href="home.php"><!-- image --><img class="block" id="u5116_img" src="images/back_but.png" alt="" width="180" height="55"/></a>
      <a class="nonblock nontext clip_frame grpelem" id="u5143" href="new_customer.php"><!-- image --><img class="block" id="u5143_img" src="images/newcustomer_but.png" alt="" width="180" height="55"/></a>
      <div class="clip_frame grpelem" id="u5445"><!-- image -->
-      <img class="block" id="u5445_img" src="images/printhistory_but.png" alt="" width="180" height="55"/>
+      <a href="report_customer.php" target="_blank"><img class="block" id="u5445_img" src="images/printhistory_but.png" alt="" width="180" height="55"/></a>
      </div>
     </div>
     <div class="colelem" id="u5121"><!-- custom html -->

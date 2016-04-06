@@ -1,6 +1,5 @@
-<? 
+<?php 
   include('session.php');
-  include('inc/conf.php');
 ?>
 <!DOCTYPE html>
 <html class="nojs html" lang="en-US">
@@ -40,11 +39,11 @@
     height:40px; 
     width: 187px; 
   }
-  .vat ,.total_vat, .total { 
+  .vat ,.total_vat, .total{ 
     outline:0; 
     height:40px; 
     width: 187px;
-    text-align: center;
+    text-align: right;
   }
   .inp{
     border-color: #515151;
@@ -110,7 +109,7 @@
       <p>วันที่สั่งซื้อ</p>
      </div>
      <div class="clearfix grpelem" id="u1284-4"><!-- content -->
-      <p>กำหนดส่ง</p>
+      <!-- <p>กำหนดส่ง</p> -->
      </div>
     </div>
     <div class="clearfix colelem" id="pu1330"><!-- group -->
@@ -120,6 +119,7 @@
 <div class="grpelem" id="u1335"><!-- custom html -->
   <select name="customer_id">
   <?php
+    include('inc/conf.php');
     $type = "SELECT customer_id, company_name FROM $Customers";
     $query_type = mysql_db_query($db_name, $type);
     while($ct = mysql_fetch_array($query_type)) {
@@ -136,7 +136,7 @@
 
 
     <div class="grpelem" id="u1317"><!-- custom html -->
-    <input class="textbox datepicker"type="text" name="due_date"> 
+    <!-- <input class="textbox datepicker"type="text" name="due_date">  -->
     </div>
 </div>
 
@@ -179,7 +179,7 @@
 .tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;width:100px;}
 .tg .tg-vn4c{background-color:#D2E4FC}
-th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::selection      { background:transparent; }th.tg-sort-header { cursor:pointer; }table th.tg-sort-header:after {  content:'';  float:right;  margin-top:7px;  border-width:0 4px 4px;  border-style:solid;  border-color:#404040 transparent;  visibility:hidden;  }table th.tg-sort-header:hover:after {  visibility:visible;  }table th.tg-sort-desc:after,table th.tg-sort-asc:after,table th.tg-sort-asc:hover:after {  visibility:visible;  opacity:0.4;  }table th.tg-sort-desc:after {  border-bottom:none;  border-width:4px 4px 0;  }@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
   <tr>
     <th class="tg-031e">รหัสสินค้า</th>

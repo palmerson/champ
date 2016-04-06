@@ -51,7 +51,7 @@
      <a class="nonblock nontext clip_frame grpelem" id="u4994" href="home.php"><!-- image --><img class="block" id="u4994_img" src="images/back_but.png" alt="" width="180" height="55"/></a>
      <a class="nonblock nontext clip_frame grpelem" id="u5048" href="new_product.php"><!-- image --><img class="block" id="u5048_img" src="images/newproduct_but.png" alt="" width="180" height="55"/></a>
      <div class="clip_frame grpelem" id="u5435"><!-- image -->
-      <img class="block" id="u5435_img" src="images/printhistory_but.png" alt="" width="180" height="55"/>
+      <a href="report_product.php" target="_blank"><img class="block" id="u5435_img" src="images/printhistory_but.png" alt="" width="180" height="55"/></a>
      </div>
     </div>
     <div class="colelem" id="u4996"><!-- custom html -->
@@ -69,6 +69,7 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
     <th class="tg-031e">รหัสสินค้า</th>
     <th class="tg-031e">ชื่อสินค้า</th>
     <th class="tg-031e">ราคา</th>
+    <th class="tg-031e">สต๊อก</th>
     <th class="tg-031e"></th>
  <th class="tg-031e"></th>
   </tr>
@@ -106,6 +107,7 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
       <td class="tg-031e"><?php echo $row['product_id']?></td>
       <td class="tg-031e"><?php echo $row['name']?></td>
       <td class="tg-031e"><?php echo $row['price']?></td>
+      <td class="tg-031e"><?php echo $row['stock']?></td>
      <td class="tg-031e"><a href="view_product.php?pid=<?php echo $row['product_id'];?>"><img src="images/view.png" alt="ดู" width="17" height="16"></a></td>
       <td class="tg-031e"><a href="edit_product.php?pid=<?php echo $row['product_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
     </tr> 
@@ -127,6 +129,7 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
       <td class="tg-vn4c"><?php echo $row['product_id']?></td>
       <td class="tg-vn4c"><?php echo $row['name']?></td>
       <td class="tg-vn4c"><?php echo $row['price']?></td>
+      <td class="tg-vn4c"><?php echo $row['stock']?></td>
      <td class="tg-vn4c"><a href="view_product.php?pid=<?php echo $row['product_id'];?>"><img src="images/view.png" alt="ดู" width="17" height="16"></a></td>
       <td class="tg-vn4c"><a href="edit_product.php?pid=<?php echo $row['product_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
     </tr> 

@@ -13,6 +13,7 @@
   <link rel="stylesheet" type="text/css" href="css/site_global.css?131700929"/>
   <link rel="stylesheet" type="text/css" href="css/master_a-master.css?336593918"/>
   <link rel="stylesheet" type="text/css" href="css/new_recive.css?287436447" id="pagesheet"/>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <!-- Other scripts -->
   <script type="text/javascript">
    document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -33,6 +34,7 @@
       <p>CHAMP MECHANIC FACTORY CO.,LTD.</p>
      </div>
     </div>
+    <form enctype="multipart/form-data" action="action_add_ro.php" method="POST" id="add_po">
     <div class="colelem" id="u169"><!-- simple frame --></div>
     <div class="clearfix colelem" id="u4690-4"><!-- content -->
      <p>เพิ่มงานผลิตเข้าสต๊อก</p>
@@ -53,19 +55,37 @@
     </div>
     <div class="clearfix colelem" id="pu4696"><!-- group -->
      <div class="grpelem" id="u4696"><!-- custom html -->
-      <input class="textbox"type="text"> 
+     <select name="product_id" class="target">
+        <option>กรุณาเลือกรหัสสินค้า</option>
+     <?php
+	  include('inc/conf.php');
+      $type = "SELECT product_id, name FROM $Products";
+      $query_type = mysql_db_query($db_name, $type);
+      while($ct = mysql_fetch_array($query_type)) {
+        echo "<option value=\"$ct[0]\" rel=\"$ct[1]\">($ct[0]) $ct[1]</option>";   
+      }
+      mysql_close();
+    ?>
+     </select>
 <style> 
  .textbox { 
     outline:0; 
     height:40px; 
     width: 187px; 
   } 
+    select {
+    width: 187px;
+    line-height: 40px;
+    height: 40px;
+    -webkit-appearance: menulist-button;
+    border-radius: 0;
+  }
 </style> 
 
 
 </div>
      <div class="grpelem" id="u4700"><!-- custom html -->
-      <input class="textbox"type="text"> 
+      <input id="product_name" class="textbox"type="text"> 
 <style> 
  .textbox { 
     outline:0; 
@@ -77,7 +97,7 @@
 
 </div>
      <div class="grpelem" id="u4725"><!-- custom html -->
-      <input class="textbox"type="text"> 
+      <input name="qty" class="textbox"type="text" style="text-align:right;"> 
 <style> 
  .textbox { 
     outline:0; 
@@ -89,7 +109,7 @@
 
 </div>
      <div class="grpelem" id="u4697"><!-- custom html -->
-      <input class="textbox"type="text"> 
+      <input name="created" class="textbox datepicker" type="text"> 
 <style> 
  .textbox { 
     outline:0; 
@@ -103,8 +123,9 @@
     </div>
     <div class="clearfix colelem" id="pu4694"><!-- group -->
      <a class="nonblock nontext clip_frame grpelem" id="u4694" href="overview_recive.php"><!-- image --><img class="block" id="u4694_img" src="images/cancle_but.png" alt="" width="180" height="55"/></a>
-     <a class="nonblock nontext clip_frame grpelem" id="u4698" href="overview_recive.php"><!-- image --><img class="block" id="u4698_img" src="images/save_but.png" alt="" width="180" height="55"/></a>
+     <a class="nonblock nontext clip_frame grpelem" id="u4698" href="#" onClick="$(this).closest('form').submit()"><!-- image --><img class="block" id="u4698_img" src="images/save_but.png" alt="" width="180" height="55"/></a>
     </div>
+    </form>
     <div class="verticalspacer"></div>
     <div class="clearfix colelem" id="u258-7"><!-- content -->
      <p id="u258-2">48 ซ. อ่อนนุช 66 แยก 19 แขวงประเวศ เขตประเวศ กรุงเทพฯ 10250 โทร. 02-1385539-41 โทรสาร. 02-1385542</p>
@@ -137,6 +158,9 @@ Muse.Utils.fullPage('#page');/* 100% height page */
 Muse.Utils.showWidgetsWhenReady();/* body */
 Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 } catch(e) { if (e && 'function' == typeof e.notify) e.notify(); else Muse.Assert.fail('Error calling selector function:' + e); }});
+
 </script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+<script src="scripts/ro.js"></script>
    </body>
 </html>

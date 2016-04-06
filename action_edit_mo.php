@@ -19,8 +19,8 @@
   $pid = $_POST['pid'];
 
 
-  $updateMo = "UPDATE $Mo SET created='$created',duedate='$duedate_'";
-  $updateMo .= " WHERE mo_id='$id'"; 
+  $updateMo = "UPDATE $Production SET created='$created',duedate='$duedate_'";
+  $updateMo .= " WHERE production_id='$id'"; 
 
   $resultMo = mysql_db_query($db_name, $updateMo);
   if ($resultMo) {
@@ -28,9 +28,9 @@
     for($i = 0; $i<$loop; $i++){
       $date = toMysql($duedate[$i]);
 
-      $updateMoDetail = "UPDATE $MoDetails SET";
+      $updateMoDetail = "UPDATE $ProductionDetails SET";
       $updateMoDetail .= " due_date='$date'";        
-      $updateMoDetail .= " WHERE code='$code' AND product_id='$pid[$i]'";
+      $updateMoDetail .= " WHERE production_code='$production_code' AND product_id='$pid[$i]'";
       $resultMoDetail_ = mysql_db_query($db_name, $updateMoDetail);
     }
     mysql_close();

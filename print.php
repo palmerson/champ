@@ -12,7 +12,7 @@
 
 
 <center>
-<iframe id="printf" name="printf" src="<? echo $page?>" width="1200" height="800" style="margin-bottom: 30px;"></iframe>
+<iframe id="printf" name="printf" src="<?php echo $page?>" width="1200" height="800" style="margin-bottom: 30px;"></iframe>
 <div style="height:60px">
   <input class="btn"type="button" onclick="window.frames['printf'].print();" value="print"/>
 </div>

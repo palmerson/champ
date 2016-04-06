@@ -290,7 +290,7 @@
 
 #u5208
 {
-	z-index: 52;
+	z-index: 1;
 	width: 187px;
 	min-height: 40px;
 	border-width: 0px;
@@ -302,7 +302,7 @@
 
 #u5221
 {
-	z-index: 55;
+	z-index: 1;
 	width: 180px;
 	background-color: transparent;
 	position: relative;

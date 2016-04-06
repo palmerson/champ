@@ -5,7 +5,7 @@
   // checkPost($_POST);
 
   //MO DB
-  $mo_id = $_POST['code'];
+  // $mo_id = $_POST['code'];
   $po_id = $_POST['po_id'];
   $po_code = $_POST['po_code'];
   $customer_id = $_POST['customer_id'];
@@ -14,22 +14,27 @@
 
   // MODETAIL DB
   $duedate = $_POST['duedate'];
+  $senddate = $_POST['senddate'];
   $qty = $_POST['qty'];
   $pid = $_POST['pid'];
 
 
-  $insertMo = "INSERT INTO $Mo VALUES(null, '$mo_id','$po_code','$customer_id','$created', '$duedate_')";
-  $resultMo = mysql_db_query($db_name, $insertMo);
-  if ($resultMo) {
-    // if ($result) {
-    //  die('Invalid query: ' . mysql_error());
-    // }
+  $insertProduction = "INSERT INTO $Production VALUES(null, '$po_id','$customer_id','$created', '$duedate_')";
+  $resultProduction = mysql_db_query($db_name, $insertProduction);
+  if ($resultProduction) {
+
+    $productionSql = "select production_id from $Production Order by production_id Desc limit 0,1";
+    $query3 = mysql_db_query($db_name, $productionSql);
+    $production_id = mysql_fetch_row($query3);
+
+
     $loop = count($pid);
     for($i = 0; $i<$loop; $i++){
-      $date = toMysql($duedate[$i]);
-      $insertMoDetail = "INSERT INTO $MoDetails VALUES('$mo_id', '$pid[$i]','$qty[$i]', '$date')";
-      $resultMoDetail = mysql_db_query($db_name, $insertMoDetail);
-      if (!$resultMoDetail) {
+      $due = toMysql($duedate[$i]);
+      $send = toMysql($senddate[$i]);
+      $insertProductionDetail = "INSERT INTO $ProductionDetails VALUES('$production_id[0]', '$pid[$i]','$qty[$i]', '$send',  '$due')";
+      $resultProductionDetail = mysql_db_query($db_name, $insertProductionDetail);
+      if (!$resultProductionDetail) {
        die('Invalid query: ' . mysql_error());
       }
     }

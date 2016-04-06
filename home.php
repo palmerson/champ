@@ -50,7 +50,7 @@
       <a class="nonblock nontext clip_frame grpelem" id="u3569" href="overview_recive.php"><!-- image --><img class="block" id="u3569_img" src="images/recive_but.png" alt="" width="180" height="55"/></a>
      </div>
      <div class="rounded-corners clearfix grpelem" id="u3525"><!-- group -->
-      <a class="nonblock nontext clip_frame grpelem" id="u3555" href="overview_stock.html"><!-- image --><img class="block" id="u3555_img" src="images/cut_stock_but.png" alt="" width="180" height="55"/></a>
+      <a class="nonblock nontext clip_frame grpelem" id="u3555" href="overview_stock.php"><!-- image --><img class="block" id="u3555_img" src="images/cut_stock_but.png" alt="" width="180" height="55"/></a>
      </div>
     </div>
     <div class="clearfix colelem" id="pu3470"><!-- group -->
@@ -61,7 +61,7 @@
       <a class="nonblock nontext rgba-background rounded-corners clip_frame grpelem" id="u382" href="overview_customer.php"><!-- image --><img class="block" id="u382_img" src="images/customer%20b.png" alt="" width="180" height="55"/></a>
      </div>
      <div class="rounded-corners clearfix grpelem" id="u3495"><!-- group -->
-      <a class="nonblock nontext clip_frame grpelem" id="u5370" href="history-search.html"><!-- image --><img class="block" id="u5370_img" src="images/report_but.png" alt="" width="180" height="55"/></a>
+      <a class="nonblock nontext clip_frame grpelem" id="u5370" href="history-search.php?db=po"><!-- image --><img class="block" id="u5370_img" src="images/report_but.png" alt="" width="180" height="55"/></a>
      </div>
     </div>
     <div class="verticalspacer"></div>

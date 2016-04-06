@@ -175,7 +175,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://champ.com/history-search.html</loc>
+    <loc>http://champ.com/history-search.php</loc>
     <lastmod>2016-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -217,7 +217,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://champ.com/overview_stock.html</loc>
+    <loc>http://champ.com/overview_stock.php</loc>
     <lastmod>2016-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

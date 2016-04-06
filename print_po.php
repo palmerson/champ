@@ -14,16 +14,14 @@
 
 
   $sql = "SELECT a.*, b.name as name FROM $PoDetails a "; 
-  $sql .= " LEFT JOIN $Products b ON a.product_id=b.product_id ";
-  $sql .= " WHERE code = '$row[1]' ORDER BY code ASC";
-  $query = mysql_db_query($db_name, $sql);
-  $counter = 1;
-  while($lists = mysql_fetch_array($query)) {
-    // checkPost($lists);
-  }
-  // checkPost($row);
-  ?>
+  $num_rows_sql = "SELECT qty FROM $PoDetails WHERE po_id = '$row[0]'";
+  $num_rows_query = mysql_db_query($db_name, $num_rows_sql);
+  $num_rows = mysql_num_rows($num_rows_query);
 
+  $amountSql = "SELECT amount FROM $PoDetails WHERE po_id = '$row[0]'";
+  $rowAmount = mysql_db_query($db_name, $amountSql);
+
+  ?>
 <!DOCTYPE html>
 <html class="nojs html" lang="en-US">
  <head>
@@ -37,7 +35,7 @@
   <title>print_po</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?131700929"/>
-  <link rel="stylesheet" type="text/css" href="css/print_po.css?256815909" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/print_po.css?125436210" id="pagesheet"/>
   <!-- Other scripts -->
   <script type="text/javascript">
    document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -46,6 +44,60 @@
 
 */
 -->
+
+     <style>
+      .cal{
+        text-align: right;
+        padding-top: 15px;
+        padding-right: 50px;
+      }
+      .num{
+        text-align: left;
+        padding-top: 30px;
+        padding-left: 32px;
+        /*padding-right: 50px;*/
+      }
+      .qty{
+        text-align: left;
+        padding-top: 30px;
+        padding-left: 35px;
+        /*padding-right: 50px;*/
+      }
+      .unit{
+        text-align: left;
+        padding-top: 30px;
+        padding-left: 20px;
+        /*padding-right: 50px;*/
+      }
+      .amount{
+        text-align: right;
+        padding-top: 30px;
+        padding-right: 50px;
+      }
+      .num_{
+        text-align: left;
+        padding-top: 10px;
+        padding-left: 32px;
+        /*padding-right: 50px;*/
+      }
+      .qty_{
+        text-align: left;
+        padding-top: 10px;
+        padding-left: 35px;
+        /*padding-right: 50px;*/
+      }
+      .unit_{
+        text-align: left;
+        padding-top: 10px;
+        padding-left: 20px;
+        /*padding-right: 50px;*/
+      }
+      .amount_{
+        text-align: right;
+        padding-top: 10px;
+        padding-right: 50px;
+      }  
+     </style>
  </head>
  <body>
 
@@ -135,33 +187,106 @@
        <p><? echo toDatepicker($row[7])?></p>
       </div>
       <div class="clearfix colelem" id="u1931-4"><!-- content -->
-       <p><? echo $row[1]?></p>
+      <p><? echo $row[1]?></p>
       </div>
      </div>
     </div>
-    <div class="clearfix colelem" id="pu1949-6"><!-- group -->
-     <div class="clearfix grpelem" id="u1949-6"><!-- content -->
-      <p>ลำดับ</p>
-      <p>item</p>
-     </div>
-     <div class="clearfix grpelem" id="u1964-6"><!-- content -->
-      <p>จำนวน</p>
-      <p>Quanity</p>
-     </div>
-     <div class="clearfix grpelem" id="u1970-6"><!-- content -->
-      <p>รายการ</p>
-      <p>Unit Price</p>
-     </div>
-     <div class="clearfix grpelem" id="u1976-6"><!-- content -->
-      <p>จำนวนเงิน</p>
-      <p>Total Amount</p>
-     </div>
-     <div class="grpelem" id="u2815"> <p class="cal"> 1</p><p class="cal"> 2</p><!-- simple frame --></div>
+    <div class="clearfix colelem" id="pu2815"><!-- group -->
+     <div class="clearfix grpelem" id="u2815"><!-- group -->
+      <div class="clearfix grpelem" id="u1949-6"><!-- content -->
+       <p>ลำดับ</p>
+       <p>item</p>
       </div>
-    <div class="clearfix colelem" id="u2818"><!-- group -->
-     <div class="grpelem" id="u2821"> rr<!-- simple frame --></div>
-     <div class="grpelem" id="u2836"> tt<!-- simple frame --></div>
-     <div class="grpelem" id="u2845"> uu<!-- simple frame --></div>
+     </div>
+     <div class="clearfix grpelem" id="u5513"><!-- group -->
+      <div class="clearfix grpelem" id="u1964-6"><!-- content -->
+       <p>จำนวน</p>
+       <p>Quanity</p>
+      </div>
+     </div>
+     <div class="clearfix grpelem" id="u5516"><!-- group -->
+      <div class="clearfix grpelem" id="u1970-6"><!-- content -->
+       <p>รายการ</p>
+       <p>Unit Price</p>
+      </div>
+     </div>
+     <div class="clearfix grpelem" id="u2845"><!-- group -->
+      <div class="clearfix grpelem" id="u1976-6"><!-- content -->
+       <p>จำนวนเงิน</p>
+       <p>Total Amount</p>
+      </div>
+     </div>
+    </div>
+    <div class="clearfix colelem" id="pu5546"><!-- group -->
+     <div class="grpelem" id="u5546"> 
+       <?php
+        $x=1;
+        while($x <= $num_rows) {
+          if($x == 1){
+            echo "<p class=\"num\">".$x."</p>";
+          }
+          else{
+            echo "<p class=\"num_\">".$x."</p>";
+          }
+        $x++;
+      }
+     ?>
+     </div>
+     <div class="grpelem" id="u5543">
+      <?php
+        $k = 1;
+        while($col_qty = mysql_fetch_array($num_rows_query)) {
+          if($k == 1){
+            echo "<p class=\"qty\">".$col_qty['qty']."</p>";
+          }
+          else{
+            echo "<p class=\"qty_\">".$col_qty['qty']."</p>";
+          }
+          $k++;
+        }
+     ?>
+     </div>
+     <div class="grpelem" id="u5540">
+      <?php
+        $sql = "SELECT a.unit_price, b.name, b.unit FROM $PoDetails a "; 
+        $sql .= " LEFT JOIN $Products b ON a.product_id=b.product_id ";
+        $sql .= " WHERE po_code = '$row[1]' ORDER BY po_code ASC";
+        $query = mysql_db_query($db_name, $sql);
+        $p = 1;
+        while($lists = mysql_fetch_array($query)) {
+          if($p == 1){
+            echo "<p class=\"unit\">".$lists['name']."  (".$lists['unit_price']."  ".$lists['unit'].")</p>";
+          }
+          else{
+            echo "<p class=\"unit_\">".$lists['name']."  (".$lists['unit_price']."  ".$lists['unit'].")</p>";
+          }
+          $p++;
+        }
+     ?>
+     </div>
+     <div class="grpelem" id="u5537">
+      <?php
+        $l = 1;
+        while($col_amount = mysql_fetch_array($rowAmount)) {
+          if($l == 1){
+            echo "<p class=\"amount\">".number_format($col_amount['amount'],2,'.',',')."</p>";
+          }
+          else{
+            echo "<p class=\"amount_\">".number_format($col_amount['amount'],2,'.',',')."</p>";
+          }
+          $l++;
+        }
+     ?>
+     </div>
+    </div>
+    <div class="clearfix colelem" id="pu2242-6"><!-- group -->
+     <div class="clearfix grpelem" id="u2242-6"><!-- content -->
+      <p>รวมราคาทั้งสิ้น</p>
+      <p>Net Amount</p>
+     </div>
+     <div class="grpelem" id="u2824"><p class="cal"></div>
+     <div class="grpelem" id="u5528"><p class="cal"><? echo number_format($row[3],2,'.',',');?></p><!-- net --></div>
+     <div class="grpelem" id="u5552"><p class="cal"><? echo convert($row[3]);?></p><!-- Thai Number --></div>
     </div>
     <div class="clearfix colelem" id="ppu2293-4"><!-- group -->
      <div class="clearfix grpelem" id="pu2293-4"><!-- column -->
@@ -174,59 +299,57 @@
         <p>เงินสด / Cash</p>
        </div>
       </div>
-      <div class="clearfix colelem" id="pu2287"><!-- group -->
-       <div class="grpelem" id="u2287"><!-- simple frame --></div>
-       <div class="clearfix grpelem" id="u2288-4"><!-- content -->
-        <p>เช็คธนาคาร ............................................. เลขที่ ......................................................</p>
+     </div>
+     <div class="clearfix grpelem" id="ppu2266-6"><!-- column -->
+      <div class="clearfix colelem" id="pu2266-6"><!-- group -->
+       <div class="clearfix grpelem" id="u2266-6"><!-- content -->
+        <p>จำนวนภาษีมูลค่าเพิ่ม</p>
+        <p>Vat / Amount 7%</p>
        </div>
+       <div class="grpelem" id="u2827"><!-- simple frame --></div>
+       <div class="grpelem" id="u5531"><p class="cal"><? echo number_format($row[4],2,'.',',')?></p><!-- vat --></div>
       </div>
-      <div class="clearfix colelem" id="pu2299-4"><!-- group -->
-       <div class="clearfix grpelem" id="u2299-4"><!-- content -->
-        <p>Cheque</p>
+      <div class="clearfix colelem" id="pu2275-6"><!-- group -->
+       <div class="clearfix grpelem" id="u2275-6"><!-- content -->
+        <p>จำนวนเงินรวมทั้งสิ้น</p>
+        <p>&nbsp;Total Amount</p>
        </div>
-       <div class="clearfix grpelem" id="u2305-4"><!-- content -->
-        <p>No.</p>
-       </div>
+       <div class="grpelem" id="u2830"></div>
+       <div class="grpelem" id="u5534"><p class="cal"><? echo number_format($row[5],2,'.',',');?></p><!-- total --></div>
       </div>
      </div>
-     <div class="clearfix grpelem" id="u2242-6"><!-- content -->
-      <p>รวมราคาทั้งสิ้น</p>
-      <p>Net Amount</p>
+    </div>
+    <div class="clearfix colelem" id="pu2287"><!-- group -->
+     <div class="grpelem" id="u2287"><!-- simple frame --></div>
+     <div class="clearfix grpelem" id="u2288-4"><!-- content -->
+      <p>เช็คธนาคาร ............................................. เลขที่ ......................................................</p>
      </div>
-     <div class="clearfix grpelem" id="u2266-6"><!-- content -->
-      <p>จำนวนภาษีมูลค่าเพิ่ม</p>
-      <p>Vat / Amount 7%</p>
+    </div>
+    <div class="clearfix colelem" id="pu2299-4"><!-- group -->
+     <div class="clearfix grpelem" id="u2299-4"><!-- content -->
+      <p>Cheque</p>
      </div>
-     <div class="clearfix grpelem" id="u2275-6"><!-- content -->
-      <p>จำนวนเงินรวมทั้งสิ้น</p>
-      <p>&nbsp;Total Amount</p>
+     <div class="clearfix grpelem" id="u2305-4"><!-- content -->
+      <p>No.</p>
      </div>
-     <div class="grpelem" id="u2749"><!-- simple frame --></div>
-     <div class="grpelem" id="u2824"><p class="cal"><? echo $row[3]?></p><!-- net --></div>
-     <div class="grpelem" id="u2827"><p class="cal"><? echo $row[4]?></p><!-- vat --></div>
-     <div class="grpelem" id="u2830"><p class="cal"><? echo $row[5]?></p><!-- total --></div>
-     <div class="grpelem" id="u2833"><!-- simple frame --></div>
-     <style>
-      .cal{
-        text-align: right;
-        padding-top: 15px;
-        padding-right: 50px;
-      }
-     </style>
     </div>
     <div class="clearfix colelem" id="u2308-4"><!-- content -->
      <p>ลงวันที่ ............../..................../....................</p>
     </div>
-    <div class="clearfix colelem" id="u2317-4"><!-- content -->
-     <p>ผู้รับเงิน / Collector .................................................................................................</p>
-    </div>
-    <div class="clearfix colelem" id="u2323-4"><!-- content -->
-     <p>เมื่อได้รับสินค้าเป็นที่เรียบร้อยแล้วโปรดลงนาม</p>
-    </div>
-    <div class="clearfix colelem" id="u2335-8"><!-- content -->
-     <p id="u2335-2">...............................................................................................</p>
-     <p id="u2335-4">ผู้ส่งของ</p>
-     <p id="u2335-6">Delivery By</p>
+    <div class="clearfix colelem" id="ppu2317-4"><!-- group -->
+     <div class="clearfix grpelem" id="pu2317-4"><!-- column -->
+      <div class="clearfix colelem" id="u2317-4"><!-- content -->
+       <p>ผู้รับเงิน / Collector .................................................................................................</p>
+      </div>
+      <div class="clearfix colelem" id="u2323-4"><!-- content -->
+       <p>เมื่อได้รับสินค้าเป็นที่เรียบร้อยแล้วโปรดลงนาม</p>
+      </div>
+     </div>
+     <div class="clearfix grpelem" id="u2335-8"><!-- content -->
+      <p id="u2335-2">...............................................................................................</p>
+      <p id="u2335-4">ผู้ส่งของ</p>
+      <p id="u2335-6">Delivery By</p>
+     </div>
     </div>
     <div class="clearfix colelem" id="pu2329-6"><!-- group -->
      <div class="clearfix grpelem" id="u2329-6"><!-- content -->

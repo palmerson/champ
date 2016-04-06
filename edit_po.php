@@ -1,4 +1,4 @@
-<? 
+<?php 
   include('session.php');
   include('inc/conf.php');
 ?>
@@ -44,7 +44,7 @@
     outline:0; 
     height:40px; 
     width: 187px;
-    text-align: center;
+    text-align: right;
   }
   .inp{
     border-color: #515151;
@@ -119,7 +119,7 @@
       <p>วันที่สั่งซื้อ</p>
      </div>
      <div class="clearfix grpelem" id="u1284-4"><!-- content -->
-      <p>กำหนดส่ง</p>
+      <!-- <p>กำหนดส่ง</p> -->
      </div>
     </div>
     <div class="clearfix colelem" id="pu1330"><!-- group -->
@@ -150,7 +150,7 @@
 
 
     <div class="grpelem" id="u1317"><!-- custom html -->
-    <input class="textbox datepicker"type="text" name="due_date" value="<?php echo toDatepicker($row[7]);?>"> 
+<!--     <input class="textbox datepicker"type="text" name="due_date" value="<?php //echo toDatepicker($row[7]);?>"> --> 
     </div>
 </div>
 
@@ -193,7 +193,7 @@
 .tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;width:100px;}
 .tg .tg-vn4c{background-color:#D2E4FC}
-th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::selection      { background:transparent; }th.tg-sort-header { cursor:pointer; }table th.tg-sort-header:after {  content:'';  float:right;  margin-top:7px;  border-width:0 4px 4px;  border-style:solid;  border-color:#404040 transparent;  visibility:hidden;  }table th.tg-sort-header:hover:after {  visibility:visible;  }table th.tg-sort-desc:after,table th.tg-sort-asc:after,table th.tg-sort-asc:hover:after {  visibility:visible;  opacity:0.4;  }table th.tg-sort-desc:after {  border-bottom:none;  border-width:4px 4px 0;  }@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
+/*th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::selection      { background:transparent; }th.tg-sort-header { cursor:pointer; }table th.tg-sort-header:after {  content:'';  float:right;  margin-top:7px;  border-width:0 4px 4px;  border-style:solid;  border-color:#404040 transparent;  visibility:hidden;  }table th.tg-sort-header:hover:after {  visibility:visible;  }table th.tg-sort-desc:after,table th.tg-sort-asc:after,table th.tg-sort-asc:hover:after {  visibility:visible;  opacity:0.4;  }table th.tg-sort-desc:after {  border-bottom:none;  border-width:4px 4px 0;  }*/@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
   <tr>
     <th class="tg-031e">รหัสสินค้า</th>
@@ -206,7 +206,7 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
   <?php
     $sql = "SELECT a.*, b.name as name FROM $PoDetails a "; 
     $sql .= " LEFT JOIN $Products b ON a.product_id=b.product_id ";
-    $sql .= " WHERE code = '$row[1]' ORDER BY code ASC";
+    $sql .= " WHERE po_code = '$row[1]' ORDER BY po_code ASC";
     $query = mysql_db_query($db_name, $sql);
     $counter = 1;
     while($lists = mysql_fetch_array($query)) {
@@ -222,7 +222,7 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
           <?php echo $lists['name']?>
         </td>
         <td class=tg-031e>
-          <input class="inp qty" type=text name=qty[] value="<?php echo $lists['qty']?>">
+          <input class="inp qty" style="text-align:right;" type=text name=qty[] value="<?php echo $lists['qty']?>">
         </td>
         <td class=tg-031e>
           <input class="inp price" type=hidden name=price[] value="<?php echo $lists['unit_price']?>"><?php echo $lists['unit_price']?>
@@ -231,7 +231,7 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
           <input id="<?php echo $counter;?>" class="inp datepicker" type=text name=duedate[] value="<?php echo toDatepicker($lists['duedate']);?>" >
         </td>
         <td class=tg-031e>
-          <input class="inp pdm" type=hidden name=pd_amount[] value="<?php echo $lists['amount']?>" ><span class="pd_amount"><?php echo $lists['amount']?>
+          <input class="inp pdm" type=hidden name=pd_amount[] value="<?php echo $lists['amount']?>" ><span class="pd_amount"><?php echo number_format($lists['amount'],2,'.',',')?>
         </td>
       </tr>
       <?php }else{ ?>
@@ -245,7 +245,7 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
           <?php echo $lists['name']?>
         </td>
         <td class="tg-vn4c">
-          <input class="inp qty" type=text name=qty[] value="<?php echo $lists['qty']?>">
+          <input class="inp qty" style="text-align:right;" type=text name=qty[] value="<?php echo $lists['qty']?>">
         </td>
         <td class="tg-vn4c">
           <input class="inp price" type=hidden name=price[] value="<?php echo $lists['unit_price']?>"><?php echo $lists['unit_price']?>
@@ -254,7 +254,7 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
           <input id="<?php echo $counter;?>" class="inp datepicker" type=text name=duedate[] value="<?php echo toDatepicker($lists['duedate']);?>" >
         </td>
         <td class="tg-vn4c">
-          <input class="inp pdm" type=hidden name=pd_amount[] value="<?php echo $lists['amount']?>" ><span class="pd_amount"><?php echo $lists['amount']?>
+          <input class="inp pdm" type=hidden name=pd_amount[] value="<?php echo $lists['amount']?>" ><span class="pd_amount"><?php echo number_format($lists['amount'],2,'.',',')?>
         </td>
       </tr>
       <?php }
@@ -271,7 +271,7 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
       <p id="u1587-2">รวมราคา</p>
      </div>
      <div class="grpelem" id="u1582"><!-- custom html -->
-      <input class="total" type="text" name="total" value="<?php echo $row[3];?>" readonly> 
+      <input class="total" type="text" name="total" value="<?php echo number_format($row[3],2,'.',',');?>" readonly> 
     </div>
     </div>
     <div class="clearfix colelem" id="pu1590-4"><!-- group -->
@@ -279,7 +279,7 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
       <p id="u1590-2">ภาษีมูลค่าเพิ่ม 7%</p>
      </div>
      <div class="grpelem" id="u1593"><!-- custom html -->
-      <input class="vat" name="vat" type="text" value="<?php echo $row[4];?>" readonly> 
+      <input class="vat" name="vat" type="text" value="<?php echo number_format($row[4],2,'.',',');?>" readonly> 
     </div>
     </div>
     <div class="clearfix colelem" id="pu1647-4"><!-- group -->
@@ -287,7 +287,7 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
       <p id="u1647-2">ราคารวมสุทธิ</p>
      </div>
      <div class="grpelem" id="u1642"><!-- custom html -->
-      <input class="total_vat" name="total_vat" type="text" value="<?php echo $row[5];?>" readonly> 
+      <input class="total_vat" name="total_vat" type="text" value="<?php echo number_format($row[5],2,'.',',');?>" readonly> 
       </div>
     </div>
     <div class="clearfix colelem" id="pu3862"><!-- group -->

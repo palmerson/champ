@@ -1,9 +1,9 @@
-<? 
+<?php 
   include('session.php');
   include('inc/conf.php');
   $id = $_GET['id'];
 
-  $sql = "SELECT a.*, b.company_name FROM $Mo a LEFT JOIN $Customers b ON  a.customer_id= b.customer_id WHERE mo_id = '$id'";
+  $sql = "SELECT a.*, b.company_name FROM $Production a LEFT JOIN $Customers b ON  a.customer_id= b.customer_id WHERE Production_id = '$id'";
 
   $query = mysql_db_query($db_name, $sql);
   $row = mysql_fetch_row($query);
@@ -121,12 +121,12 @@
     </div>
     <div class="clearfix colelem" id="pu4036"><!-- group -->
      <div class="grpelem" id="u4036"><!-- custom html -->
-  <input class="textbox" name="po_id" value="<?php echo $row[0];?>">
+  <input class="textbox" name="po_id" value="<?php echo $row[0];?>" readonly>
 
 
 </div>
      <div class="grpelem" id="u5482"><!-- custom html -->
-      <input class="textbox"type="text" name="code" value="<?php echo $row[1];?>"> 
+      <input class="textbox"type="text" name="code" value="<?php echo $row[1];?>" readonly> 
       <input class="textbox po_code"type="hidden" name="po_code" value="<?php echo $row[2];?>"> 
 <style> 
  .textbox { 
@@ -140,7 +140,7 @@
 </div>
      <div class="grpelem" id="u4030"><!-- custom html -->
       <input class="customer_id"type="hidden" name="customer_id" value="<?php echo $row[3];?>">
-      <input class="textbox customer_name"type="text" name="customer_name" readonly value="<?php echo $row[6];?>">  
+      <input class="textbox customer_name"type="text" name="customer_name" readonly value="<?php echo $row[5];?>">  
 <style> 
  .textbox { 
     outline:0; 
@@ -171,7 +171,7 @@
 .tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;width:150px;}
 .tg .tg-vn4c{background-color:#D2E4FC}
-th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::selection      { background:transparent; }th.tg-sort-header { cursor:pointer; }table th.tg-sort-header:after {  content:'';  float:right;  margin-top:7px;  border-width:0 4px 4px;  border-style:solid;  border-color:#404040 transparent;  visibility:hidden;  }table th.tg-sort-header:hover:after {  visibility:visible;  }table th.tg-sort-desc:after,table th.tg-sort-asc:after,table th.tg-sort-asc:hover:after {  visibility:visible;  opacity:0.4;  }table th.tg-sort-desc:after {  border-bottom:none;  border-width:4px 4px 0;  }@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
+</style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
   <tr>
     <th class="tg-031e">ลำดับ</th>
@@ -181,9 +181,10 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
     <th class="tg-031e">กำหนดเสร็จ</th>
   </tr>
   <?php
-    $sql = "SELECT a.*, b.name as name FROM $MoDetails a "; 
+
+    $sql = "SELECT a.*, b.name as name FROM $ProductionDetails a "; 
     $sql .= " LEFT JOIN $Products b ON a.product_id=b.product_id ";
-    $sql .= " WHERE mo_id = '$row[1]' ORDER BY mo_id ASC";
+    $sql .= " WHERE a.production_id = '$row[1]' ORDER BY a.production_id ASC";
     $query = mysql_db_query($db_name, $sql);
     $counter = 1;
     while($lists = mysql_fetch_array($query)) {
@@ -193,30 +194,30 @@ th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::
       <tr>
       <td class="tg-031e">
       <input class="inp" type="hidden" name="pid[]" value="<?php echo $lists['product_id']?>">
-        <? echo $counter; ?>
+        <?php echo $counter; ?>
       </td>
       <td class="tg-031e"><?php echo $lists['product_id']?></td>
-      <td class="tg-031e"><? echo $lists['name']; ?></td>
+      <td class="tg-031e"><?php echo $lists['name']; ?></td>
       <td class="tg-031e">
-      <input class="inp qty" type="text" name="qty[]" readonly="" value="<?php echo $lists['quantity']; ?>">
+      <input class="inp qty" type="text" style="text-align:right;" name="qty[]" readonly="" value="<?php echo $lists['qty']; ?>">
       </td>
       <td class="tg-031e">
-      <input id="<? echo $counter; ?>" class="inp datepicker" readonly="" type="text" name="duedate[]" value="<? echo toDatepicker($lists['due_date']); ?>">
+      <input id="<?php echo $counter; ?>" class="inp datepicker" readonly="" type="text" name="duedate[]" value="<?php echo toDatepicker($lists['due_date']); ?>">
       </td>
       </tr>
       <?php }else{ ?>
       <tr>
       <td class="tg-vn4c">
       <input class="inp" type="hidden" name="pid[]" value="<?php echo $lists['product_id']?>">
-        <? echo $counter; ?>
+        <?php echo $counter; ?>
       </td>
       <td class="tg-vn4c"><?php echo $lists['product_id']?></td>
-      <td class="tg-vn4c"><? echo $lists['name']; ?></td>
+      <td class="tg-vn4c"><?php echo $lists['name']; ?></td>
       <td class="tg-vn4c">
-      <input class="inp qty" type="text" name="qty[]" readonly="" value="<?php echo $lists['quantity']; ?>">
+      <input class="inp qty" type="text" style="text-align:right;" name="qty[]" readonly="" value="<?php echo $lists['qty']; ?>">
       </td>
       <td class="tg-vn4c">
-      <input id="<? echo $counter; ?>" class="inp datepicker" readonly="" type="text" name="duedate[]" value="<? echo toDatepicker($lists['due_date']); ?>">
+      <input id="<?php echo $counter; ?>" class="inp datepicker" readonly="" type="text" name="duedate[]" value="<?php echo toDatepicker($lists['due_date']); ?>">
       </td>
       </tr>
       <?php }

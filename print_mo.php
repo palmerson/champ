@@ -1,3 +1,29 @@
+  <?php 
+
+  // include('session.php');
+  include('inc/conf.php');
+
+  $id = $_GET['id'];
+
+  $sql = "SELECT a.*, b.* FROM $Production a LEFT JOIN $Customers b ON a.customer_id=b.customer_id  WHERE production_id = '$id'";
+
+  $query = mysql_db_query($db_name, $sql);
+  $row = mysql_fetch_row($query);
+
+  // checkPost($row);
+  $num_rows_sql = "SELECT qty FROM $ProductionDetails WHERE production_id = '$row[1]'";
+  $num_rows_query = mysql_db_query($db_name, $num_rows_sql);
+  $num_rows_query2 = mysql_db_query($db_name, $num_rows_sql);
+  $num_rows = mysql_num_rows($num_rows_query);
+
+
+  $productSql = "SELECT product_id FROM $ProductionDetails WHERE production_id = '$row[1]'";
+  $productQuery = mysql_db_query($db_name, $productSql);
+  $productQuery2 = mysql_db_query($db_name, $productSql);
+
+  ?>
+
+
 <!DOCTYPE html>
 <html class="nojs html" lang="en-US">
  <head>
@@ -20,6 +46,20 @@
 
 */
 -->
+<style>
+  .num, .num_, .pdt, .pdt_, .qty, .qty_, .unit, .unit_ {
+    font-size: 8px;
+  }
+  .num, .num_, .pdt, .pdt_, .qty, .qty_{
+    text-align: center;
+  }
+  .unit, .unit_ {
+    padding-left: 10px;
+  }
+  .num, .pdt, .qty, .unit{
+    padding-top: 30px;
+  }
+</style>
  </head>
  <body>
 
@@ -66,62 +106,61 @@
       <p>นามผู้ซื้อ / Customer Name</p>
      </div>
      <div class="clearfix grpelem" id="u4123-4"><!-- content -->
-      <p>เลขที่ใบ</p>
+      <p>เลขที่ใบสั่งผลิต</p>
      </div>
      <div class="clearfix grpelem" id="u4130-4"><!-- content -->
-      <p>01</p>
+      <p><? echo $row[0]?></p>
      </div>
      <div class="clearfix grpelem" id="u4540-4"><!-- content -->
       <p>นามผู้ซื้อ / Customer Name</p>
      </div>
      <div class="clearfix grpelem" id="u4573-4"><!-- content -->
-      <p>เลขที่ใบ</p>
+      <p>เลขที่ใบสั่งผลิต</p>
      </div>
      <div class="clearfix grpelem" id="u4591-4"><!-- content -->
-      <p>01</p>
+      <p><? echo $row[0]?></p>
      </div>
     </div>
     <div class="clearfix colelem" id="pu4112-8"><!-- group -->
      <div class="clearfix grpelem" id="u4112-8"><!-- content -->
-      <p>บจก. เอเชีย แมชชีนพาร์ท (สำนักงานใหญ่)</p>
-      <p>222/11 ถนนวิภาวดีรังสิต ซอย 60 แขวงตลาดบางเขน เขตหลักสี่</p>
-      <p>กทม. 10210</p>
+      <p><?php echo $row[8]?></p>
+      <p><?php echo $row[9]?></p>
+      <!-- <p>กทม. 10210</p> -->
      </div>
      <div class="clearfix grpelem" id="pu4142-4"><!-- column -->
       <div class="clearfix colelem" id="u4142-4"><!-- content -->
        <p>เลขที่ใบสั่งขาย</p>
       </div>
       <div class="clearfix colelem" id="u4154-4"><!-- content -->
-       <p>วันที่</p>
+       <p>วันที่สั่งผลิต</p>
       </div>
      </div>
      <div class="clearfix grpelem" id="pu4136-4"><!-- column -->
       <div class="clearfix colelem" id="u4136-4"><!-- content -->
-       <p>01</p>
+       <p><?php echo $row[0]?></p>
       </div>
       <div class="clearfix colelem" id="u4147-4"><!-- content -->
-       <p>01 / 02 / 2559</p>
+       <p><?php echo toDatepicker($row[4])?></p>
       </div>
      </div>
      <div class="clearfix grpelem" id="u4537-8"><!-- content -->
-      <p>บจก. เอเชีย แมชชีนพาร์ท (สำนักงานใหญ่)</p>
-      <p>222/11 ถนนวิภาวดีรังสิต ซอย 60 แขวงตลาดบางเขน เขตหลักสี่</p>
-      <p>กทม. 10210</p>
+      <p><?php echo $row[8]?></p>
+      <p><?php echo $row[9]?></p>
      </div>
      <div class="clearfix grpelem" id="pu4570-4"><!-- column -->
       <div class="clearfix colelem" id="u4570-4"><!-- content -->
        <p>เลขที่ใบสั่งขาย</p>
       </div>
       <div class="clearfix colelem" id="u4576-4"><!-- content -->
-       <p>วันที่</p>
+       <p>วันที่สั่งผลิต</p>
       </div>
      </div>
      <div class="clearfix grpelem" id="pu4588-4"><!-- column -->
       <div class="clearfix colelem" id="u4588-4"><!-- content -->
-       <p>01</p>
+       <p><?php echo $row[0]?></p>
       </div>
       <div class="clearfix colelem" id="u4594-4"><!-- content -->
-       <p>01 / 02 / 2559</p>
+       <p><?php echo toDatepicker($row[4])?></p>
       </div>
      </div>
     </div>
@@ -130,13 +169,13 @@
       <p>กำหนดเสร็จ</p>
      </div>
      <div class="clearfix grpelem" id="u4228-4"><!-- content -->
-      <p>11 / 02 / 2559</p>
+      <p><?php echo toDatepicker($row[5])?></p>
      </div>
      <div class="clearfix grpelem" id="u4579-4"><!-- content -->
       <p>กำหนดเสร็จ</p>
      </div>
      <div class="clearfix grpelem" id="u4597-4"><!-- content -->
-      <p>11 / 02 / 2559</p>
+      <p><?php echo toDatepicker($row[5])?></p>
      </div>
     </div>
     <div class="clearfix colelem" id="ppu4543-4"><!-- group -->
@@ -154,10 +193,67 @@
        <p>จำนวน</p>
       </div>
       <div class="grpelem" id="u4555"><!-- simple frame --></div>
-      <div class="grpelem" id="u4549"><!-- simple frame --></div>
-      <div class="grpelem" id="u4546"><!-- simple frame --></div>
-      <div class="grpelem" id="u4558"><!-- simple frame --></div>
-      <div class="grpelem" id="u4582"><!-- simple frame --></div>
+      <div class="grpelem" id="u4549">
+      <?php 
+        $x=1;
+        while($x <= $num_rows) {
+          if($x == 1){
+            echo "<p class=\"num\">".$x."</p>";
+          }
+          else{
+            echo "<p class=\"num_\">".$x."</p>";
+          }
+        $x++;
+      }
+     ?>
+      </div>
+      <div class="grpelem" id="u4546">
+      <?php
+        $k = 1;
+        while($col_pdt = mysql_fetch_array($productQuery)) {
+          if($k == 1){
+            echo "<p class=\"pdt\">".$col_pdt['product_id']."</p>";
+          }
+          else{
+            echo "<p class=\"pdt_\">".$col_pdt['product_id']."</p>";
+          }
+          $k++;
+        }
+     ?>
+      </div>
+      <div class="grpelem" id="u4558">
+      <?php
+        $sql = "SELECT b.name FROM $ProductionDetails a "; 
+        $sql .= " LEFT JOIN $Products b ON a.product_id=b.product_id ";
+        $sql .= " WHERE a.production_id = '$row[1]' ORDER BY a.product_id ASC";
+        $query = mysql_db_query($db_name, $sql);
+
+        $p = 1;
+        while($lists = mysql_fetch_array($query)) {
+          if($p == 1){
+            echo "<p class=\"unit\">".$lists['name'].")</p>";
+          }
+          else{
+            echo "<p class=\"unit_\">".$lists['name'].")</p>";
+          }
+          $p++;
+        }
+     ?>
+      </div>
+      <div class="grpelem" id="u4582">
+        <?php
+        $k = 1;
+        while($col_qty = mysql_fetch_array($num_rows_query2)) {
+          if($k == 1){
+            echo "<p class=\"qty\">".$col_qty['qty']."</p>";
+          }
+          else{
+            echo "<p class=\"qty_\">".$col_qty['qty']."</p>";
+          }
+          $k++;
+        }
+     ?>
+      </div>
      </div>
      <div class="clearfix grpelem" id="u4122-4"><!-- content -->
       <p>ลำดับ</p>
@@ -172,10 +268,67 @@
       <p>จำนวน</p>
      </div>
      <div class="grpelem" id="u4137"><!-- simple frame --></div>
-     <div class="grpelem" id="u4249"><!-- simple frame --></div>
-     <div class="grpelem" id="u4255"><!-- simple frame --></div>
-     <div class="grpelem" id="u4258"><!-- simple frame --></div>
-     <div class="grpelem" id="u4261"><!-- simple frame --></div>
+     <div class="grpelem" id="u4249">
+      <?php 
+        $x=1;
+        while($x <= $num_rows) {
+          if($x == 1){
+            echo "<p class=\"num\">".$x."</p>";
+          }
+          else{
+            echo "<p class=\"num_\">".$x."</p>";
+          }
+        $x++;
+      }
+     ?>
+     </div>
+     <div class="grpelem" id="u4255">
+     <!-- simple frame -->
+      <?php
+        $k = 1;
+        while($col_pdt = mysql_fetch_array($productQuery2)) {
+          if($k == 1){
+            echo "<p class=\"pdt\">".$col_pdt['product_id']."</p>";
+          }
+          else{
+            echo "<p class=\"pdt_\">".$col_pdt['product_id']."</p>";
+          }
+          $k++;
+        }
+     ?>
+     </div>
+     <div class="grpelem" id="u4258">
+      <?php
+        $sql = "SELECT b.name FROM $ProductionDetails a "; 
+        $sql .= " LEFT JOIN $Products b ON a.product_id=b.product_id ";
+        $sql .= " WHERE production_id = '$row[1]' ORDER BY production_id ASC";
+        $query = mysql_db_query($db_name, $sql);
+        $p = 1;
+        while($lists = mysql_fetch_array($query)) {
+          if($p == 1){
+            echo "<p class=\"unit\">".$lists['name'].")</p>";
+          }
+          else{
+            echo "<p class=\"unit_\">".$lists['name'].")</p>";
+          }
+          $p++;
+        }
+     ?>
+     </div>
+     <div class="grpelem" id="u4261">
+      <?php
+        $k = 1;
+        while($col_qty = mysql_fetch_array($num_rows_query)) {
+          if($k == 1){
+            echo "<p class=\"qty\">".$col_qty['qty']."</p>";
+          }
+          else{
+            echo "<p class=\"qty_\">".$col_qty['qty']."</p>";
+          }
+          $k++;
+        }
+     ?>
+     <!-- simple frame --></div>
     </div>
     <div class="clearfix colelem" id="pu4128-6"><!-- group -->
      <div class="clearfix grpelem" id="u4128-6"><!-- content -->
@@ -213,7 +366,8 @@
    $(document).ready(function() { try {
 (function(){var a={},b=function(a){if(a.match(/^rgb/))return a=a.replace(/\s+/g,"").match(/([\d\,]+)/gi)[0].split(","),(parseInt(a[0])<<16)+(parseInt(a[1])<<8)+parseInt(a[2]);if(a.match(/^\#/))return parseInt(a.substr(1),16);return 0};(function(){$('link[type="text/css"]').each(function(){var b=($(this).attr("href")||"").match(/\/?css\/([\w\-]+\.css)\?(\d+)/);b&&b[1]&&b[2]&&(a[b[1]]=b[2])})})();(function(){$("body").append('<div class="version" style="display:none; width:1px; height:1px;"></div>');
 for(var c=$(".version"),d=0;d<Muse.assets.required.length;){var f=Muse.assets.required[d],g=f.match(/([\w\-\.]+)\.(\w+)$/),k=g&&g[1]?g[1]:null,g=g&&g[2]?g[2]:null;switch(g.toLowerCase()){case "css":k=k.replace(/\W/gi,"_").replace(/^([^a-z])/gi,"_$1");c.addClass(k);var g=b(c.css("color")),h=b(c.css("background-color"));g!=0||h!=0?(Muse.assets.required.splice(d,1),"undefined"!=typeof a[f]&&(g!=a[f]>>>24||h!=(a[f]&16777215))&&Muse.assets.outOfDate.push(f)):d++;c.removeClass(k);break;case "js":k.match(/^jquery-[\d\.]+/gi)&&
-typeof $!="undefined"?Muse.assets.required.splice(d,1):d++;break;default:throw Error("Unsupported file type: "+g);}}c.remove();if(Muse.assets.outOfDate.length||Muse.assets.required.length)c="Some files on the server may be missing or incorrect. Clear browser cache and try again. If the problem persists please contact website author.",(d=location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi))&&Muse.assets.outOfDate.length&&(c+="\nOut of date: "+Muse.assets.outOfDate.join(",")),d&&Muse.assets.required.length&&(c+="\nMissing: "+Muse.assets.required.join(",")),alert(c)})()})();/* body */
+typeof $!="undefined"?Muse.assets.required.splice(d,1):d++;break;default:throw Error("Unsupported file type: "+g);}}c.remove();if(Muse.assets.outOfDate.length||Muse.assets.required.length)c="Some files on the server may be missing or incorrect. Clear browser cache and try again. If the problem persists please contact website author.",(d=location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi))&&Muse.assets.outOfDate.length&&(c+="\nOut of date: "+Muse.assets.outOfDate.join(",")),d&&Muse.assets.required.length&&(c+="\nMissing: "+Muse.assets.required.join(",")),alert(c)})()})();
+/* body */
 Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.prepHyperlinks(true);/* body */
 Muse.Utils.fullPage('#page');/* 100% height page */

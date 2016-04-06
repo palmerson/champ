@@ -261,7 +261,7 @@
 
 #u1582
 {
-	z-index: 55;
+	z-index: 1;
 	width: 187px;
 	min-height: 40px;
 	border-width: 0px;
@@ -290,7 +290,7 @@
 
 #u1593
 {
-	z-index: 56;
+	z-index: 1;
 	width: 187px;
 	min-height: 40px;
 	border-width: 0px;
@@ -331,7 +331,7 @@
 
 #u1642
 {
-	z-index: 57;
+	z-index: 2;
 	width: 187px;
 	min-height: 40px;
 	border-width: 0px;
@@ -361,7 +361,7 @@
 
 #u3872
 {
-	z-index: 60;
+	z-index: 2;
 	width: 180px;
 	background-color: transparent;
 	position: relative;
