@@ -53,7 +53,7 @@ tr{
   </tr>
   <?php 
 
-  $sql = "SELECT a.*, b.name,c.created,c.po_id FROM $StockOutDetails a LEFT JOIN products b ON a.product_id=b.product_id LEFT JOIN $StockOut c ON a.stock_out_id=c.stock_out_id where a.qty != 0 and a.stock != 0";
+  $sql = "SELECT a.*, b.name,c.created,c.po_id FROM $StockOutDetails a LEFT JOIN products b ON a.product_id=b.product_id LEFT JOIN $StockOut c ON a.stock_out_id=c.stock_out_id where a.stock != 0";
   
   $query = mysql_db_query($db_name, $sql);
   // $po = mysql_fetch_row($query);

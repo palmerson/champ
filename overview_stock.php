@@ -62,7 +62,7 @@
     <th class="tg-031e">ลำดับ</th>
     <th class="tg-031e">รหัสสินค้า</th>
     <th class="tg-031e">ชื่อสินค้า</th>
-    <th class="tg-031e">จำนวนที่เพิ่ม</th>
+    <th class="tg-031e">จำนวนที่ตัดสต๊อก</th>
     <th class="tg-031e">เลขที่ใบสั่งขาย</th>
     <th class="tg-031e">วันที่</th>
     <th class="tg-031e"></th>

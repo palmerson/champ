@@ -373,7 +373,7 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
         <th class="tg-031e"></th>
         <!-- <th class="tg-031e"></th> -->
       </tr>
-  <?
+  <?php
     $counter = 1;
     while($row2 = mysql_fetch_array($query2)) { //print_r($row2);
       if($counter%2 != 0){ ?>
@@ -481,7 +481,7 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
         <th class="tg-031e">จำนวน</th>
         <th class="tg-031e"></th>
       </tr>
-      <?
+      <?php
     $counter = 1;
     while($row4 = mysql_fetch_array($query4)) { //print_r($row4[0]);
       if($counter%2 != 0){ ?>
