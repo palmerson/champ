@@ -29,6 +29,11 @@
 
 */
 -->
+<style>
+  .qty{
+    text-align: right;
+  }
+</style>
  </head>
  <body class="museBGSize">
 
@@ -89,7 +94,7 @@
     <td class="tg-vn4c"><?php echo $counter;?></td>
     <td class="tg-vn4c"><?php echo $row['product_id'];?></td>
     <td class="tg-vn4c"><?php echo $row['name'];?></td>
-    <td class="tg-vn4c"><?php echo $row['qty'];?></td>
+    <td class="tg-vn4c qty" style="padding-right: 50px;"><?php echo $row['qty'];?></td>
     <td class="tg-vn4c"><?php echo toDatepicker($row['created']);?></td>
     <td class="tg-vn4c"><a href="edit_ro.php?id=<?php echo $row['stock_in_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
   </tr>
@@ -100,7 +105,7 @@
     <td class="tg-031e"><?php echo $counter;?></td>
     <td class="tg-031e"><?php echo $row['product_id'];?></td>
     <td class="tg-031e"><?php echo $row['name'];?></td>
-    <td class="tg-031e"><?php echo $row['qty'];?></td>
+    <td class="tg-031e qty" style="padding-right: 50px;"><?php echo $row['qty'];?></td>
     <td class="tg-031e"><?php echo toDatepicker($row['created']);?></td>
     <td class="tg-031e"><a href="edit_ro.php?id=<?php echo $row['stock_in_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
   </tr>

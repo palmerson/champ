@@ -91,7 +91,7 @@
       <td class="tg-vn4c"><?php echo $row['po_code'];?></td>
       <td class="tg-vn4c"><?php echo $row['name'];?></td>
       <td class="tg-vn4c"><a href="edit_po.php?id=<?php echo $row['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
-      <td class="tg-vn4c"><a tarket="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
+      <td class="tg-vn4c"><a target="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
     </tr>
     <?php }else{ ?>
       <tr>
@@ -99,7 +99,7 @@
         <td class="tg-031e"><?php echo $row['po_code'];?></td>
         <td class="tg-031e"><?php echo $row['name'];?></td>
         <td class="tg-031e"><a href="edit_po.php?id=<?php echo $row['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
-        <td class="tg-031e"><a tarket="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
+        <td class="tg-031e"><a target="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
       </tr>
     <?php }
         $counter++;

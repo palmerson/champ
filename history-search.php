@@ -5,7 +5,7 @@
   if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
     if(isset($_GET['db'])){ $db = $_GET['db']; }  
     if(isset($_GET['po_id']) && $_GET['po_id'] != 'เลือกใบสั่งขาย'){ $po = $_GET['po_id']; }
-    if(isset($_GET['mo'])){ $po = $_GET['mo']; }  
+    if(isset($_GET['mo_id']) && $_GET['mo_id'] != 'เลือกใบสั่งผลิต'){ $mo = $_GET['mo_id']; }  
     if(isset($_GET['customer_id']) && $_GET['customer_id'] != 'เลือกลูกค้า'){ $customer_id = $_GET['customer_id']; } 
     if(isset($_GET['product_id'])){ $product_id = $_GET['product_id']; } 
     if(isset($_GET['from'])){ $from = $_GET['from']; } 
@@ -59,6 +59,11 @@
 
 */
 -->
+<style type="text/css">
+  .right{
+    text-align: right;
+  }
+</style>
  </head>
  <body class="museBGSize">
 
@@ -207,20 +212,36 @@
        <p class='lc'>เลขที่ใบ P/O - LC</p>
       </div>
       <div class="colelem" id="u5208"><!-- custom html -->
-         <select class="po_id" name="po_id" <?php if($db != 'po') { ?> disabled  <?php }?>>
-    <option>เลือกใบสั่งขาย</option>
-    <?php
-      $type = "SELECT po_id, po_code FROM $Po";
-      $query_type = mysql_db_query($db_name, $type);
-      while($ct = mysql_fetch_array($query_type)) {
-        if($ct[1] == $po){
-          echo "<option value=\"$ct[1]\" selected>$ct[1]</option>"; 
-        }
-          echo "<option value=\"$ct[1]\"> $ct[1]</option>";   
-      }
-      // mysql_close();
-    ?>
-    </select> 
+        <select class="po_id" name="po_id" <?php if($db != 'po') { ?> disabled  <?php }?>>
+          <option>เลือกใบสั่งขาย</option>
+          <?php
+            $type = "SELECT po_id, po_code FROM $Po";
+            $query_type = mysql_db_query($db_name, $type);
+            while($ct = mysql_fetch_array($query_type)) {
+              if($ct[1] == $po){
+                echo "<option value=\"$ct[1]\" selected>$ct[1]</option>"; 
+              }
+                echo "<option value=\"$ct[1]\"> $ct[1]</option>";   
+            }
+            // mysql_close();
+          ?>
+        </select>
+        <select class="mo_id" name="mo_id">
+          <option>เลือกใบสั่งผลิต</option>
+          <?php
+            $productionSQL = "SELECT production_id FROM $Production";
+            $productionLists = mysql_db_query($db_name, $productionSQL);
+            while($ct = mysql_fetch_array($productionLists)) {
+              if($ct[0] == $mo){
+                $select = 'selected';
+              } else{
+                $select = '';
+              }
+              echo "<option value=\"$ct[0]\" $select> $ct[0] </option>";   
+            }
+            // mysql_close();
+          ?>
+        </select>
 <style> 
  .textbox { 
     outline:0; 
@@ -254,8 +275,8 @@
      <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
 
-.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;text-align: center;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;text-align: center;}
 .tg .tg-vn4c{background-color:#D2E4FC}
 </style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
@@ -263,26 +284,29 @@
 <?php
 if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
   if($_GET['db'] == 'po'){
-      $sql = "SELECT a.*, b.company_name name, c.qty qty FROM $Po a "; 
+      $sql = "SELECT a.*, b.company_name name, c.qty qty, c.amount FROM $Po a "; 
       $sql .= " left JOIN $Customers b ON a.customer_id=b.customer_id ";
       $sql .= " left JOIN $PoDetails c ON a.po_id=c.po_id ";
-      if(isset($po)){
-        $sql .= " WHERE a.po_code like '%$po%' ";
-        if(isset($from) && isset($to) && $from != '' && $to != ''){
-          $from = toMysql($from);
-          $to = toMysql($to);
-          $sql .= " AND ((a.created BETWEEN '$from' AND '$to') AND (a.duedate BETWEEN '$from' AND '$to'))";
-        }
+
+      $conditions = array();
+
+      if(isset($po)) {
+        $conditions[] = " a.po_code like '%$po%' ";
       }
       if(isset($from) && isset($to) && $from != '' && $to != ''){
         $from = toMysql($from);
         $to = toMysql($to);
-        $sql .= " WHERE ((a.created BETWEEN '$from' AND '$to') AND (a.duedate BETWEEN '$from' AND '$to')) ";
-        if(isset($po)){
-          $sql .= "  AND a.po_code like '%$po%' ";
-        }
+        $conditions[] = " (a.created BETWEEN '$from' AND '$to') ";
       }
-      // $sql .= " GROUP BY po_code";
+      if(isset($customer_id)){
+        $conditions[] = " a.customer_id = '$customer_id'";
+      }
+
+      if(count($conditions) > 0) {
+          // append the conditions
+          $sql .= " WHERE " . implode (' AND ', $conditions);
+      }
+
       $query = mysql_db_query($db_name, $sql);
 
 ?>
@@ -292,7 +316,8 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
     <th class="tg-031e">เลขที่ใบ P/O</th>
     <th class="tg-031e">ชื่อลูกค้า</th>
     <th class="tg-031e">จำนวนที่สั่ง</th>
-    <th class="tg-031e">กำหนดส่ง</th>
+    <th class="tg-031e">ราคา</th>
+    <th class="tg-031e">วันที่สั่ง</th>
     <th class="tg-031e"></th>
     <!-- <th class="tg-031e"></th> -->
   </tr>
@@ -306,7 +331,8 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
         <td class="tg-vn4c"><?php echo $row['po_code'];?></td>
         <td class="tg-vn4c"><?php echo $row['name'];?></td>
         <td class="tg-vn4c"><?php echo $row['qty'];?></td>
-        <td class="tg-vn4c"><?php echo toDatepicker($row['duedate']);?></td>
+        <td class="tg-vn4c"><?php echo number_format($row['amount'],2,'.',',');?></td>
+        <td class="tg-vn4c"><?php echo toDatepicker($row['created']);?></td>
         <td class="tg-vn4c" class='btn'><a href="edit_po.php?id=<?php echo $row['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a>&nbsp;&nbsp;<a target="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
         </tr>
     <?php
@@ -318,7 +344,8 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
           <td class="tg-031e"><?php echo $row['po_code'];?></td>
           <td class="tg-031e"><?php echo $row['name'];?></td>
           <td class="tg-031e"><?php echo $row['qty'];?></td>
-          <td class="tg-031e"><?php echo toDatepicker($row['duedate']);?></td>
+          <td class="tg-031e"><?php echo number_format($row['amount'],2,'.',',');?></td>
+          <td class="tg-031e"><?php echo toDatepicker($row['created']);?></td>
           <td class="tg-031e" class='btn'><a href="edit_po.php?id=<?php echo $row['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a>&nbsp;&nbsp;<a target="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
         </tr>
   <?php }
@@ -327,43 +354,42 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
     }
 
   else if($_GET['db'] == 'mo'){ 
-    // print_r($_POST);
-    $sql2 = "SELECT a.*, c.*, d.po_code, e.name FROM production a left JOIN production_details c ON a.production_id=c.production_id left JOIN po d ON a.po_id=d.po_id left JOIN products e ON c.product_id=e.product_id";
 
-    // echo $sql2;
-    // if(isset($po)){
-    //   $sql .= " WHERE a.po_code like '%$po%' ";
-    //   if(isset($from) && isset($to) && $from != '' && $to != ''){
-    //     $from = toMysql($from);
-    //     $to = toMysql($to);
-    //     $sql .= " AND (a.created BETWEEN '$from' AND '$to')";
-    //   }
-    // }
+    $sql2 = "SELECT a.*, c.*, d.po_code, e.name, f.company_name FROM $Production a"; 
+    $sql2 .= " LEFT JOIN $ProductionDetails c ON a.production_id=c.production_id"; 
+    $sql2 .= " Left JOIN $Po d ON a.po_id=d.po_id"; 
+    $sql2 .= " Left JOIN $Products e ON c.product_id=e.product_id"; 
+    $sql2 .= " Left JOIN $Customers f ON a.customer_id=f.customer_id";
+
+    $conditions = array();
+
     if(isset($from) && isset($to) && $from != '' && $to != ''){
       $from = toMysql($from);
       $to = toMysql($to);
-      $sql2 .= " WHERE ((a.created BETWEEN '$from' AND '$to') AND (a.duedate BETWEEN '$from' AND '$to'))";
-      // if(isset($pd)){
-      //   $sql2 .= "  AND a.production_id like '%$po%' ";
-      // }
+      $conditions[] = " ((a.created BETWEEN '$from' AND '$to') OR (a.duedate BETWEEN '$from' AND '$to')) ";
     }
-
     if(isset($pd) && $pd != ''){
-      $sql2 .= " WHERE c.product_id = '$pd'";
+      $conditions[] = " c.product_id = '$pd'";
     }
-
     if(isset($customer_id) && $customer_id != ''){
-      $sql2 .= " WHERE a.customer_id = '$customer_id'";
+      $conditions[] = " a.customer_id = '$customer_id'";
     }
-    // // $sql .= " GROUP BY po_code";
+    if(isset($mo) && $mo != ''){
+      $conditions[] = " a.production_id = '$mo'";
+    }
 
+    if(count($conditions) > 0) {
+      // append the conditions
+      $sql2 .= " WHERE " . implode (' AND ', $conditions);
+    }
     // echo $sql2;
-      $query2 = mysql_db_query($db_name, $sql2);
+    $query2 = mysql_db_query($db_name, $sql2);
   ?>
       <tr>
         <th class="tg-031e">ลำดับ</th>
         <th class="tg-031e">เลขที่ใบสั่งขาย</th>
-        <th class="tg-031e">เลขที่ใบ P/O</th>
+        <th class="tg-031e">เลขที่ใบสั่งผลิต</th>
+        <th class="tg-031e">ชื่อลูกค้า</th>
         <th class="tg-031e">สินค้า</th>
         <th class="tg-031e">จำนวน</th>
         <th class="tg-031e">กำหนดเสร็จ</th>
@@ -380,7 +406,8 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
         <tr>
         <td class="tg-vn4c"><?php echo $counter;?></td>
         <td class="tg-vn4c"><?php echo $row2['po_id'];?></td>
-        <td class="tg-vn4c"><?php echo $row2['po_code'];?></td>
+        <td class="tg-vn4c"><?php echo $row2['production_id'];?></td>
+        <td class="tg-vn4c"><?php echo $row2['company_name'];?></td>
         <td class="tg-vn4c"><?php echo $row2['name'];?></td>
         <td class="tg-vn4c"><?php echo $row2['qty'];?></td>
         <td class="tg-vn4c"><?php echo toDatepicker($row2['duedate']);?></td>
@@ -393,7 +420,8 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
         <tr>
           <td class="tg-031e"><?php echo $counter;?></td>
           <td class="tg-031e"><?php echo $row2['po_id'];?></td>
-          <td class="tg-031e"><?php echo $row2['po_code'];?></td>
+          <td class="tg-031e"><?php echo $row2['production_id'];?></td>
+          <td class="tg-031e"><?php echo $row2['company_name'];?></td>
           <td class="tg-031e"><?php echo $row2['name'];?></td>
           <td class="tg-031e"><?php echo $row2['qty'];?></td>
           <td class="tg-031e"><?php echo toDatepicker($row2['duedate']);?></td>
@@ -407,17 +435,25 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
 
     }
     else if($_GET['db'] == 'ro'){ 
-      $sql3 = "SELECT a.*, b.name FROM $StockIn a left JOIN $Products b ON a.product_id=b.product_id ";
+      $sql3 = "SELECT a.*, b.name FROM $StockIn a ";
+      $sql3 .= "Left JOIN $Products b ON a.product_id=b.product_id ";
+
+      $conditions = array();
 
       if(isset($from) && isset($to) && $from != '' && $to != ''){
         $from = toMysql($from);
         $to = toMysql($to);
-        $sql3 .= " WHERE (a.created BETWEEN '$from' AND '$to')";
+        $conditions[] = " (a.created BETWEEN '$from' AND '$to')";
+      }
+      if(isset($pd) && $pd != ''){
+        $conditions[] = " b.product_id = '$pd'";
       }
 
-      if(isset($pd) && $pd != ''){
-        $sql3 .= " WHERE b.product_id = '$pd'";
+      if(count($conditions) > 0) {
+        // append the conditions
+        $sql3 .= " WHERE " . implode (' AND ', $conditions);
       }
+      // echo $sql3;
       $query3 = mysql_db_query($db_name, $sql3);
   ?>
       <tr>
@@ -457,25 +493,44 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
     }
     else if($_GET['db'] == 'so') {
 
-      $sql4 = "SELECT a.*, c.*, d.po_code, e.name FROM $StockOut a left JOIN $StockOutDetails c ON a.stock_out_id=c.stock_out_id left JOIN po d ON a.po_id=d.po_id left JOIN products e ON c.product_id=e.product_id";
+      $sql4 = "SELECT a.*, c.*, d.po_code, d.po_id , e.name, f.company_name FROM $StockOut a "; 
+      $sql4 .= " Left JOIN $StockOutDetails c ON a.stock_out_id=c.stock_out_id ";
+      $sql4 .= " Left JOIN $Po d ON a.po_id=d.po_id ";
+      $sql4 .= " Left JOIN $Products e ON c.product_id=e.product_id";
+      $sql4 .= " Left JOIN $Customers f ON d.customer_id=f.customer_id";
+
+      $conditions = array();
 
       if(isset($from) && isset($to) && $from != '' && $to != ''){
       $from = toMysql($from);
       $to = toMysql($to);
-      $sql4 .= " WHERE (a.created BETWEEN '$from' AND '$to')";
+      $conditions[] = " (a.created BETWEEN '$from' AND '$to')";
       }
 
       if(isset($pd) && $pd != ''){
-        $sql4 .= " WHERE c.product_id = '$pd'";
+        $conditions[] = " c.product_id = '$pd'";
       }
 
       if(isset($customer_id) && $customer_id != ''){
-        $sql4 .= " WHERE d.customer_id = '$customer_id'";
+        $conditions[] = " d.customer_id = '$customer_id'";
       }
+
+      if(isset($po)) {
+        $conditions[] = " a.po_code like '%$po%' ";
+      }
+
+      if(count($conditions) > 0) {
+        // append the conditions
+        $sql4 .= " WHERE " . implode (' AND ', $conditions);
+      }
+
+
         $query4 = mysql_db_query($db_name, $sql4);
       ?>
       <tr>
         <th class="tg-031e">ลำดับ</th>
+        <th class="tg-031e">เลขที่ใบสั่งขาย</th>
+        <th class="tg-031e">ชื่อลูกค้า</th>
         <th class="tg-031e">วันที่</th>
         <th class="tg-031e">สินค้า</th>
         <th class="tg-031e">จำนวน</th>
@@ -487,6 +542,8 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
       if($counter%2 != 0){ ?>
         <tr>
         <td class="tg-vn4c"><?php echo $counter;?></td>
+        <td class="tg-vn4c"><?php echo $row4['po_id'];?></td>
+        <td class="tg-vn4c"><?php echo $row4['company_name'];?></td>
         <td class="tg-vn4c"><?php echo toDatepicker($row4['created']);?></td>
         <td class="tg-vn4c"><?php echo $row4['name'];?></td>
         <td class="tg-vn4c"><?php echo $row4['qty'];?></td>
@@ -497,6 +554,8 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
     ?>
         <tr>
           <td class="tg-031e"><?php echo $counter;?></td>
+          <td class="tg-031e"><?php echo $row4['po_id'];?></td>
+          <td class="tg-031e"><?php echo $row4['company_name'];?></td>
           <td class="tg-031e"><?php echo toDatepicker($row4['created']);?></td>
           <td class="tg-031e"><?php echo $row4['name'];?></td>
           <td class="tg-031e"><?php echo $row4['qty'];?></td>

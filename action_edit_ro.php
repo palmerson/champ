@@ -9,7 +9,7 @@
   $qty = $_POST['qty'];
   $ro_id = $_GET['id'];
 
-  $sql = "UPDATE $StockIn SET qty='$qty' WHERE ro_id='$ro_id'";
+  $sql = "UPDATE $StockIn SET qty='$qty' WHERE stock_in_id='$ro_id'";
   // echo $sql;
   $result = mysql_db_query($db_name, $sql);
   if ($result) {

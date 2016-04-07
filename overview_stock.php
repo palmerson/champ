@@ -86,7 +86,7 @@
     <td class="tg-vn4c"><?php echo $counter;?></td>
     <td class="tg-vn4c"><?php echo $po['product_id'];?></td>
     <td class="tg-vn4c"><?php echo $po['name'];?></td>
-    <td class="tg-vn4c"><?php echo $po['stock'];?></td>
+    <td class="tg-vn4c" style="text-align: right;"><?php echo $po['stock'];?></td>
     <td class="tg-vn4c"><?php echo $po['po_id'];?></td>
     <td class="tg-vn4c"><?php echo toDatepicker($po['created']);?></td>
     <td class="tg-vn4c"><a href="edit_stock.php?s_id=<?php echo $po['stock_out_id']?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
@@ -98,7 +98,7 @@
     <td class="tg-031e"><?php echo $counter;?></td>
     <td class="tg-031e"><?php echo $po['product_id'];?></td>
     <td class="tg-031e"><?php echo $po['name'];?></td>
-    <td class="tg-031e"><?php echo $po['stock'];?></td>
+    <td class="tg-031e" style="text-align: right;"><?php echo $po['stock'];?></td>
     <td class="tg-vn4c"><?php echo $po['po_id'];?></td>
     <td class="tg-031e"><?php echo toDatepicker($po['created'])?></td>
     <td class="tg-031e"><a href="edit_stock.php?s_id=<?php echo $po['stock_out_id']?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>

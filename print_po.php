@@ -51,6 +51,12 @@
         padding-top: 15px;
         padding-right: 50px;
       }
+      .cal2{
+        text-align: right;
+        padding-top: 15px;
+        padding-right: 50px;
+        font-size: 20px;
+      }
       .num{
         text-align: left;
         padding-top: 30px;
@@ -255,10 +261,10 @@
         $p = 1;
         while($lists = mysql_fetch_array($query)) {
           if($p == 1){
-            echo "<p class=\"unit\">".$lists['name']."  (".$lists['unit_price']."  ".$lists['unit'].")</p>";
+            echo "<p class=\"unit\">".$lists['name']."  (".$lists['unit_price']." บาท/".$lists['unit'].")</p>";
           }
           else{
-            echo "<p class=\"unit_\">".$lists['name']."  (".$lists['unit_price']."  ".$lists['unit'].")</p>";
+            echo "<p class=\"unit_\">".$lists['name']."  (".$lists['unit_price']." บาท/".$lists['unit'].")</p>";
           }
           $p++;
         }
@@ -286,7 +292,7 @@
      </div>
      <div class="grpelem" id="u2824"><p class="cal"></div>
      <div class="grpelem" id="u5528"><p class="cal"><? echo number_format($row[3],2,'.',',');?></p><!-- net --></div>
-     <div class="grpelem" id="u5552"><p class="cal"><? echo convert($row[3]);?></p><!-- Thai Number --></div>
+     <div class="grpelem" id="u5552"><p class="cal2"><? echo convert($row[3]);?></p><!-- Thai Number --></div>
     </div>
     <div class="clearfix colelem" id="ppu2293-4"><!-- group -->
      <div class="clearfix grpelem" id="pu2293-4"><!-- column -->

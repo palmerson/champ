@@ -15,9 +15,14 @@ $(function() {
     $.get( "api_po.php", { pid: pid } )
       .done(function( data ) {
         data = JSON.parse(data);
+
+        var str = "" + data.production_id;
+        var pad = "0000";
+        var ans = pad.substring(0, pad.length - str.length) + str;
+
         $('.customer_name').val(data.detail.name);
         $('.po_code').val(data.detail.code);
-        $('.production_id').val(data.production_id);
+        $('.production_id').val(ans);
         $('.customer_id').val(data.detail.customer_id);
         $("#tg-0YX8L tr:not(:first)").remove();
         $.each(data.lists, function(i, item) {

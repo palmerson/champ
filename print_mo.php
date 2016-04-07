@@ -11,13 +11,13 @@
   $row = mysql_fetch_row($query);
 
   // checkPost($row);
-  $num_rows_sql = "SELECT qty FROM $ProductionDetails WHERE production_id = '$row[1]'";
+  $num_rows_sql = "SELECT qty FROM $ProductionDetails WHERE production_id = '$id'";
   $num_rows_query = mysql_db_query($db_name, $num_rows_sql);
   $num_rows_query2 = mysql_db_query($db_name, $num_rows_sql);
   $num_rows = mysql_num_rows($num_rows_query);
 
 
-  $productSql = "SELECT product_id FROM $ProductionDetails WHERE production_id = '$row[1]'";
+  $productSql = "SELECT product_id FROM $ProductionDetails WHERE production_id = '$id'";
   $productQuery = mysql_db_query($db_name, $productSql);
   $productQuery2 = mysql_db_query($db_name, $productSql);
 
@@ -301,7 +301,7 @@
       <?php
         $sql = "SELECT b.name FROM $ProductionDetails a "; 
         $sql .= " LEFT JOIN $Products b ON a.product_id=b.product_id ";
-        $sql .= " WHERE production_id = '$row[1]' ORDER BY production_id ASC";
+        $sql .= " WHERE production_id = '$id' ORDER BY production_id ASC";
         $query = mysql_db_query($db_name, $sql);
         $p = 1;
         while($lists = mysql_fetch_array($query)) {
@@ -333,19 +333,19 @@
     <div class="clearfix colelem" id="pu4128-6"><!-- group -->
      <div class="clearfix grpelem" id="u4128-6"><!-- content -->
       <p id="u4128-2">................................................................................</p>
-      <p id="u4128-4">(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้อนุมัติจ่ายงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+      <p id="u4128-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้อนุมัติจ่ายงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
      </div>
      <div class="clearfix grpelem" id="u4267-6"><!-- content -->
       <p id="u4267-2">................................................................................</p>
-      <p id="u4267-4">(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้รับใบสั่ง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+      <p id="u4267-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้รับใบสั่ง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
      </div>
      <div class="clearfix grpelem" id="u5498-6"><!-- content -->
       <p id="u5498-2">................................................................................</p>
-      <p id="u5498-4">(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้อนุมัติจ่ายงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+      <p id="u5498-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้อนุมัติจ่ายงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
      </div>
      <div class="clearfix grpelem" id="u5495-6"><!-- content -->
       <p id="u5495-2">................................................................................</p>
-      <p id="u5495-4">(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้รับใบสั่ง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+      <p id="u5495-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้รับใบสั่ง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
      </div>
     </div>
    </div>

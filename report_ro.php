@@ -64,7 +64,7 @@ tr{
       <td class="tg-vn4c"><?php echo $counter;?></td>
       <td class="tg-vn4c"><?php echo $row['product_id'];?></td>
       <td class="tg-vn4c"><?php echo $row['name'];?></td>
-      <td class="tg-vn4c"><?php echo toDatepicker($row['qty']);?></td>
+      <td class="tg-vn4c" style="text-align: right;"><?php echo toDatepicker($row['qty']);?></td>
       <td class="tg-vn4c"><?php echo toDatepicker($row['created']);?></td>
     </tr>
     <?php }else{ ?>
@@ -72,7 +72,7 @@ tr{
         <td class="tg-031e"><?php echo $counter;?></td>
         <td class="tg-031e"><?php echo $row['product_id'];?></td>
         <td class="tg-031e"><?php echo $row['name'];?></td>
-        <td class="tg-031e"><?php echo toDatepicker($row['qty']);?></td>
+        <td class="tg-031e" style="text-align: right;"><?php echo toDatepicker($row['qty']);?></td>
         <td class="tg-031e"><?php echo toDatepicker($row['created']);?></td>
       </tr>
     <?php }

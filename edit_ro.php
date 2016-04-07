@@ -41,7 +41,7 @@
 	  // include('inc/conf.php');
     include('inc/conf.php');
       $id = $_GET['id'];
-      $sql = "SELECT * FROM $StockIn a LEFT JOIN $Products b ON a.product_id=b.product_id WHERE ro_id = '$id'";
+      $sql = "SELECT * FROM $StockIn a LEFT JOIN $Products b ON a.product_id=b.product_id WHERE stock_in_id = '$id'";
       $query = mysql_db_query($db_name, $sql);
       $row = mysql_fetch_row($query);
       
@@ -98,7 +98,7 @@
 
 </div>
      <div class="grpelem" id="u4725"><!-- custom html -->
-      <input name="qty" class="textbox"type="text" value="<?php echo $row[2];?>"> 
+      <input name="qty" class="textbox"type="text" value="<?php echo $row[2];?>" style="text-align: right;"> 
 <style> 
  .textbox { 
     outline:0; 

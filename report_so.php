@@ -69,7 +69,7 @@ tr{
     <td class="tg-vn4c"><?php echo $counter;?></td>
     <td class="tg-vn4c"><?php echo $po['product_id'];?></td>
     <td class="tg-vn4c"><?php echo $po['name'];?></td>
-    <td class="tg-vn4c"><?php echo $po['stock'];?></td>
+    <td class="tg-vn4c" style="text-align: right;"><?php echo $po['stock'];?></td>
     <td class="tg-vn4c"><?php echo $po['po_id'];?></td>
     <td class="tg-vn4c"><?php echo toDatepicker($po['created']);?></td>
   </tr>
@@ -80,7 +80,7 @@ tr{
     <td class="tg-031e"><?php echo $counter;?></td>
     <td class="tg-031e"><?php echo $po['product_id'];?></td>
     <td class="tg-031e"><?php echo $po['name'];?></td>
-    <td class="tg-031e"><?php echo $po['stock'];?></td>
+    <td class="tg-031e" style="text-align: right;"><?php echo $po['stock'];?></td>
     <td class="tg-vn4c"><?php echo $po['po_id'];?></td>
     <td class="tg-031e"><?php echo toDatepicker($po['created'])?></td>
   </tr>

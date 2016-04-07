@@ -47,5 +47,9 @@
     mysql_close();
     header("location: overview_po.php");
   }
+  else{
+    echo mysql_error($insertPo) . "\n";
+    echo "<a href=\"javascript:history.go(-1)\">Go Back</a>";
+  }
 
 ?>

@@ -150,9 +150,9 @@
           <td class="tg-031e"><?php echo $counters;?></td>
           <td class="tg-031e"><input type="hidden" name="product_id[]" value="<?php echo $products['product_id']?>"><?php echo $products['product_id']?></td>
           <td class="tg-031e"><?php echo $products['name']?></td>
-          <td class="tg-031e qty"><input type="hidden" name="qty[]" value="<?php echo $products['qty']?>"><?php echo $products['qty']?></td>
-          <td class="tg-031e"><input class="total" name="total[]" type="text" readonly="" value="<?php echo $products['total']?>"></td>
-          <td class="tg-031e"><input class="cal_so" name="stock[]" type="text" value="<?php echo $products['stock']?>"></td>
+          <td class="tg-031e qty" style="text-align: right;"><input type="hidden" name="qty[]" value="<?php echo $products['qty']?>" style="text-align: right;"><?php echo $products['qty']?></td>
+          <td class="tg-031e"><input class="total" name="total[]" type="text" readonly="" value="<?php echo $products['total']?>" style="text-align: right;"></td>
+          <td class="tg-031e"><input class="cal_so" name="stock[]" type="text" value="<?php echo $products['stock']?>" style="text-align: right;"></td>
         </tr>
     <?php  
       }else{ ?>
@@ -160,9 +160,9 @@
           <td class="tg-vn4c"><?php echo $counters;?></td>
           <td class="tg-vn4c"><input type="hidden" name="product_id[]" value="<?php echo $products['product_id']?>"><?php echo $products['product_id']?></td>
           <td class="tg-vn4c"><?php echo $products['name']?></td>
-          <td class="tg-vn4c qty"><input type="hidden" name="qty[]" value="<?php echo $products['qty']?>"><?php echo $products['qty']?></td>
-          <td class="tg-vn4c"><input class="total" name="total[]" type="text" readonly="" value="<?php echo $products['total']?>"></td>
-          <td class="tg-vn4c"><input class="cal_so" name="stock[]" type="text" value="<?php echo $products['stock']?>"></td>
+          <td class="tg-vn4c qty" style="text-align: right;"><input type="hidden" name="qty[]" value="<?php echo $products['qty']?>"><?php echo $products['qty']?></td>
+          <td class="tg-vn4c"><input class="total" name="total[]" type="text" readonly="" value="<?php echo $products['total']?>" style="text-align: right;"></td>
+          <td class="tg-vn4c"><input class="cal_so" name="stock[]" type="text" value="<?php echo $products['stock']?>" style="text-align: right;"></td>
         </tr>
     <?php  }
     $counters++;
