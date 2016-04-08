@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 06, 2016 at 06:36 PM
+-- Generation Time: Apr 07, 2016 at 08:49 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -125,7 +125,10 @@ CREATE TABLE `po` (
 
 INSERT INTO `po` (`po_id`, `po_code`, `customer_id`, `total`, `vat`, `total_vat`, `created`, `duedate`) VALUES
 (00001, 'PO-011', 'A0002', 5321.00, 372.47, 5693.47, '2016-04-01', '2016-04-22'),
-(00002, 'PPK008', 'A0030', 31360.00, 2195.20, 33555.20, '2016-04-01', '2016-05-27');
+(00002, 'PPK008', 'A0030', 31360.00, 2195.20, 33555.20, '2016-04-01', '2016-05-27'),
+(00005, 'PPK008-1', 'A0009', 7155.00, 500.85, 7655.85, '2016-04-01', '2016-04-29'),
+(00006, 'Pooo5', 'A0004', 1077972.00, 75458.04, 1153430.00, '2016-04-09', '2016-04-01'),
+(00007, 'LC0000000000000018', 'A0011', 428400.00, 29988.00, 458388.00, '2016-04-05', '2016-05-06');
 
 -- --------------------------------------------------------
 
@@ -151,7 +154,17 @@ INSERT INTO `po_details` (`po_id`, `po_code`, `product_id`, `unit_price`, `qty`,
 (00001, 'PO-011', 'V002', 63, 17, 1071.00, '2016-04-22'),
 (00001, 'PO-011', 'V024-R1', 125, 34, 4250.00, '2016-04-22'),
 (00002, 'PPK008', 'V017-S1', 82, 230, 18860.00, '2016-05-27'),
-(00002, 'PPK008', 'V028', 125, 100, 12500.00, '2016-05-27');
+(00002, 'PPK008', 'V028', 125, 100, 12500.00, '2016-05-27'),
+(00005, 'PPK008-1', 'V024-R1', 125, 20, 2500.00, '2016-04-29'),
+(00005, 'PPK008-1', 'V077-R1', 95, 49, 4655.00, '2016-04-29'),
+(00006, 'Pooo5', 'V006-R1', 110, 455, 50050.00, '2016-04-01'),
+(00006, 'Pooo5', 'V017-S1', 82, 666, 54612.00, '2016-04-01'),
+(00006, 'Pooo5', 'V035-R1', 105, 222, 23310.00, '2016-04-01'),
+(00006, 'Pooo5', 'V077-R1', 95, 10000, 950000.00, '2016-04-01'),
+(00007, 'LC0000000000000018', 'V002', 63, 1000, 63000.00, '2016-05-06'),
+(00007, 'LC0000000000000018', 'V006-R1', 110, 2000, 220000.00, '2016-05-06'),
+(00007, 'LC0000000000000018', 'V012', 102, 200, 20400.00, '2016-05-06'),
+(00007, 'LC0000000000000018', 'V024-R1', 125, 1000, 125000.00, '2016-05-06');
 
 -- --------------------------------------------------------
 
@@ -172,7 +185,9 @@ CREATE TABLE `production` (
 --
 
 INSERT INTO `production` (`production_id`, `po_id`, `customer_id`, `created`, `duedate`) VALUES
-(00001, 00001, 'A0002', '2016-04-01', '2016-04-30');
+(00001, 00001, 'A0002', '2016-04-01', '2016-04-30'),
+(00002, 00005, 'A0009', '2016-04-08', '2016-04-30'),
+(00003, 00007, 'A0011', '2016-04-08', '2016-04-30');
 
 -- --------------------------------------------------------
 
@@ -194,7 +209,13 @@ CREATE TABLE `production_details` (
 
 INSERT INTO `production_details` (`production_id`, `product_id`, `qty`, `send_date`, `due_date`) VALUES
 (00001, 'V002', 17, '2016-04-22', '2016-04-30'),
-(00001, 'V024-R1', 34, '2016-04-22', '2016-04-30');
+(00001, 'V024-R1', 34, '2016-04-22', '2016-04-30'),
+(00002, 'V024-R1', 20, '2016-04-29', '2016-04-30'),
+(00002, 'V077-R1', 49, '2016-04-29', '2016-04-30'),
+(00003, 'V002', 1000, '2016-05-06', '2016-04-30'),
+(00003, 'V006-R1', 2000, '2016-05-06', '2016-04-30'),
+(00003, 'V012', 200, '2016-05-06', '2016-04-30'),
+(00003, 'V024-R1', 1000, '2016-05-06', '2016-04-30');
 
 -- --------------------------------------------------------
 
@@ -223,7 +244,7 @@ INSERT INTO `products` (`product_id`, `name`, `unit`, `price`, `remark`, `pic`, 
 ('V005-P1', 'วาล์ว V64 (H/W RTอลูมิเนียมพ่นสีเขียว/ตี Pi mark)', 'ตัว', 103, '', '', 10000),
 ('V006-R1', 'วาล์ว V68', 'ตัว', 110, '', '', 10000),
 ('V006-T9', 'วาล์ว V68(แฮนวีลทองเหลือง) ปตท', 'ตัว', 158, '', '', 10000),
-('V007', 'วาล์ว V15-S (SNAP-TIGHT)', 'ตัว', 82, '', '', 2000),
+('V007', 'วาล์ว V15-S (SNAP-TIGHT)', 'ตัว', 82, '', '', 2001),
 ('V010-P1', 'วาล์ว M17 #20mm (Pi mark)', 'ตัว', 82, '', '', 10000),
 ('V012', 'วาล์ว F1 ฟรีออน 13.5 กก.', 'ตัว', 102, '', '', 10000),
 ('V015', 'วาล์ว V2', 'ตัว', 110, '', '', 10000),
@@ -254,7 +275,7 @@ CREATE TABLE `stock_in` (
 --
 
 INSERT INTO `stock_in` (`stock_in_id`, `product_id`, `qty`, `created`) VALUES
-(00001, 'V007', 2000, '2016-04-07');
+(00001, 'V007', 2001, '2016-04-07');
 
 -- --------------------------------------------------------
 
@@ -341,7 +362,8 @@ ALTER TABLE `customers_type`
 -- Indexes for table `po`
 --
 ALTER TABLE `po`
-  ADD PRIMARY KEY (`po_id`);
+  ADD PRIMARY KEY (`po_id`),
+  ADD UNIQUE KEY `po_code` (`po_code`);
 
 --
 -- Indexes for table `po_details`
@@ -399,17 +421,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `po`
 --
 ALTER TABLE `po`
-  MODIFY `po_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `po_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `production`
 --
 ALTER TABLE `production`
-  MODIFY `production_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `production_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `production_details`
 --
 ALTER TABLE `production_details`
-  MODIFY `production_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `production_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `stock_in`
 --
