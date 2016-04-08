@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 07, 2016 at 08:49 PM
+-- Generation Time: Apr 08, 2016 at 12:52 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -128,7 +128,8 @@ INSERT INTO `po` (`po_id`, `po_code`, `customer_id`, `total`, `vat`, `total_vat`
 (00002, 'PPK008', 'A0030', 31360.00, 2195.20, 33555.20, '2016-04-01', '2016-05-27'),
 (00005, 'PPK008-1', 'A0009', 7155.00, 500.85, 7655.85, '2016-04-01', '2016-04-29'),
 (00006, 'Pooo5', 'A0004', 1077972.00, 75458.04, 1153430.00, '2016-04-09', '2016-04-01'),
-(00007, 'LC0000000000000018', 'A0011', 428400.00, 29988.00, 458388.00, '2016-04-05', '2016-05-06');
+(00007, 'LC0000000000000018', 'A0011', 428400.00, 29988.00, 458388.00, '2016-04-05', '2016-05-06'),
+(00011, 'LC0000000000000019', 'A0016', 2540.00, 177.80, 2717.80, '2016-04-08', '2016-04-23');
 
 -- --------------------------------------------------------
 
@@ -164,7 +165,9 @@ INSERT INTO `po_details` (`po_id`, `po_code`, `product_id`, `unit_price`, `qty`,
 (00007, 'LC0000000000000018', 'V002', 63, 1000, 63000.00, '2016-05-06'),
 (00007, 'LC0000000000000018', 'V006-R1', 110, 2000, 220000.00, '2016-05-06'),
 (00007, 'LC0000000000000018', 'V012', 102, 200, 20400.00, '2016-05-06'),
-(00007, 'LC0000000000000018', 'V024-R1', 125, 1000, 125000.00, '2016-05-06');
+(00007, 'LC0000000000000018', 'V024-R1', 125, 1000, 125000.00, '2016-05-06'),
+(00011, 'LC0000000000000019', 'V023', 82, 20, 1640.00, '2016-04-24'),
+(00011, 'LC0000000000000019', 'V061-R1', 45, 20, 900.00, '2016-04-23');
 
 -- --------------------------------------------------------
 
@@ -187,7 +190,8 @@ CREATE TABLE `production` (
 INSERT INTO `production` (`production_id`, `po_id`, `customer_id`, `created`, `duedate`) VALUES
 (00001, 00001, 'A0002', '2016-04-01', '2016-04-30'),
 (00002, 00005, 'A0009', '2016-04-08', '2016-04-30'),
-(00003, 00007, 'A0011', '2016-04-08', '2016-04-30');
+(00003, 00007, 'A0011', '2016-04-08', '2016-04-30'),
+(00004, 00011, 'A0016', '2016-04-09', '2016-04-21');
 
 -- --------------------------------------------------------
 
@@ -215,7 +219,9 @@ INSERT INTO `production_details` (`production_id`, `product_id`, `qty`, `send_da
 (00003, 'V002', 1000, '2016-05-06', '2016-04-30'),
 (00003, 'V006-R1', 2000, '2016-05-06', '2016-04-30'),
 (00003, 'V012', 200, '2016-05-06', '2016-04-30'),
-(00003, 'V024-R1', 1000, '2016-05-06', '2016-04-30');
+(00003, 'V024-R1', 1000, '2016-05-06', '2016-04-30'),
+(00004, 'V023', 20, '2016-04-24', '2016-04-21'),
+(00004, 'V061-R1', 20, '2016-04-23', '2016-04-21');
 
 -- --------------------------------------------------------
 
@@ -248,13 +254,13 @@ INSERT INTO `products` (`product_id`, `name`, `unit`, `price`, `remark`, `pic`, 
 ('V010-P1', 'วาล์ว M17 #20mm (Pi mark)', 'ตัว', 82, '', '', 10000),
 ('V012', 'วาล์ว F1 ฟรีออน 13.5 กก.', 'ตัว', 102, '', '', 10000),
 ('V015', 'วาล์ว V2', 'ตัว', 110, '', '', 10000),
-('V017-S1', 'วาล์ว M20 #20mm (2.6mpa/MS831)', 'ตัว', 82, '', '', 9990),
+('V017-S1', 'วาล์ว M20 #20mm (2.6mpa/MS831)', 'ตัว', 82, '', '', 9770),
 ('V022-R1', 'วาล์ว F8', 'ตัว', 105, '', '', 10000),
-('V023', 'วาล์ว M16 (Clip on Valve)', 'ตัว', 82, '', '', 10000),
-('V024-R1', 'วาล์ว V69+OPD', 'ตัว', 125, '', '', 9980),
+('V023', 'วาล์ว M16 (Clip on Valve)', 'ตัว', 82, '', '', 9988),
+('V024-R1', 'วาล์ว V69+OPD', 'ตัว', 125, '', '', 200),
 ('V028', 'วาล์ว V63', 'ตัว', 125, '', '', 9900),
 ('V035-R1', 'วาล์ว V95', 'ตัว', 105, '', '', 10000),
-('V061-R1', 'วาล์วแค้มปิ้ง VCP-2 (รุ่นเฟือง)', 'ตัว', 45, '', '', 10000),
+('V061-R1', 'วาล์วแค้มปิ้ง VCP-2 (รุ่นเฟือง)', 'ตัว', 45, '', '', 4998),
 ('V077-R1', 'วาล์ว V67 (เกลียวทางเข้า W28.8-14/แฮนวีลทองเหลือง)', 'ตัว', 95, '', '', 10000);
 
 -- --------------------------------------------------------
@@ -275,7 +281,9 @@ CREATE TABLE `stock_in` (
 --
 
 INSERT INTO `stock_in` (`stock_in_id`, `product_id`, `qty`, `created`) VALUES
-(00001, 'V007', 2001, '2016-04-07');
+(00001, 'V007', 2001, '2016-04-07'),
+(00002, 'V061-R1', 5000, '2016-04-18'),
+(00003, 'V024-R1', 200, '2016-04-19');
 
 -- --------------------------------------------------------
 
@@ -295,7 +303,9 @@ CREATE TABLE `stock_out` (
 
 INSERT INTO `stock_out` (`stock_out_id`, `po_id`, `created`) VALUES
 (00001, 00001, '2016-04-23'),
-(00002, 00002, '2016-04-09');
+(00002, 00002, '2016-04-09'),
+(00003, 00011, '2016-04-14'),
+(00004, 00002, '2016-04-09');
 
 -- --------------------------------------------------------
 
@@ -319,7 +329,11 @@ INSERT INTO `stock_out_details` (`stock_out_id`, `product_id`, `qty`, `stock`, `
 (00001, 'V002', 17, 6, 11),
 (00001, 'V024-R1', 34, 20, 14),
 (00002, 'V017-S1', 230, 10, 220),
-(00002, 'V028', 100, 100, 0);
+(00002, 'V028', 100, 100, 0),
+(00003, 'V023', 20, 12, 8),
+(00003, 'V061-R1', 20, 2, 18),
+(00004, 'V017-S1', 230, 220, 0),
+(00004, 'V028', 100, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -421,27 +435,27 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `po`
 --
 ALTER TABLE `po`
-  MODIFY `po_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `po_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `production`
 --
 ALTER TABLE `production`
-  MODIFY `production_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `production_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `production_details`
 --
 ALTER TABLE `production_details`
-  MODIFY `production_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `production_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `stock_in`
 --
 ALTER TABLE `stock_in`
-  MODIFY `stock_in_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `stock_in_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `stock_out`
 --
 ALTER TABLE `stock_out`
-  MODIFY `stock_out_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `stock_out_id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --

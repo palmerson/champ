@@ -53,7 +53,7 @@
     <div class="clearfix colelem" id="pu4617"><!-- group -->
      <a class="nonblock nontext clip_frame grpelem" id="u4617" href="home.php"><!-- image --><img class="block" id="u4617_img" src="images/back_but.png" alt="" width="180" height="55"/></a>
      <a class="nonblock nontext clip_frame grpelem" id="u4704" href="new_recive.php"><!-- image --><img class="block" id="u4704_img" src="images/newrecive_but.png" alt="" width="200" height="55"/></a>
-     <a target="_blank" class="nonblock nontext clip_frame grpelem" id="u4619" href="print_ro.php"><!-- image --><img class="block" id="u4619_img" src="images/searchreport_but.png" alt="" width="180" height="55"/></a>
+<!--      <a target="_blank" class="nonblock nontext clip_frame grpelem" id="u4619" href="print_ro.php"><img class="block" id="u4619_img" src="images/searchreport_but.png" alt="" width="180" height="55"/></a> -->
     </div>
     <div class="colelem" id="u4621"><!-- custom html -->
      <style type="text/css">

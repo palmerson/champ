@@ -48,7 +48,7 @@
     <div class="clearfix colelem" id="pu4763"><!-- group -->
      <a class="nonblock nontext clip_frame grpelem" id="u4763" href="home.php"><!-- image --><img class="block" id="u4763_img" src="images/back_but.png" alt="" width="180" height="55"/></a>
      <a class="nonblock nontext clip_frame grpelem" id="u4950" href="cut_stock.php"><!-- image --><img class="block" id="u4950_img" src="images/cutstock_but.png" alt="" width="180" height="55"/></a>
-     <a class="nonblock nontext clip_frame grpelem" id="u4761" href="print_so.php" target="_blank"><!-- image --><img class="block" id="u4761_img" src="images/searchreport_but.png" alt="" width="180" height="55"/></a>
+<!--      <a class="nonblock nontext clip_frame grpelem" id="u4761" href="print_so.php" target="_blank"><img class="block" id="u4761_img" src="images/searchreport_but.png" alt="" width="180" height="55"/></a> -->
     </div>
     <div class="colelem" id="u4767"><!-- custom html -->
      <style type="text/css">
