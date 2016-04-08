@@ -253,9 +253,8 @@
     color:#FFF;
     font-family: '__ThaiSans Neue_5';
     font-weight: 700px;
-    margin-bottom: 50px
-    margin-top: 50px
-  } 
+    padding-top: 400px;
+  }
 </style> 
 
 
@@ -267,16 +266,17 @@
     </div>
     <div class="colelem" id="u3828"><!-- custom html -->
 <!--     <iframe id="printf" name="printf" src="report_so.php" width="1200" height="800" style="margin-bottom: 30px;"></iframe> -->
-  <center>
-    <p class="head">
-    </p>
-  </center>
+  <div class="tj">
+    <center>
+      <span class="head"></span>
+    </center>
+  </div>
   <div style="height: 20px;"></div>
      <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
 
-.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;text-align: center;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;text-align: center;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#000;background-color:#F7FDFA;text-align: center;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#000;background-color:#26ADE4;text-align: center;}
 .tg .tg-vn4c{background-color:#D2E4FC}
 </style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
@@ -284,7 +284,7 @@
 <?php
 if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
   if($_GET['db'] == 'po'){
-      $sql = "SELECT a.*, b.company_name name, c.qty qty, c.amount FROM $Po a "; 
+      $sql = "SELECT a.po_id, a.po_code,a.created, b.company_name name, c.qty qty, c.amount FROM $Po a "; 
       $sql .= " left JOIN $Customers b ON a.customer_id=b.customer_id ";
       $sql .= " left JOIN $PoDetails c ON a.po_id=c.po_id ";
 
@@ -306,7 +306,7 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
           // append the conditions
           $sql .= " WHERE " . implode (' AND ', $conditions);
       }
-
+      $sql .= "LIMIT 0, 100";
       $query = mysql_db_query($db_name, $sql);
 
 ?>
@@ -316,7 +316,7 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
     <th class="tg-031e">เลขที่ใบ P/O</th>
     <th class="tg-031e">ชื่อลูกค้า</th>
     <th class="tg-031e">จำนวนที่สั่ง</th>
-    <th class="tg-031e">ราคา</th>
+    <!-- <th class="tg-031e">ราคา</th> -->
     <th class="tg-031e">วันที่สั่ง</th>
     <th class="tg-031e"></th>
     <!-- <th class="tg-031e"></th> -->
@@ -331,7 +331,7 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
         <td class="tg-vn4c"><?php echo $row['po_code'];?></td>
         <td class="tg-vn4c"><?php echo $row['name'];?></td>
         <td class="tg-vn4c"><?php echo $row['qty'];?></td>
-        <td class="tg-vn4c"><?php echo number_format($row['amount'],2,'.',',');?></td>
+        <!-- <td class="tg-vn4c"><?php //echo number_format($row['amount'],2,'.',',');?></td> -->
         <td class="tg-vn4c"><?php echo toDatepicker($row['created']);?></td>
         <td class="tg-vn4c" class='btn'><a href="edit_po.php?id=<?php echo $row['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a>&nbsp;&nbsp;<a target="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
         </tr>
@@ -344,7 +344,7 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
           <td class="tg-031e"><?php echo $row['po_code'];?></td>
           <td class="tg-031e"><?php echo $row['name'];?></td>
           <td class="tg-031e"><?php echo $row['qty'];?></td>
-          <td class="tg-031e"><?php echo number_format($row['amount'],2,'.',',');?></td>
+          <!-- <td class="tg-031e"><?php //echo number_format($row['amount'],2,'.',',');?></td> -->
           <td class="tg-031e"><?php echo toDatepicker($row['created']);?></td>
           <td class="tg-031e" class='btn'><a href="edit_po.php?id=<?php echo $row['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a>&nbsp;&nbsp;<a target="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
         </tr>
@@ -383,6 +383,7 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
       $sql2 .= " WHERE " . implode (' AND ', $conditions);
     }
     // echo $sql2;
+    $sql2 .= " LIMIT 0, 100";
     $query2 = mysql_db_query($db_name, $sql2);
   ?>
       <tr>
@@ -454,6 +455,7 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
         $sql3 .= " WHERE " . implode (' AND ', $conditions);
       }
       // echo $sql3;
+      $sql3 .= "LIMIT 0, 100";
       $query3 = mysql_db_query($db_name, $sql3);
   ?>
       <tr>
@@ -524,7 +526,7 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
         $sql4 .= " WHERE " . implode (' AND ', $conditions);
       }
 
-
+        $sql4 .= " LIMIT 0, 100";
         $query4 = mysql_db_query($db_name, $sql4);
       ?>
       <tr>

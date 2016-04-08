@@ -48,7 +48,8 @@
     header("location: overview_po.php");
   }
   else{
-    echo mysql_error($insertPo) . "\n";
+    echo "กรอกข้อมูลไม่ครบ หรือเลขที่ใบ PO/LC ซ้ำในระบบ";
+    echo "<br/>";
     echo "<a href=\"javascript:history.go(-1)\">Go Back</a>";
   }
 

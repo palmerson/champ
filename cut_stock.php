@@ -64,8 +64,12 @@
         <option>กรุณาเลือกเลขที่ใบสั่งขาย</option>
      <?php
 	  include 'inc/conf.php';
-      $type = "select a.po_id from $Po a where a.po_id not in (select b.po_id from $StockOut b)";
-      echo $type;
+      $condition = "SELECT a.po_id FROM $StockOut a ";
+      $condition .= " LEFT JOIN $StockOutDetails b ON a.stock_out_id=b.stock_out_id ";
+      $condition .= " WHERE b.total=0 GROUP BY a.po_id";
+      // echo $condition
+      $type = "select a.po_id from $Po a where a.po_id not in ($condition)";
+      // echo $type;
       $query_type = mysql_db_query($db_name, $type);
       while($ct = mysql_fetch_array($query_type)) {
         echo "<option value=\"$ct[0]\">$ct[0]</option>";   

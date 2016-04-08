@@ -158,6 +158,7 @@ $(function() {
 
 function printDiv() {
     $("#tg-0YX8L th:last-child, #tg-0YX8L td:last-child").remove();
+    $('.head').css('color','#000');
     divToPrint = $("#u3828").html();
     w = window.open();
     w.document.writeln(divToPrint);

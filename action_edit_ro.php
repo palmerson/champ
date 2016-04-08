@@ -7,9 +7,10 @@
   // echo "</pre>";
   $product_id = $_POST['product_id'];
   $qty = $_POST['qty'];
+  $created = toMysql($_POST['created']);
   $ro_id = $_GET['id'];
 
-  $sql = "UPDATE $StockIn SET qty='$qty' WHERE stock_in_id='$ro_id'";
+  $sql = "UPDATE $StockIn SET qty='$qty', created='$created' WHERE stock_in_id='$ro_id'";
   // echo $sql;
   $result = mysql_db_query($db_name, $sql);
   if ($result) {

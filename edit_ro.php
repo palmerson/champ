@@ -110,7 +110,7 @@
 
 </div>
      <div class="grpelem" id="u4697"><!-- custom html -->
-      <input name="created" class="textbox" type="text" value="<?php echo toDatepicker($row[3]);?>" readonly> 
+      <input name="created" class="textbox datepicker" type="text" value="<?php echo toDatepicker($row[3]);?>" readonly> 
 <style> 
  .textbox { 
     outline:0; 
