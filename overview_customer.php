@@ -132,7 +132,7 @@
       <td class="tg-vn4c" width="30%"><?php echo $row['company_name'];?></td>
       <td class="tg-vn4c" width="20%"><?php echo $row['address'];?></td>
       <td class="tg-vn4c" width="10%"><?php echo $row['contact'];?></td>
-      <td class="tg-vn4c" width="10%"><?php echo $row['phone'];?></td>
+      <td class="tg-vn4c" width="15%"><?php echo $row['phone'];?></td>
      <td class="tg-vn4c" width="5%"><!-- <a href="view_customer.php?id=<?php //echo $row['customer_id'];?>"><img src="images/view.png" alt="ดู" width="17" height="16"></a>&nbsp; -->
       <a href="edit_customer.php?id=<?php echo $row['customer_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16" title="แก้ไข"></a></td>
     </tr>
@@ -144,7 +144,7 @@
       <td class="tg-031e" width="30%"><?php echo $row['company_name'];?></td>
       <td class="tg-031e" width="20%"><?php echo $row['address'];?></td>
       <td class="tg-031e" width="10%"><?php echo $row['contact'];?></td>
-      <td class="tg-031e" width="10%"><?php echo $row['phone'];?></td>
+      <td class="tg-031e" width="15%"><?php echo $row['phone'];?></td>
      <td class="tg-031e" width="5%"><!-- <a href="view_customer.php?id=<?php //echo $row['customer_id'];?>"><img src="images/view.png" alt="ดู" width="17" height="16"></a>&nbsp; -->
       <a href="edit_customer.php?id=<?php echo $row['customer_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16" title="แก้ไข"></a></td>
     </tr>
