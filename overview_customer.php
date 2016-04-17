@@ -1,4 +1,6 @@
-<? include('session.php');?>
+<?php include('session.php');
+   if(isset($_GET['id'])){ $id = $_GET['id']; }
+?>
 <!DOCTYPE html>
 <html class="nojs html" lang="en-US">
  <head>
@@ -42,6 +44,7 @@
       <p>CHAMP MECHANIC FACTORY CO.,LTD.</p>
      </div>
     </div>
+    <form enctype="" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" id="search" >
     <div class="colelem" id="u169"><!-- simple frame --></div>
     <div class="clearfix colelem" id="u5120-4"><!-- content -->
      <p>ข้อมูลลูกค้า</p>
@@ -52,6 +55,20 @@
      <div class="clip_frame grpelem" id="u5445"><!-- image -->
 <!--       <a href="report_customer.php" target="_blank"><img class="block" id="u5445_img" src="images/printhistory_but.png" alt="" width="180" height="55"/></a> -->
     <img class="block" id="u5445_img" src="images/printhistory_but.png" alt="พิมพ์รายงาน" title="พิมพ์รายงาน" width="180" height="55" onclick="printDiv()"/>
+     </div>
+    </div>
+    <div class="clearfix colelem" id="pu5116"><!-- group -->
+      <input class="product_id" type="text" name="id" placeholder="ค้นหารหัสลูกค้า" value="<?php if(isset($id)) { echo $id; }?>">
+        <style> 
+         .product_id { 
+            outline:0; 
+            height:40px; 
+            width: 178px;
+            padding-left: 5px; 
+          } 
+        </style>
+            <button type="submit" form="search" value="Submit"><img class="block" id="u5143" src="images/search_but.png" alt="" width="180" height="55" style="top:-48px;" /></button>
+     <div class="clip_frame grpelem" id="u5445"><!-- image -->
      </div>
     </div>
     <div class="colelem" id="u5121"><!-- custom html -->
@@ -88,7 +105,22 @@
     $p = 0;
   }
 
-  $sql = "SELECT * FROM $Customers ORDER BY customer_id ASC LIMIT $p , 100";
+
+  $sql = "SELECT * FROM $Customers";
+
+  $conditions = array();
+
+  if(isset($id)) {
+    $conditions[] = " customer_id like '%$id%' ";
+  }
+
+  if(count($conditions) > 0) {
+    // append the conditions
+    $sql .= " WHERE " . implode (' AND ', $conditions);
+  }
+
+  $sql .= " ORDER BY customer_id ASC";
+  $sql .= " LIMIT $p, 100";
 
   $query = mysql_db_query($db_name, $sql);
   $counter = 1;
@@ -97,10 +129,10 @@
   ?>
     <tr>
       <td class="tg-vn4c center" width="5%"><?php echo $row['customer_id'];?></td>
-      <td class="tg-vn4c" width="40%"><?php echo $row['company_name'];?></td>
-      <td class="tg-vn4c" width="10%"><?php echo $row['address'];?></td>
-      <td class="tg-vn4c" width="15%"><?php echo $row['contact'];?></td>
-      <td class="tg-vn4c" width="25%"><?php echo $row['phone'];?></td>
+      <td class="tg-vn4c" width="30%"><?php echo $row['company_name'];?></td>
+      <td class="tg-vn4c" width="20%"><?php echo $row['address'];?></td>
+      <td class="tg-vn4c" width="10%"><?php echo $row['contact'];?></td>
+      <td class="tg-vn4c" width="10%"><?php echo $row['phone'];?></td>
      <td class="tg-vn4c" width="5%"><!-- <a href="view_customer.php?id=<?php //echo $row['customer_id'];?>"><img src="images/view.png" alt="ดู" width="17" height="16"></a>&nbsp; -->
       <a href="edit_customer.php?id=<?php echo $row['customer_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16" title="แก้ไข"></a></td>
     </tr>
@@ -109,10 +141,10 @@
   ?>
     <tr>
       <td class="tg-031e center" width="5%"><?php echo $row['customer_id'];?></td>
-      <td class="tg-031e" width="40%"><?php echo $row['company_name'];?></td>
-      <td class="tg-031e" width="10%"><?php echo $row['address'];?></td>
-      <td class="tg-031e" width="15%"><?php echo $row['contact'];?></td>
-      <td class="tg-031e" width="25%"><?php echo $row['phone'];?></td>
+      <td class="tg-031e" width="30%"><?php echo $row['company_name'];?></td>
+      <td class="tg-031e" width="20%"><?php echo $row['address'];?></td>
+      <td class="tg-031e" width="10%"><?php echo $row['contact'];?></td>
+      <td class="tg-031e" width="10%"><?php echo $row['phone'];?></td>
      <td class="tg-031e" width="5%"><!-- <a href="view_customer.php?id=<?php //echo $row['customer_id'];?>"><img src="images/view.png" alt="ดู" width="17" height="16"></a>&nbsp; -->
       <a href="edit_customer.php?id=<?php echo $row['customer_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16" title="แก้ไข"></a></td>
     </tr>
@@ -146,6 +178,7 @@
     </div>
    </div>
   </div>
+  </form>
   <!-- JS includes -->
   <script type="text/javascript">
    if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn2.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');

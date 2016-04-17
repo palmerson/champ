@@ -1,4 +1,6 @@
-<? include('session.php');?>
+<?php include('session.php');
+   if(isset($_GET['id'])){ $id = $_GET['id']; }
+?>
 
 <!DOCTYPE html>
 <html class="nojs html" lang="en-US">
@@ -43,6 +45,7 @@
       <p>CHAMP MECHANIC FACTORY CO.,LTD.</p>
      </div>
     </div>
+    <form enctype="" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" id="search" >
     <div class="colelem" id="u169"><!-- simple frame --></div>
     <div class="clearfix colelem" id="u4997-4"><!-- content -->
      <p>ข้อมูลสินค้า</p>
@@ -53,6 +56,20 @@
      <div class="clip_frame grpelem" id="u5435"><!-- image -->
 <!--       <a href="report_product.php" target="_blank"><img class="block" id="u5435_img" src="images/printhistory_but.png" alt="" width="180" height="55"/></a> -->
   <img class="block" id="u5435_img" src="images/printhistory_but.png" alt="พิมพ์รายงาน" width="180" height="55" title="พิมพ์รายงาน" onclick="printDiv()"/>
+     </div>
+    </div>
+    <div class="clearfix colelem" id="pu4994"><!-- group -->
+    <input class="product_id" type="text" name="id" placeholder="ค้นหารหัสสินค้า" value="<?php if(isset($id)) { echo $id; }?>"> 
+        <style> 
+         .product_id { 
+            outline:0; 
+            height:40px; 
+            width: 178px;
+            padding-left: 5px; 
+          } 
+        </style>
+            <button type="submit" form="search" value="Submit"><img class="block" id="u5048" src="images/search_but.png" alt="" width="180" height="55" style="top:-48px;" /></button>
+     <div class="clip_frame grpelem" id="u5435"><!-- image -->
      </div>
     </div>
     <div class="colelem" id="u4996"><!-- custom html -->
@@ -92,7 +109,21 @@
     $p = 0;
   }
 
-  $sql = "SELECT * FROM $Products ORDER BY product_id ASC LIMIT $p , 100";
+  $sql = "SELECT * FROM $Products";
+
+  $conditions = array();
+
+  if(isset($id)) {
+    $conditions[] = " product_id like '%$id%' ";
+  }
+
+  if(count($conditions) > 0) {
+    // append the conditions
+    $sql .= " WHERE " . implode (' AND ', $conditions);
+  }
+
+  $sql .= " ORDER BY product_id ASC";
+  $sql .= " LIMIT $p, 100";
 
   $query = mysql_db_query($db_name, $sql);
   $counter = 1;
@@ -158,6 +189,7 @@
     </div>
    </div>
   </div>
+  </form>
   <!-- JS includes -->
   <script type="text/javascript">
    if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn2.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
