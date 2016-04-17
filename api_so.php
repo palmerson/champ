@@ -22,6 +22,7 @@
     $sql2 .= " LEFT JOIN $StockOut b ON a.stock_out_id=b.stock_out_id ";
     $sql2 .= " LEFT JOIN $Products c ON a.product_id=c.product_id ";
     $sql2 .= "WHERE b.po_id = '$po_id'";
+    $sql2 .= " GROUP BY c.product_id";
   }else{
     $sql2 = "SELECT a.po_code,b.product_id,b.qty,b.duedate,c.name FROM $Po a "; 
     $sql2 .= " LEFT JOIN $PoDetails b ON a.po_code=b.po_code ";

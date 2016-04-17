@@ -118,11 +118,18 @@
     </div>
     <div class="colelem" id="u4932"><!-- custom html -->
      <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto; width:100%;}
 
-.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+.tg td{font-size:14px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#F7FDFA;}
+.tg th{font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#fff;background-color:#26ADE4;text-align: center;}
 .tg .tg-vn4c{background-color:#D2E4FC}
+
+.center { text-align: center; }
+.right { text-align: right; }
+.inp{
+  border-color: #515151;
+  border-width: 2px;
+}
 </style>
 <div class="tg-wrap">
 <table id="tg-0YX8L" class="tg tb_stock">
@@ -147,22 +154,22 @@
     while($products = mysql_fetch_array($query2)) {
       if($counters%2 !=0){ ?>
         <tr>
-          <td class="tg-031e"><?php echo $counters;?></td>
-          <td class="tg-031e"><input type="hidden" name="product_id[]" value="<?php echo $products['product_id']?>"><?php echo $products['product_id']?></td>
+          <td class="tg-031e center"><?php echo $counters;?></td>
+          <td class="tg-031e center"><input type="hidden" name="product_id[]" value="<?php echo $products['product_id']?>"><?php echo $products['product_id']?></td>
           <td class="tg-031e"><?php echo $products['name']?></td>
           <td class="tg-031e qty" style="text-align: right;"><input type="hidden" name="qty[]" value="<?php echo $products['qty']?>" style="text-align: right;"><?php echo $products['qty']?></td>
-          <td class="tg-031e"><input class="total" name="total[]" type="text" readonly="" value="<?php echo $products['total']?>" style="text-align: right;"></td>
-          <td class="tg-031e"><input class="cal_so" name="stock[]" type="text" value="<?php echo $products['stock']?>" style="text-align: right;"></td>
+          <td class="tg-031e"><input class="total2" name="total2[]" type="hidden" value="<?php echo $products['total']?>"><input class="total inp" name="total[]" type="text" readonly="" value="<?php echo $products['total']?>" style="text-align: right;"></td>
+          <td class="tg-031e"><input class="cal_so inp" name="stock[]" type="text" value="<?php echo $products['stock']?>" style="text-align: right;"></td>
         </tr>
     <?php  
       }else{ ?>
         <tr>
-          <td class="tg-vn4c"><?php echo $counters;?></td>
-          <td class="tg-vn4c"><input type="hidden" name="product_id[]" value="<?php echo $products['product_id']?>"><?php echo $products['product_id']?></td>
+          <td class="tg-vn4c center"><?php echo $counters;?></td>
+          <td class="tg-vn4c center"><input type="hidden" name="product_id[]" value="<?php echo $products['product_id']?>"><?php echo $products['product_id']?></td>
           <td class="tg-vn4c"><?php echo $products['name']?></td>
           <td class="tg-vn4c qty" style="text-align: right;"><input type="hidden" name="qty[]" value="<?php echo $products['qty']?>"><?php echo $products['qty']?></td>
-          <td class="tg-vn4c"><input class="total" name="total[]" type="text" readonly="" value="<?php echo $products['total']?>" style="text-align: right;"></td>
-          <td class="tg-vn4c"><input class="cal_so" name="stock[]" type="text" value="<?php echo $products['stock']?>" style="text-align: right;"></td>
+          <td class="tg-vn4c"><input class="total2" name="total2[]" type="hidden" value="<?php echo $products['total']?>"><input class="total inp" name="total[]" type="text" readonly="" value="<?php echo $products['total']?>" style="text-align: right;"></td>
+          <td class="tg-vn4c"><input class="cal_so inp" name="stock[]" type="text" value="<?php echo $products['stock']?>" style="text-align: right;"></td>
         </tr>
     <?php  }
     $counters++;
@@ -215,6 +222,6 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 } catch(e) { if (e && 'function' == typeof e.notify) e.notify(); else Muse.Assert.fail('Error calling selector function:' + e); }});
 </script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
-<script src="scripts/so.js"></script>
+<script src="scripts/so2.js"></script>
    </body>
 </html>

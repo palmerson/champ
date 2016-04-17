@@ -103,6 +103,30 @@
     </div>
     <div class="clearfix colelem" id="pu4031-4"><!-- group -->
      <div class="clearfix grpelem" id="u4031-4"><!-- content -->
+      <p>วันที่</p>
+     </div>
+    </div>
+ <div class="clearfix colelem" id="pu4036"><!-- group -->
+     <div class="grpelem" id="u4036"><!-- custom html -->
+ <input class="datepicker picker"type="text"name="created">
+<style> 
+ .picker { 
+    outline:0; 
+    height:40px; 
+    width: 75px; 
+  } 
+</style> 
+
+</div>
+     <div class="grpelem" id="u5482"><!-- custom html -->
+</div>
+     <div class="grpelem" id="u4030"><!-- custom html -->
+</div>
+     <div class="grpelem" id="u4033"><!-- custom html -->
+</div>
+    </div>
+    <div class="clearfix colelem" id="pu4031-4"><!-- group -->
+     <div class="clearfix grpelem" id="u4031-4"><!-- content -->
       <p>เลขที่ใบสั่งขาย</p>
      </div>
      <div class="clearfix grpelem" id="u5479-4"><!-- content -->
@@ -110,9 +134,6 @@
      </div>
      <div class="clearfix grpelem" id="u4037-4"><!-- content -->
       <p>ชื่อลูกค้า</p>
-     </div>
-     <div class="clearfix grpelem" id="u4035-4"><!-- content -->
-      <p>วันที่</p>
      </div>
     </div>
     <div class="clearfix colelem" id="pu4036"><!-- group -->
@@ -123,7 +144,7 @@
       $type = "select a.po_id, a.po_code from $Po a where a.po_id not in (select b.po_id from $Production b)";
       $query_type = mysql_db_query($db_name, $type);
       while($ct = mysql_fetch_array($query_type)) {
-        echo "<option value=\"$ct[0]\"> $ct[1]</option>";   
+        echo "<option value=\"$ct[0]\"> $ct[0]</option>";   
       }
       mysql_close();
     ?>
@@ -148,22 +169,10 @@
       <input class="customer_id"type="hidden" name="customer_id">
       <input class="textbox customer_name"type="text" name="customer_name" readonly>  
 <style> 
- .textbox { 
+ .customer_name { 
     outline:0; 
     height:40px; 
-    width: 187px; 
-  } 
-</style> 
-
-
-</div>
-     <div class="grpelem" id="u4033"><!-- custom html -->
-      <input class="textbox datepicker"type="text"name="created"> 
-<style> 
- .textbox { 
-    outline:0; 
-    height:40px; 
-    width: 187px; 
+    width: 400px; 
   } 
 </style> 
 
@@ -172,15 +181,17 @@
     </div>
     <div class="colelem" id="u4029"><!-- custom html -->
      <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#000;border:none;margin:0px auto; width:100%;}
 
-.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;width:150px;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#F7FDFA;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#26ADE4;width:150px;text-align: center;}
 .tg .tg-vn4c{background-color:#D2E4FC}
+.center { text-align: center;}
+.right { text-align: right;}
 </style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
   <tr>
-    <th class="tg-031e">ลำดับ</th>
+    <th class="tg-031e" style="font-size:14px;color:#000;">ลำดับ</th>
     <th class="tg-031e">รหัสสินค้า</th>
     <th class="tg-031e">ชื่อสินค้า</th>
     <th class="tg-031e">จำนวน</th>

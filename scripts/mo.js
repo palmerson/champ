@@ -17,7 +17,7 @@ $(function() {
         data = JSON.parse(data);
 
         var str = "" + data.production_id;
-        var pad = "0000";
+        var pad = "00000";
         var ans = pad.substring(0, pad.length - str.length) + str;
 
         $('.customer_name').val(data.detail.name);
@@ -48,19 +48,19 @@ $(function() {
           var duedate = dd+'/'+mm+'/'+yyyy;
 
         if($('#tg-0YX8L tr').length % 2 == 0){
-          $html = '<tr><td class=tg-vn4c><input class=inp type=hidden name=pid[] value='+product_id+'>'+ids+'</td>';
-          $html += '<td class=tg-vn4c>'+product_id+'</td>';
+          $html = '<tr><td class="tg-vn4c center"><input class=inp type=hidden name=pid[] value='+product_id+'>'+ids+'</td>';
+          $html += '<td class="tg-vn4c center">'+product_id+'</td>';
           $html += '<td class=tg-vn4c>'+name+'</td>';
-          $html += '<td class=tg-vn4c><input style="text-align:right;" class="inp qty" type=text name=qty[] readonly value='+qty+'></td>';
-          $html += '<td class=tg-vn4c><input id="'+ids+'s" class="inp" readonly type=text name=senddate[] value='+duedate+'></td>';
-          $html += '<td class=tg-vn4c><input id="'+ids+'" class="inp datepicker" readonly type=text name=duedate[] value=></td>';
+          $html += '<td class="tg-vn4c center"><input style="text-align:right;" class="inp qty" type=text name=qty[] readonly value='+qty+'></td>';
+          $html += '<td class="tg-vn4c center"><input id="'+ids+'s" class="inp" readonly type=text name=senddate[] value='+duedate+'></td>';
+          $html += '<td class="tg-vn4c center"><input id="'+ids+'" class="inp datepicker" readonly type=text name=duedate[] value=></td>';
         } else{
-          $html = '<tr><td class=tg-031e><input class=inp type=hidden name=pid[] value='+product_id+'>'+ids+'</td>';
-          $html += '<td class=tg-031e>'+product_id+'</td>';
+          $html = '<tr><td class="tg-031e center"><input class=inp type=hidden name=pid[] value='+product_id+'>'+ids+'</td>';
+          $html += '<td class="tg-031e center">'+product_id+'</td>';
           $html += '<td class=tg-031e>'+name+'</td>';
-          $html += '<td class=tg-031e><input style="text-align:right;" class="inp qty" type=text name=qty[] readonly value='+qty+'></td>';
-          $html += '<td class=tg-031e><input id="'+ids+'s" class="inp " readonly type=text name=senddate[] value='+duedate+'></td>';
-          $html += '<td class=tg-031e><input id="'+ids+'" class="inp datepicker" readonly type=text name=duedate[] value=></td>';
+          $html += '<td class="tg-031e center"><input style="text-align:right;" class="inp qty" type=text name=qty[] readonly value='+qty+'></td>';
+          $html += '<td class="tg-031e center"><input id="'+ids+'s" class="inp " readonly type=text name=senddate[] value='+duedate+'></td>';
+          $html += '<td class="tg-031e center"><input id="'+ids+'" class="inp datepicker" readonly type=text name=duedate[] value=></td>';
         }
         $('#tg-0YX8L tbody').append($html);
         ids++;

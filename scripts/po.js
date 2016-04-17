@@ -2,7 +2,7 @@ $(function() {
 
   var ids= $('#tg-0YX8L > tbody  > tr').not(":first").length + 1;
 
-  $(document).on('focus',".datepicker", function(){ //multi datepickers
+  $(document).on('focus',".datepicker", function(){ //multi datepickers ทำวันที่ให้เลือกได้
     $(this).datepicker({
       showOtherMonths: true,
       selectOtherMonths: true,
@@ -27,18 +27,18 @@ $(function() {
         p_name = data[1];
         price = data[2];
         if($('#tg-0YX8L tr').length % 2 == 0){
-          $html = '<tr><td class=tg-vn4c><input class=inp type=hidden name=pid[] value='+pid+'>'+pid+'</td>';
+          $html = '<tr><td class="tg-vn4c center"><input class=inp type=hidden name=pid[] value='+pid+'>'+pid+'</td>';
           $html += '<td class=tg-vn4c><input class=inp type=hidden name=p_name[] value='+p_name+'>'+p_name+'</td>';
-          $html += '<td class=tg-vn4c><input style="text-align:right;" class="inp qty" type=text name=qty[] ></td>';
-          $html += '<td class=tg-vn4c><input class="inp price" type=hidden name=price[] value='+price+'>'+price+'</td>';
-          $html += '<td class=tg-vn4c><input id="'+ids+'" class="inp datepicker" type=text name=duedate[] ></td>';
+          $html += '<td class="tg-vn4c center"><input style="text-align:right;" class="inp qty" type=text name=qty[] ></td>';
+          $html += '<td class="tg-vn4c right"><input class="inp price" type=hidden name=price[] value='+price+'>'+price+'</td>';
+          $html += '<td class="tg-vn4c center"><input id="'+ids+'" class="inp datepicker" type=text name=duedate[] ></td>';
           $html += '<td class=tg-vn4c><input class="inp pdm" type=hidden name=pd_amount[] ><span class="pd_amount">0</td></td></tr>';
         } else{
-          $html = '<tr><td class=tg-031e><input class=inp type=hidden name=pid[] value='+pid+'>'+pid+'</td>';
+          $html = '<tr><td class="tg-031e center"><input class=inp type=hidden name=pid[] value='+pid+'>'+pid+'</td>';
           $html += '<td class=tg-031e><input class=inp type=hidden name=p_name[] value='+p_name+'>'+p_name+'</td>';
-          $html += '<td class=tg-031e><input style="text-align:right;" class="inp qty" type=text name=qty[] ></td>';
-          $html += '<td class=tg-031e><input class="inp price" type=hidden name=price[] value='+price+'>'+price+'</td>';
-          $html += '<td class=tg-031e><input id="'+ids+'" class="inp datepicker" type=text name=duedate[] ></td>';
+          $html += '<td class="tg-031e center"><input style="text-align:right;" class="inp qty" type=text name=qty[] ></td>';
+          $html += '<td class="tg-031e right"><input class="inp price" type=hidden name=price[] value='+price+'>'+price+'</td>';
+          $html += '<td class="tg-031e center"><input id="'+ids+'" class="inp datepicker" type=text name=duedate[] ></td>';
           $html += '<td class=tg-031e><input class="inp pdm" type=hidden name=pd_amount[] ><span class="pd_amount">0</td></tr>';
         }
         $('#tg-0YX8L tbody').append($html);

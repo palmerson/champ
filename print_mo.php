@@ -140,7 +140,7 @@
        <p><?php echo $row[0]?></p>
       </div>
       <div class="clearfix colelem" id="u4147-4"><!-- content -->
-       <p><?php echo toDatepicker($row[4])?></p>
+       <p><?php echo toDatepicker($row[3])?></p>
       </div>
      </div>
      <div class="clearfix grpelem" id="u4537-8"><!-- content -->
@@ -160,7 +160,7 @@
        <p><?php echo $row[0]?></p>
       </div>
       <div class="clearfix colelem" id="u4594-4"><!-- content -->
-       <p><?php echo toDatepicker($row[4])?></p>
+       <p><?php echo toDatepicker($row[3])?></p>
       </div>
      </div>
     </div>
@@ -169,13 +169,13 @@
       <p>กำหนดเสร็จ</p>
      </div>
      <div class="clearfix grpelem" id="u4228-4"><!-- content -->
-      <p><?php echo toDatepicker($row[5])?></p>
+      <p><?php echo toDatepicker($row[4])?></p>
      </div>
      <div class="clearfix grpelem" id="u4579-4"><!-- content -->
       <p>กำหนดเสร็จ</p>
      </div>
      <div class="clearfix grpelem" id="u4597-4"><!-- content -->
-      <p><?php echo toDatepicker($row[5])?></p>
+      <p><?php echo toDatepicker($row[4])?></p>
      </div>
     </div>
     <div class="clearfix colelem" id="ppu4543-4"><!-- group -->
@@ -231,10 +231,10 @@
         $p = 1;
         while($lists = mysql_fetch_array($query)) {
           if($p == 1){
-            echo "<p class=\"unit\">".$lists['name'].")</p>";
+            echo "<p class=\"unit\">".$lists['name']."</p>";
           }
           else{
-            echo "<p class=\"unit_\">".$lists['name'].")</p>";
+            echo "<p class=\"unit_\">".$lists['name']."</p>";
           }
           $p++;
         }
@@ -333,19 +333,23 @@
     <div class="clearfix colelem" id="pu4128-6"><!-- group -->
      <div class="clearfix grpelem" id="u4128-6"><!-- content -->
       <p id="u4128-2">................................................................................</p>
-      <p id="u4128-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้อนุมัติจ่ายงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+      <p id="u4128-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+      <p id="u4128-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้อนุมัติจ่ายงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
      </div>
      <div class="clearfix grpelem" id="u4267-6"><!-- content -->
       <p id="u4267-2">................................................................................</p>
-      <p id="u4267-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้รับใบสั่ง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+      <p id="u4267-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+      <p id="u4128-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้รับใบสั่ง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
      </div>
      <div class="clearfix grpelem" id="u5498-6"><!-- content -->
       <p id="u5498-2">................................................................................</p>
-      <p id="u5498-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้อนุมัติจ่ายงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+      <p id="u5498-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+      <p id="u4128-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้อนุมัติจ่ายงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
      </div>
      <div class="clearfix grpelem" id="u5495-6"><!-- content -->
       <p id="u5495-2">................................................................................</p>
-      <p id="u5495-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้รับใบสั่ง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+      <p id="u5495-4">( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</p>
+            <p id="u4128-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ผู้รับใบสั่ง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
      </div>
     </div>
    </div>

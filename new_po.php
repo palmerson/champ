@@ -51,7 +51,7 @@
     width: 75px;
   }
   select {
-    width: 187px;
+    width: 400px;
     line-height: 40px;
     height: 40px;
     -webkit-appearance: menulist-button;
@@ -93,7 +93,7 @@
     <form enctype="multipart/form-data" action="action_add_po.php" method="POST" id="add_po">
     <div class="colelem" id="u169"><!-- simple frame --></div>
     <div class="clearfix colelem" id="u1055-4"><!-- content -->
-     <p>สร้างใบสั่งขาย / ใบเสร็จรับเงิน</p>
+     <p>สร้างใบสั่งขาย</p>
     </div>
     <div class="clearfix colelem" id="pu1156-4"><!-- group -->
      <div class="clearfix grpelem" id="u1156-4"><!-- content -->
@@ -106,10 +106,11 @@
      </div>
      <div class="clearfix grpelem" id="u1272-4"><!-- content -->
       <!-- <p>รหัสลูกค้า</p> -->
-      <p>วันที่สั่งซื้อ</p>
+      <!-- <p>วันที่สั่งซื้อ</p> -->
      </div>
      <div class="clearfix grpelem" id="u1284-4"><!-- content -->
       <!-- <p>กำหนดส่ง</p> -->
+      <p>วันที่สั่งซื้อ</p>
      </div>
     </div>
     <div class="clearfix colelem" id="pu1330"><!-- group -->
@@ -117,7 +118,7 @@
       <input class="textbox"type="text" name="code"> 
 </div>
 <div class="grpelem" id="u1335"><!-- custom html -->
-  <select name="customer_id">
+  <select name="customer_id" class='customer'>
   <?php
     include('inc/conf.php');
     $type = "SELECT customer_id, company_name FROM $Customers";
@@ -130,13 +131,21 @@
 
 
 </div>
-<div class="grpelem" id="u1350"><!-- custom html -->
-  <input class="textbox datepicker"type="text" name="created"> 
-</div>
+<!-- <div class="grpelem" id="u1350"> --><!-- custom html -->
+  <!-- <input class="textbox datepicker"type="text" name="created">  -->
+<!-- </div> -->
 
 
     <div class="grpelem" id="u1317"><!-- custom html -->
     <!-- <input class="textbox datepicker"type="text" name="due_date">  -->
+    <input class="datepicker picker"type="text" name="created"> 
+    <style> 
+ .picker { 
+    outline:0; 
+    height:40px; 
+    width: 75px; 
+  } 
+</style> 
     </div>
 </div>
 
@@ -164,21 +173,21 @@
     ?>
     </select> 
   </div>
-  <div class="grpelem" id="u1335">
-    <a href="#" class="myButton">เพิ่มสินค้า</a>
-  </div>
   <div class="grpelem" id="u1350">
+    <a href="#" class="myButton">เพิ่มสินค้า</a>
   </div>
   <div class="grpelem" id="u1317">
   </div>
 </div>
     <div class="colelem" id="u1312">
      <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto; width:100%;}
 
-.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;width:100px;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#F7FDFA;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#26ADE4;width:100px;text-align: center;}
 .tg .tg-vn4c{background-color:#D2E4FC}
+.center { text-align: center;}
+.right { text-align: right;}
 @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
   <tr>

@@ -66,12 +66,17 @@
 	  include 'inc/conf.php';
       $condition = "SELECT a.po_id FROM $StockOut a ";
       $condition .= " LEFT JOIN $StockOutDetails b ON a.stock_out_id=b.stock_out_id ";
-      $condition .= " WHERE b.total=0 GROUP BY a.po_id";
-      // echo $condition
+      $condition .= " WHERE b.stock=0 and b.total=0 GROUP BY a.po_id";
+      // echo $condition;
       $type = "select a.po_id from $Po a where a.po_id not in ($condition)";
+      // $type = "select a.po_id from $Po a";
       // echo $type;
       $query_type = mysql_db_query($db_name, $type);
+      // $query_type2 = mysql_db_query($db_name, $condition);
       while($ct = mysql_fetch_array($query_type)) {
+        // while($ct2 = mysql_fetch_array($query_type2)) {
+        // echo "<option value=\"$ct2[0]\">$ct2[0]</option>";   
+        // }
         echo "<option value=\"$ct[0]\">$ct[0]</option>";   
       }
       mysql_close();
@@ -121,11 +126,18 @@
     </div>
     <div class="colelem" id="u4932"><!-- custom html -->
      <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#000;border:none;margin:0px auto; width:100%;}
 
-.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+.tg td{font-size:14px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#F7FDFA;}
+.tg th{font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#26ADE4;text-align: center;}
 .tg .tg-vn4c{background-color:#D2E4FC}
+
+.center { text-align: center; }
+.right { text-align: right; }
+.inp{
+  border-color: #515151;
+  border-width: 2px;
+}
 </style>
 <div class="tg-wrap">
 <table id="tg-0YX8L" class="tg tb_stock">

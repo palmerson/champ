@@ -38,6 +38,22 @@
         $sql = "UPDATE $Products SET stock='$amount' WHERE product_id='$product_id[$i]'";
         $result = mysql_db_query($db_name, $sql);
       }
+      else{
+        $productsql_ = "select stock from $StockOutDetails WHERE product_id='$product_id[$i]'";
+        $productquery_ = mysql_db_query($db_name, $productsql_);
+        $product_ = mysql_fetch_row($productquery_);
+
+        $updateSoDetails = "UPDATE $StockOutDetails SET qty='$qty[$i]', total='$total[$i]', stock='$stock[$i]'  WHERE product_id='$product_id[$i]' and stock_out_id='$sid' ";
+        $resultSodetails = mysql_db_query($db_name, $updateSoDetails);
+
+
+        $productsql = "select stock from $Products WHERE product_id='$product_id[$i]'";
+        $productquery = mysql_db_query($db_name, $productsql);
+        $product_id1 = mysql_fetch_row($productquery);
+        $amount =  $product_id1[0] ;
+        $sql = "UPDATE $Products SET stock='$amount' WHERE product_id='$product_id[$i]'";
+        $result = mysql_db_query($db_name, $sql); 
+      }
   	}
   	mysql_close();
     header("location: overview_stock.php");

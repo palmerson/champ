@@ -52,10 +52,13 @@
     </div>
     <div class="colelem" id="u4767"><!-- custom html -->
      <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;width: 100%;}
 
-.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+.tg td{font-size:14px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#444;background-color:#F7FDFA;}
+.tg th{font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#26ADE4;text-align: center;}
+.tg .tg-vn4c{background-color:#D2E4FC}
+
+.center { text-align: center; }
 </style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
   <tr>
@@ -83,24 +86,24 @@
       if($counter%2 != 0){
     ?>
   <tr>
-    <td class="tg-vn4c"><?php echo $counter;?></td>
-    <td class="tg-vn4c"><?php echo $po['product_id'];?></td>
+    <td class="tg-vn4c center"><?php echo $counter;?></td>
+    <td class="tg-vn4c center"><?php echo $po['product_id'];?></td>
     <td class="tg-vn4c"><?php echo $po['name'];?></td>
-    <td class="tg-vn4c" style="text-align: right;"><?php echo $po['stock'];?></td>
-    <td class="tg-vn4c"><?php echo $po['po_id'];?></td>
-    <td class="tg-vn4c"><?php echo toDatepicker($po['created']);?></td>
-    <td class="tg-vn4c"><a href="edit_stock.php?s_id=<?php echo $po['stock_out_id']?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
+    <td class="tg-vn4c" style="text-align: right;"><?php echo number_format($po['stock'],0,'',',');?></td>
+    <td class="tg-vn4c center"><?php echo $po['po_id'];?></td>
+    <td class="tg-vn4c center"><?php echo toDatepicker($po['created']);?></td>
+    <td class="tg-vn4c"><a href="edit_stock.php?s_id=<?php echo $po['stock_out_id']?>"><img src="images/edit.png" alt="แก้" title="แก้ไข" width="16" height="16"></a></td>
   </tr>
   <?php
    }else{
   ?>
   <tr>
-    <td class="tg-031e"><?php echo $counter;?></td>
-    <td class="tg-031e"><?php echo $po['product_id'];?></td>
+    <td class="tg-031e center"><?php echo $counter;?></td>
+    <td class="tg-031e center"><?php echo $po['product_id'];?></td>
     <td class="tg-031e"><?php echo $po['name'];?></td>
-    <td class="tg-031e" style="text-align: right;"><?php echo $po['stock'];?></td>
-    <td class="tg-vn4c"><?php echo $po['po_id'];?></td>
-    <td class="tg-031e"><?php echo toDatepicker($po['created'])?></td>
+    <td class="tg-031e" style="text-align: right;"><?php echo number_format($po['stock'],0,'',',');?></td>
+    <td class="tg-031e center"><?php echo $po['po_id'];?></td>
+    <td class="tg-031e center"><?php echo toDatepicker($po['created'])?></td>
     <td class="tg-031e"><a href="edit_stock.php?s_id=<?php echo $po['stock_out_id']?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
   </tr>
   <?php

@@ -36,6 +36,7 @@
     line-height: 40px;
     -webkit-appearance: menulist-button;
     border-radius: 0;
+    height: 40px;
   }
 </style> 
     <!--/*

@@ -46,7 +46,7 @@
     <div class="clearfix grpelem" id="pu3384-4"><!-- column -->
       <form method="post" action="action_check_login.php" id="form1">
      <div class="clearfix colelem" id="u3384-4"><!-- content -->
-      <p id="u3384-2">เข้าสู่ระบบงานขาย</p>
+      <p id="u3384-2">เข้าสู่ระบบงานขายวาล์วก๊าซปิโตรเลียมเหลว</p>
      </div>
      <div class="clearfix colelem" id="u3351"><!-- group -->
       <div class="clip_frame grpelem" id="u3356"><!-- svg -->

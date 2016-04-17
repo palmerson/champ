@@ -49,7 +49,7 @@
     <form enctype="multipart/form-data" action="action_edit_ro.php?id=<?php echo $row[0];?>" method="POST" id="edit_po">
     <div class="colelem" id="u169"><!-- simple frame --></div>
     <div class="clearfix colelem" id="u4690-4"><!-- content -->
-     <p>แก้ไขผลิตเข้าสต๊อก</p>
+     <p>แก้ไขงานผลิตเข้าสต๊อก</p>
     </div>
     <div class="clearfix colelem" id="pu4689-4"><!-- group -->
      <div class="clearfix grpelem" id="u4689-4"><!-- content -->

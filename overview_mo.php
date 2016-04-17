@@ -53,11 +53,13 @@
     </div>
     <div class="colelem" id="u3982"><!-- custom html -->
      <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;width:100%;}
 
-.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;width:100px;}
+.tg td{font-size:14px;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#444;background-color:#F7FDFA;}
+.tg th{font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#26ADE4;text-align: center;}
 .tg .tg-vn4c{background-color:#D2E4FC}
+
+.center { text-align: center; }
 </style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
   <tr>
@@ -66,7 +68,7 @@
     <th class="tg-031e">วันที่สั่ง</th>
     <th class="tg-031e">วันที่เสร็จ</th>
     <th class="tg-031e"></th>
-    <th class="tg-031e"></th>
+<!--     <th class="tg-031e"></th> -->
   </tr>
   <?php 
   include('inc/conf.php');
@@ -85,22 +87,22 @@
   while($row = mysql_fetch_array($query)) {
     if($counter%2 != 0){?>
     <tr>
-    <td class="tg-vn4c"><?php echo $row['production_id'];?></td>
-    <td class="tg-vn4c"><?php echo $row['po_id'];?></td>
-    <td class="tg-vn4c"><?php echo toDatepicker($row['created']);?></td>
-    <td class="tg-vn4c"><?php echo toDatepicker($row['duedate']);?></td>
-    <td class="tg-vn4c"><a href="edit_mo.php?id=<?php echo $row['production_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
-    <td class="tg-vn4c"><a target="_blank" href="print.php?type=mo&id=<?php echo $row['production_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
+    <td class="tg-vn4c center"><?php echo $row['production_id'];?></td>
+    <td class="tg-vn4c center"><?php echo $row['po_id'];?></td>
+    <td class="tg-vn4c center"><?php echo toDatepicker($row['created']);?></td>
+    <td class="tg-vn4c center"><?php echo toDatepicker($row['duedate']);?></td>
+    <td class="tg-vn4c"><a href="edit_mo.php?id=<?php echo $row['production_id'];?>"><img src="images/edit.png" alt="แก้" title="แก้ไข" width="16" height="16"></a>&nbsp;
+    <a target="_blank" href="print.php?type=mo&id=<?php echo $row['production_id'];?>"><img src="images/print.png" alt="พิมพ์" title="พิมพ์รายงาน" width="17" height="16"></a></td>
   </tr>
     <?php }
     else{ ?>
       <tr>
-   <td class="tg-031e"><?php echo $row['production_id'];?></td>
-    <td class="tg-031e"><?php echo $row['po_id'];?></td>
-    <td class="tg-031e"><?php echo toDatepicker($row['created']);?></td>
-    <td class="tg-031e"><?php echo toDatepicker($row['duedate']);?></td>
-    <td class="tg-031e"><a href="edit_mo.php?id=<?php echo $row['production_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
-    <td class="tg-031e"><a target="_blank" href="print.php?type=mo&id=<?php echo $row['production_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
+   <td class="tg-031e center"><?php echo $row['production_id'];?></td>
+    <td class="tg-031e center"><?php echo $row['po_id'];?></td>
+    <td class="tg-031e center"><?php echo toDatepicker($row['created']);?></td>
+    <td class="tg-031e center"><?php echo toDatepicker($row['duedate']);?></td>
+    <td class="tg-031e"><a href="edit_mo.php?id=<?php echo $row['production_id'];?>"><img src="images/edit.png" alt="แก้" title="แก้ไข" width="16" height="16"></a>&nbsp;
+    <a target="_blank" href="print.php?type=mo&id=<?php echo $row['production_id'];?>"><img src="images/print.png" alt="พิมพ์" title="พิมพ์รายงาน" width="17" height="16"></a></td>
   </tr>
     <?php }
     $counter++; 

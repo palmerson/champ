@@ -52,7 +52,7 @@
     width: 75px;
   }
   select {
-    width: 187px;
+    width: 400px;
     line-height: 40px;
     height: 40px;
     -webkit-appearance: menulist-button;
@@ -116,10 +116,11 @@
      </div>
      <div class="clearfix grpelem" id="u1272-4"><!-- content -->
       <!-- <p>รหัสลูกค้า</p> -->
-      <p>วันที่สั่งซื้อ</p>
+      <!-- <p>วันที่สั่งซื้อ</p> -->
      </div>
      <div class="clearfix grpelem" id="u1284-4"><!-- content -->
       <!-- <p>กำหนดส่ง</p> -->
+      <p>วันที่สั่งซื้อ</p>
      </div>
     </div>
     <div class="clearfix colelem" id="pu1330"><!-- group -->
@@ -127,7 +128,7 @@
       <input class="textbox"type="text" name="code" value="<?php echo $row[1];?>"> 
 </div>
 <div class="grpelem" id="u1335"><!-- custom html -->
-  <select name="customer_id">
+  <select name="customer_id" class="customer">
   <?php
     $type = "SELECT customer_id, company_name FROM $Customers";
     $query_type = mysql_db_query($db_name, $type);
@@ -144,25 +145,27 @@
 
 
 </div>
-<div class="grpelem" id="u1350"><!-- custom html -->
-  <input class="textbox datepicker"type="text" name="created" value="<?php echo toDatepicker($row[6]);?>"> 
-</div>
+<!-- <div class="grpelem" id="u1350"> --><!-- custom html -->
+  <!-- <input class="textbox datepicker"type="text" name="created" value="<?php //echo toDatepicker($row[6]);?>">  -->
+<!-- </div> -->
 
 
     <div class="grpelem" id="u1317"><!-- custom html -->
-<!--     <input class="textbox datepicker"type="text" name="due_date" value="<?php //echo toDatepicker($row[7]);?>"> --> 
+<!--     <input class="textbox datepicker"type="text" name="due_date" value="<?php //echo toDatepicker($row[7]);?>"> -->
+<input class="datepicker picker"type="text" name="created" value="<?php echo toDatepicker($row[6]);?>"> 
+    <style> 
+ .picker { 
+    outline:0; 
+    height:40px; 
+    width: 75px; 
+  } 
+</style> 
     </div>
 </div>
 
 <div class="clearfix colelem" id="pu1156-4"><!-- group -->
   <div class="clearfix grpelem" id="u1156-4"><!-- content -->
     <p>สินค้า</p>
-  </div>
-  <div class="clearfix grpelem" id="u1102-4"><!-- content -->
-  </div>
-  <div class="clearfix grpelem" id="u1272-4"><!-- content -->
-  </div>
-  <div class="clearfix grpelem" id="u1284-4"><!-- content -->
   </div>
 </div>
 <div class="clearfix colelem" id="pu1330"><!-- group -->
@@ -178,10 +181,8 @@
     ?>
     </select> 
   </div>
-  <div class="grpelem" id="u1335">
-    <a href="#" class="myButton">เพิ่มสินค้า</a>
-  </div>
   <div class="grpelem" id="u1350">
+     <a href="#" class="myButton">เพิ่มสินค้า</a>
   </div>
   <div class="grpelem" id="u1317">
   </div>
@@ -190,9 +191,11 @@
      <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
 
-.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;width:100px;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#F7FDFA;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#26ADE4;width:100px;text-align: center;}
 .tg .tg-vn4c{background-color:#D2E4FC}
+.center { text-align: center;}
+.right { text-align: right;}
 /*th.tg-sort-header::-moz-selection { background:transparent; }th.tg-sort-header::selection      { background:transparent; }th.tg-sort-header { cursor:pointer; }table th.tg-sort-header:after {  content:'';  float:right;  margin-top:7px;  border-width:0 4px 4px;  border-style:solid;  border-color:#404040 transparent;  visibility:hidden;  }table th.tg-sort-header:hover:after {  visibility:visible;  }table th.tg-sort-desc:after,table th.tg-sort-asc:after,table th.tg-sort-asc:hover:after {  visibility:visible;  opacity:0.4;  }table th.tg-sort-desc:after {  border-bottom:none;  border-width:4px 4px 0;  }*/@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
   <tr>
@@ -213,7 +216,7 @@
       if($counter%2 != 0){
       ?>
       <tr>
-        <td class=tg-031e>
+        <td class="tg-031e center">
           <input class=inp type=hidden name=pid[] value="<?php echo $lists['product_id']?>">
           <?php echo $lists['product_id']?>
         </td>
@@ -221,13 +224,13 @@
           <input class=inp type=hidden name=p_name[] value="<?php echo $lists['name']?>">
           <?php echo $lists['name']?>
         </td>
-        <td class=tg-031e>
+        <td class="tg-031e center">
           <input class="inp qty" style="text-align:right;" type=text name=qty[] value="<?php echo $lists['qty']?>">
         </td>
-        <td class=tg-031e>
+        <td class="tg-031e right">
           <input class="inp price" type=hidden name=price[] value="<?php echo $lists['unit_price']?>"><?php echo $lists['unit_price']?>
         </td>
-        <td class=tg-031e>
+        <td class="tg-031e center">
           <input id="<?php echo $counter;?>" class="inp datepicker" type=text name=duedate[] value="<?php echo toDatepicker($lists['duedate']);?>" >
         </td>
         <td class=tg-031e>
@@ -236,7 +239,7 @@
       </tr>
       <?php }else{ ?>
       <tr>
-        <td class="tg-vn4c">
+        <td class="tg-vn4c center">
           <input class=inp type=hidden name=pid[] value="<?php echo $lists['product_id']?>">
           <?php echo $lists['product_id']?>
         </td>
@@ -244,13 +247,13 @@
           <input class=inp type=hidden name=p_name[] value="<?php echo $lists['name']?>">
           <?php echo $lists['name']?>
         </td>
-        <td class="tg-vn4c">
+        <td class="tg-vn4c center">
           <input class="inp qty" style="text-align:right;" type=text name=qty[] value="<?php echo $lists['qty']?>">
         </td>
-        <td class="tg-vn4c">
+        <td class="tg-vn4c right">
           <input class="inp price" type=hidden name=price[] value="<?php echo $lists['unit_price']?>"><?php echo $lists['unit_price']?>
         </td>
-        <td class="tg-vn4c">
+        <td class="tg-vn4c center">
           <input id="<?php echo $counter;?>" class="inp datepicker" type=text name=duedate[] value="<?php echo toDatepicker($lists['duedate']);?>" >
         </td>
         <td class="tg-vn4c">

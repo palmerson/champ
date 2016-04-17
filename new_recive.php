@@ -62,7 +62,8 @@
       $type = "SELECT product_id, name FROM $Products";
       $query_type = mysql_db_query($db_name, $type);
       while($ct = mysql_fetch_array($query_type)) {
-        echo "<option value=\"$ct[0]\" rel=\"$ct[1]\">($ct[0]) $ct[1]</option>";   
+        // echo "<option value=\"$ct[0]\" rel=\"$ct[1]\">($ct[0]) $ct[1]</option>";   
+        echo "<option value=\"$ct[0]\" rel=\"$ct[1]\">$ct[0]</option>";   
       }
       mysql_close();
     ?>

@@ -91,14 +91,6 @@
     </div>
     <div class="clearfix colelem" id="pu5161"><!-- group -->
      <div class="grpelem" id="u5161"><!-- custom html -->
-<!--       <input class="textbox"type="text"> 
-<style> 
- .textbox { 
-    outline:0; 
-    height:40px; 
-    width: 404px;
-  } 
-</style>  -->
 <select name='db' class='db'>
   <option>เลือกหัวข้อ</option>
   <option value="po" <?php if($db == 'po'){ echo 'selected'; } ?>>ใบสั่งขาย</option>
@@ -107,6 +99,28 @@
   <option value="so" <?php if($db == 'so'){ echo 'selected'; } ?>>ตัดสต๊อก</option>
 </select>
 
+<!--  <select name="customer_id" class="customer_id" disabled>
+         <option>เลือกลูกค้า</option> -->
+
+  <?php
+    // $type = "SELECT product_id, name FROM $Products";
+    // $query_type = mysql_db_query($db_name, $type);
+    // while($ct = mysql_fetch_array($query_type)) {
+    //   if($ct[0] == $customer_id){
+    //     echo "<option value=\"$ct[0]\" selected>($ct[0]) $ct[1]</option>"; 
+    //   }else{
+    //     echo "<option value=\"$ct[0]\">($ct[0]) $ct[1]</option>";  
+    //   }  
+    // }
+  ?>
+ <!--  </select> -->
+<style> 
+ /*.textbox { 
+    outline:0; 
+    height:40px; 
+    width: 186px; 
+  } */
+</style>
 
 </div>
      <div class="grpelem" id="u5171"><!-- custom html -->
@@ -218,10 +232,12 @@
             $type = "SELECT po_id, po_code FROM $Po";
             $query_type = mysql_db_query($db_name, $type);
             while($ct = mysql_fetch_array($query_type)) {
-              if($ct[1] == $po){
+              if(str_replace("%2F","/",$ct[1]) == $po){
                 echo "<option value=\"$ct[1]\" selected>$ct[1]</option>"; 
               }
-                echo "<option value=\"$ct[1]\"> $ct[1]</option>";   
+              else{
+                echo "<option value=\"$ct[1]\"> $ct[1]</option>";
+              }   
             }
             // mysql_close();
           ?>
@@ -273,11 +289,16 @@
   </div>
   <div style="height: 20px;"></div>
      <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;width: 100%;}
 
-.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#000;background-color:#F7FDFA;text-align: center;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#000;background-color:#26ADE4;text-align: center;}
+.tg td{font-size:14px;padding:8px 8px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#444;background-color:#F7FDFA;}
+.tg th{font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#26ADE4;text-align: center;}
 .tg .tg-vn4c{background-color:#D2E4FC}
+
+.btn {width:50px;}
+
+.center { text-align: center; }
+.right { text-align: right; }
 </style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
 
@@ -326,27 +347,27 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
     while($row = mysql_fetch_array($query)) {
       if($counter%2 != 0){ ?>
         <tr>
-        <td class="tg-vn4c"><?php echo $counter;?></td>
-        <td class="tg-vn4c"><?php echo $row['po_id'];?></td>
-        <td class="tg-vn4c"><?php echo $row['po_code'];?></td>
-        <td class="tg-vn4c"><?php echo $row['name'];?></td>
-        <td class="tg-vn4c"><?php echo $row['qty'];?></td>
+        <td class="tg-vn4c center" width="5%"><?php echo $counter;?></td>
+        <td class="tg-vn4c center" width="10%"><?php echo $row['po_id'];?></td>
+        <td class="tg-vn4c" width="20%"><?php echo $row['po_code'];?></td>
+        <td class="tg-vn4c" width="30%"><?php echo $row['name'];?></td>
+        <td class="tg-vn4c center" width="10%"><?php echo number_format($row['qty'],0,'',',');?></td>
         <!-- <td class="tg-vn4c"><?php //echo number_format($row['amount'],2,'.',',');?></td> -->
-        <td class="tg-vn4c"><?php echo toDatepicker($row['created']);?></td>
-        <td class="tg-vn4c" class='btn'><a href="edit_po.php?id=<?php echo $row['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a>&nbsp;&nbsp;<a target="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
+        <td class="tg-vn4c center" width="10%"><?php echo toDatepicker($row['created']);?></td>
+        <td class="tg-vn4c" class='btn'width="10%"><a href="edit_po.php?id=<?php echo $row['po_id'];?>"><img src="images/edit.png" alt="แก้" title="แก้ไข" width="16" height="16"></a>&nbsp;&nbsp;<a target="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" title="พิมพ์รายงาน"  width="17" height="16"></a></td>
         </tr>
     <?php
       }else{
     ?>
         <tr>
-          <td class="tg-031e"><?php echo $counter;?></td>
-          <td class="tg-031e"><?php echo $row['po_id'];?></td>
-          <td class="tg-031e"><?php echo $row['po_code'];?></td>
-          <td class="tg-031e"><?php echo $row['name'];?></td>
-          <td class="tg-031e"><?php echo $row['qty'];?></td>
+          <td class="tg-031e center" width="5%"><?php echo $counter;?></td>
+          <td class="tg-031e center" width="10%"><?php echo $row['po_id'];?></td>
+          <td class="tg-031e" width="20%"><?php echo $row['po_code'];?></td>
+          <td class="tg-031e" width="30%"><?php echo $row['name'];?></td>
+          <td class="tg-031e center" width="10%"><?php echo number_format($row['qty'],0,'',',');?></td>
           <!-- <td class="tg-031e"><?php //echo number_format($row['amount'],2,'.',',');?></td> -->
-          <td class="tg-031e"><?php echo toDatepicker($row['created']);?></td>
-          <td class="tg-031e" class='btn'><a href="edit_po.php?id=<?php echo $row['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a>&nbsp;&nbsp;<a target="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
+          <td class="tg-031e center" width="10%"><?php echo toDatepicker($row['created']);?></td>
+          <td class="tg-031e" class='btn' width="10%"><a href="edit_po.php?id=<?php echo $row['po_id'];?>"><img src="images/edit.png" alt="แก้" title="แก้ไข" width="16" height="16"></a>&nbsp;&nbsp;<a target="_blank" href="print.php?type=po&id=<?php echo $row['po_id'];?>"><img src="images/print.png" alt="พิมพ์" title="พิมพ์รายงาน"   width="17" height="16"></a></td>
         </tr>
   <?php }
         $counter++;
@@ -397,7 +418,7 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
         <th class="tg-031e">วันที่สั่ง</th>
         <!-- <th class="tg-031e">วันที่เสร็จ</th> -->
         <!-- <th class="tg-031e"></th> -->
-        <th class="tg-031e"></th>
+        <th class="tg-031e" width='80'></th>
         <!-- <th class="tg-031e"></th> -->
       </tr>
   <?php
@@ -405,29 +426,29 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
     while($row2 = mysql_fetch_array($query2)) { //print_r($row2);
       if($counter%2 != 0){ ?>
         <tr>
-        <td class="tg-vn4c"><?php echo $counter;?></td>
+        <td class="tg-vn4c center"><?php echo $counter;?></td>
         <td class="tg-vn4c"><?php echo $row2['po_id'];?></td>
         <td class="tg-vn4c"><?php echo $row2['production_id'];?></td>
         <td class="tg-vn4c"><?php echo $row2['company_name'];?></td>
         <td class="tg-vn4c"><?php echo $row2['name'];?></td>
-        <td class="tg-vn4c"><?php echo $row2['qty'];?></td>
+        <td class="tg-vn4c center"><?php echo number_format($row2['qty']);?></td>
         <td class="tg-vn4c"><?php echo toDatepicker($row2['duedate']);?></td>
         <td class="tg-vn4c"><?php echo toDatepicker($row2['created']);?></td>
-        <td class="tg-vn4c" class='btn'><a href="edit_mo.php?id=<?php echo $row2['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a>&nbsp;&nbsp;<a target="_blank" href="print.php?type=mo&id=<?php echo $row2['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
+        <td class="tg-vn4c btn"><a href="edit_mo.php?id=<?php echo $row2['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16" title="แก้ไข"></a>&nbsp;<a target="_blank" href="print.php?type=mo&id=<?php echo $row2['po_id'];?>"><img src="images/print.png" alt="พิมพ์" title="พิมพ์รายงาน" width="17" height="16"></a></td>
         </tr>
     <?php
       }else{
     ?>
         <tr>
-          <td class="tg-031e"><?php echo $counter;?></td>
+          <td class="tg-031e center"><?php echo $counter;?></td>
           <td class="tg-031e"><?php echo $row2['po_id'];?></td>
           <td class="tg-031e"><?php echo $row2['production_id'];?></td>
           <td class="tg-031e"><?php echo $row2['company_name'];?></td>
           <td class="tg-031e"><?php echo $row2['name'];?></td>
-          <td class="tg-031e"><?php echo $row2['qty'];?></td>
+          <td class="tg-031e center"><?php echo number_format($row2['qty']);?></td>
           <td class="tg-031e"><?php echo toDatepicker($row2['duedate']);?></td>
           <td class="tg-031e"><?php echo toDatepicker($row2['created']);?></td>
-          <td class="tg-031e" class='btn'><a href="edit_mo.php?id=<?php echo $row2['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a>&nbsp;&nbsp;<a target="_blank" href="print.php?type=mo&id=<?php echo $row2['po_id'];?>"><img src="images/print.png" alt="พิมพ์" width="17" height="16"></a></td>
+          <td class="tg-031e btn"><a href="edit_mo.php?id=<?php echo $row2['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16" title="แก้ไข"></a>&nbsp;<a target="_blank" href="print.php?type=mo&id=<?php echo $row2['po_id'];?>"><img src="images/print.png" alt="พิมพ์" title="พิมพ์รายงาน" width="17" height="16"></a></td>
         
         </tr>
   <?php }
@@ -473,21 +494,21 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
     while($row3 = mysql_fetch_array($query3)) { //print_r($row2);
       if($counter%2 != 0){ ?>
         <tr>
-        <td class="tg-vn4c"><?php echo $counter;?></td>
+        <td class="tg-vn4c center"><?php echo $counter;?></td>
         <td class="tg-vn4c"><?php echo $row3['name'];?></td>
-        <td class="tg-vn4c"><?php echo $row3['qty'];?></td>
-        <td class="tg-vn4c"><?php echo toDatepicker($row3['created']);?></td>
-        <td class="tg-vn4c" class='btn'><a href="edit_ro.php?id=<?php echo $row3['ro_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
+        <td class="tg-vn4c right"><?php echo number_format($row3['qty']);?></td>
+        <td class="tg-vn4c center"><?php echo toDatepicker($row3['created']);?></td>
+        <td class="tg-vn4c" class='btn'><a href="edit_ro.php?id=<?php echo $row3['ro_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16" title="แก้ไข"></a></td>
         </tr>
     <?php
       }else{
     ?>
         <tr>
-          <td class="tg-031e"><?php echo $counter;?></td>
+          <td class="tg-031e center"><?php echo $counter;?></td>
           <td class="tg-031e"><?php echo $row3['name'];?></td>
-          <td class="tg-031e"><?php echo $row3['qty'];?></td>
-          <td class="tg-031e"><?php echo toDatepicker($row3['created']);?></td>
-          <td class="tg-031e" class='btn' ><a href="edit_ro.php?id=<?php echo $row3['ro_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
+          <td class="tg-031e right"><?php echo number_format($row3['qty']);?></td>
+          <td class="tg-031e center"><?php echo toDatepicker($row3['created']);?></td>
+          <td class="tg-031e" class='btn' ><a href="edit_ro.php?id=<?php echo $row3['ro_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16" title="แก้ไข"></a></td>
         </tr>
   <?php }
         $counter++;
@@ -518,7 +539,7 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
       }
 
       if(isset($po)) {
-        $conditions[] = " a.po_code like '%$po%' ";
+        $conditions[] = " d.po_code like '%$po%' ";
       }
 
       if(count($conditions) > 0) {
@@ -540,28 +561,29 @@ if(isset($_GET['db']) && $_GET['db'] != 'เลือกหัวข้อ'){
       </tr>
       <?php
     $counter = 1;
-    while($row4 = mysql_fetch_array($query4)) { //print_r($row4[0]);
+    // echo $sql4;
+    while($row4 = mysql_fetch_array($query4)) { //print_r($row4);
       if($counter%2 != 0){ ?>
         <tr>
-        <td class="tg-vn4c"><?php echo $counter;?></td>
+        <td class="tg-vn4c center"><?php echo $counter;?></td>
         <td class="tg-vn4c"><?php echo $row4['po_id'];?></td>
         <td class="tg-vn4c"><?php echo $row4['company_name'];?></td>
-        <td class="tg-vn4c"><?php echo toDatepicker($row4['created']);?></td>
+        <td class="tg-vn4c center"><?php echo toDatepicker($row4['created']);?></td>
         <td class="tg-vn4c"><?php echo $row4['name'];?></td>
-        <td class="tg-vn4c"><?php echo $row4['qty'];?></td>
-        <td class="tg-vn4c" class='btn'><a href="edit_stock.php?s_id=<?php echo $row4['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
+        <td class="tg-vn4c right"><?php echo number_format($row4['qty']);?></td>
+        <td class="tg-vn4c" class='btn'><a href="edit_stock.php?s_id=<?php echo $row4['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16" title="แก้ไข"></a></td>
         </tr>
     <?php
       }else{
     ?>
         <tr>
-          <td class="tg-031e"><?php echo $counter;?></td>
+          <td class="tg-031e center"><?php echo $counter;?></td>
           <td class="tg-031e"><?php echo $row4['po_id'];?></td>
           <td class="tg-031e"><?php echo $row4['company_name'];?></td>
-          <td class="tg-031e"><?php echo toDatepicker($row4['created']);?></td>
+          <td class="tg-031e center"><?php echo toDatepicker($row4['created']);?></td>
           <td class="tg-031e"><?php echo $row4['name'];?></td>
-          <td class="tg-031e"><?php echo $row4['qty'];?></td>
-          <td class="tg-031e" class='btn'><a href="edit_stock.php?s_id=<?php echo $row4['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16"></a></td>
+          <td class="tg-031e right"><?php echo number_format($row4['qty']);?></td>
+          <td class="tg-031e" class='btn'><a href="edit_stock.php?s_id=<?php echo $row4['po_id'];?>"><img src="images/edit.png" alt="แก้" width="16" height="16" title="แก้ไข"></a></td>
         </tr>
   <?php }
         $counter++;

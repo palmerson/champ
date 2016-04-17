@@ -12,13 +12,14 @@ $(function() {
   $(document).on('focus',".cal_so", function(){ //multi datepickers
     $(this).keyup(function() {
       //console.log($(this).parent().parent().find('.qty').text());
-    var qty = $(this).parent().parent().find('.qty').text();
+    var qty = $(this).parent().parent().find('.total2').val();
       var stock = $(this).parent().parent().find('.cal_so').val();
       var amount = qty-stock;
     // console.log('qty'+ qty + 'stock'+ stock + 'amount'+ amount);
       if(amount<0){
         alert('ใส่จำนวนตัดสินค้าไม่ถูกต้อง');
         $(this).val(0);
+        $(this).parent().parent().find('.total').val(qty);
         return false;
       }
       else{
@@ -61,19 +62,19 @@ $(function() {
 		   // stock = value.stock;
 		   
 		   if($('#tg-0YX8L tr').length % 2 == 0){
-			   $html = '<tr><td class=tg-vn4c>'+key+'</td>';
-               $html += '<td class=tg-vn4c><input type=hidden name=product_id[] value='+product_id+'>'+product_id+'</td>';
-               $html += '<td class=tg-vn4c>'+product_name+'</td>';
-			   $html += '<td class="tg-vn4c qty"><input type=hidden name=qty[] value='+qty+'><input class=tt type=hidden name=tt[] value='+total+'>'+qty+'</td>';
-			   $html += '<td class=tg-vn4c><input style="text-align:right;" class="total" name=total[] type="text" readonly value='+total+'></td>';
-			   $html += '<td class=tg-vn4c><input style="text-align:right;" class="cal_so" name=stock[] type="text" value=0></td></tr>';
+			   $html = '<tr><td class="tg-vn4c center">'+key+'</td>';
+         $html += '<td class="tg-vn4c center"><input type=hidden name=product_id[] value='+product_id+'>'+product_id+'</td>';
+         $html += '<td class=tg-vn4c>'+product_name+'</td>';
+			   $html += '<td class="tg-vn4c qty" style="text-align:right;"><input type=hidden name=qty[] value='+qty+'><input class=tt type=hidden name=tt[] value='+total+'>'+qty+'</td>';
+			   $html += '<td class=tg-vn4c><input class="total2" name="total2[]" type="hidden" value='+total+'><input style="text-align:right;" class="total inp" name=total[] type="text" readonly value='+total+'></td>';
+			   $html += '<td class=tg-vn4c><input style="text-align:right;" class="cal_so inp" name=stock[] type="text" value=0></td></tr>';
 		   }else{
-			   $html = '<tr><td class=tg-031e>'+key+'</td>';
-               $html += '<td class=tg-031e><input type=hidden name=product_id[] value='+product_id+'>'+product_id+'</td>';
-               $html += '<td class=tg-031e>'+product_name+'</td>';
-			   $html += '<td class="tg-031e qty"><input type=hidden name=qty[] value='+qty+'><input class=tt type=hidden name=tt[] value='+total+'>'+qty+'</td>';
-			   $html += '<td class=tg-031e><input style="text-align:right;" class="total" name=total[] type="text" readonly value='+total+'></td>';
-			   $html += '<td class=tg-031e><input style="text-align:right;" class="cal_so" name=stock[] type="text" value=0></td></tr>';
+			   $html = '<tr><td class="tg-031e center">'+key+'</td>';
+         $html += '<td class="tg-031e center"><input type=hidden name=product_id[] value='+product_id+'>'+product_id+'</td>';
+         $html += '<td class=tg-031e>'+product_name+'</td>';
+			   $html += '<td class="tg-031e qty" style="text-align:right;"><input type=hidden name=qty[] value='+qty+'><input class=tt type=hidden name=tt[] value='+total+'>'+qty+'</td>';
+			   $html += '<td class=tg-031e><input class="total2" name="total2[]" type="hidden" value='+total+'><input style="text-align:right;" class="total inp" name=total[] type="text" readonly value='+total+'></td>';
+			   $html += '<td class=tg-031e><input style="text-align:right;" class="cal_so inp" name=stock[] type="text" value=0></td></tr>';
 		   }
 		   $('#tg-0YX8L tbody').append($html);
 		   

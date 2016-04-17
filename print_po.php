@@ -132,10 +132,10 @@
     </div>
     <div class="clearfix colelem" id="pu1853-4"><!-- group -->
      <div class="clearfix grpelem" id="u1853-4"><!-- content -->
-      <p>เลขที่ใบ</p>
+      <!-- <p>เลขที่ใบ</p> -->
      </div>
      <div class="clearfix grpelem" id="u1859-4"><!-- content -->
-      <p><? echo $row[0]?></p>
+      <!-- <p><? //echo $row[0]?></p> -->
      </div>
     </div>
     <div class="clearfix colelem" id="pu1865-4"><!-- group -->
@@ -243,10 +243,10 @@
         $k = 1;
         while($col_qty = mysql_fetch_array($num_rows_query)) {
           if($k == 1){
-            echo "<p class=\"qty\">".$col_qty['qty']."</p>";
+            echo "<p class=\"qty\">".number_format($col_qty['qty'])."</p>";
           }
           else{
-            echo "<p class=\"qty_\">".$col_qty['qty']."</p>";
+            echo "<p class=\"qty_\">".number_format($col_qty['qty'])."</p>";
           }
           $k++;
         }
@@ -310,7 +310,7 @@
       <div class="clearfix colelem" id="pu2266-6"><!-- group -->
        <div class="clearfix grpelem" id="u2266-6"><!-- content -->
         <p>จำนวนภาษีมูลค่าเพิ่ม</p>
-        <p>Vat / Amount 7%</p>
+        <p>Tax / Amount 7%</p>
        </div>
        <div class="grpelem" id="u2827"><!-- simple frame --></div>
        <div class="grpelem" id="u5531"><p class="cal"><? echo number_format($row[4],2,'.',',')?></p><!-- vat --></div>

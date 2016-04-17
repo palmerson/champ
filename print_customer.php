@@ -34,11 +34,13 @@ page[size="A4"] {
       <center><h1>รายงานลูกค้า</h1></center>
   <div style="height: 20px;"></div>
   <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#000;border:none;margin:0px auto;}
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;border:none;margin:0px auto;}
 
-.tg td{font-family:Arial, sans-serif;font-size:14px;width:960px;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:20px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#26ADE4;}
-.tg .tg-vn4c{background-color:#D2E4FC}</style>
+.tg td{font-size:14px;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#444;background-color:#F7FDFA;}
+.tg th{font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000;color:#000;background-color:#26ADE4;text-align: center;}
+.tg .tg-vn4c{background-color:#D2E4FC}
+
+.center { text-align: center; }</style>
 <div class="tg-wrap"><table id="tg-0YX8L" class="tg">
   <tr>
     <th class="tg-031e">รหัสลูกค้า</th>
@@ -56,7 +58,7 @@ page[size="A4"] {
     if($counter%2 == 0){
   ?>
     <tr>
-      <td class="tg-vn4c"><?php echo $row['customer_id'];?></td>
+      <td class="tg-vn4c center"><?php echo $row['customer_id'];?></td>
       <td class="tg-vn4c"><?php echo $row['company_name'];?></td>
       <td class="tg-vn4c"><?php echo $row['address'];?></td>
      <td class="tg-vn4c"><?php echo $row['contact'];?></td>
@@ -66,7 +68,7 @@ page[size="A4"] {
     } else{
   ?>
     <tr>
-      <td class="tg-031e"><?php echo $row['customer_id'];?></td>
+      <td class="tg-031e center"><?php echo $row['customer_id'];?></td>
       <td class="tg-031e"><?php echo $row['company_name'];?></td>
       <td class="tg-031e"><?php echo $row['address'];?></td>
      <td class="tg-031e"><?php echo $row['contact'];?></td>

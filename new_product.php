@@ -9,7 +9,7 @@
   
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="generator" content="2015.1.1.343"/>
-  <title>Edit_Product</title>
+  <title>New_Product</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?131700929"/>
   <link rel="stylesheet" type="text/css" href="css/master_a-master.css?336593918"/>
@@ -36,7 +36,7 @@
     <form enctype="multipart/form-data" action="action_add_product.php" method="POST" id="add_product">
     <div class="colelem" id="u169"><!-- simple frame --></div>
     <div class="clearfix colelem" id="u430-4"><!-- content -->
-     <p>แก้ไขสินค้า</p>
+     <p>เพิ่มสินค้า</p>
     </div>
     <div class="clearfix colelem" id="pppu611-4"><!-- group -->
      <div class="clearfix grpelem" id="ppu611-4"><!-- column -->
@@ -75,7 +75,7 @@
       </div>
       <div class="clearfix colelem" id="pu629-4"><!-- group -->
        <div class="clearfix grpelem" id="u629-4"><!-- content -->
-        <p>หน่วยนับ</p>
+        <p>สต๊อก</p>
        </div>
        <div class="clearfix grpelem" id="u638-4"><!-- content -->
         <p>ราคา</p>
@@ -88,13 +88,14 @@
          .textbox2 { 
             outline:0; 
             height:40px; 
-            width: 122px; 
+            width: 80px;
+            padding-left: 20px;
           } 
         </style> 
         <!-- <p id="u641">&nbsp;</p> -->
        </div>
        <div class="grpelem" id="u1385"><!-- custom html -->
-        <input class="textbox"type="text" name="unit"> 
+        <input class="textbox"type="text" name="stock"> 
 <style> 
  .textbox { 
     outline:0; 

@@ -30,13 +30,13 @@ function checkPost($post){
 function toMysql($date){
   $explode = explode('/', $date);
   $new  = date('Y-m-d', strtotime(implode('-', array_reverse($explode))));
-  return $new;
+  return $new;//แปลงจาก / เป็น - เพื่อเก็บใน database
 }
 
 function toDatepicker($date){
   $explode = explode('-', $date);
   $new  = implode('/', array_reverse($explode));
-  return $new;
+  return $new;//แปลงจาก - เป็น / เพื่อแสดงผล
 }
 
 function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
@@ -46,7 +46,7 @@ function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
     
   $interval = date_diff($datetime1, $datetime2);
     
-  return $interval->format($differenceFormat);
+  return $interval->format($differenceFormat);// นับระยะวันห่างกี่วันใบ report po
     
 }
 
@@ -58,7 +58,7 @@ $number = str_replace(" ","",$number);
 $number = str_replace("บาท","",$number); 
 $number = explode(".",$number); 
 if(sizeof($number)>2){ 
-return 'ทศนิยมหลายตัวนะจ๊ะ'; 
+return 'ทศนิยมหลายตัวนะจ๊ะ'; //แปลงจากตัวเลขเป็นภาษาไทย
 exit; 
 } 
 $strlen = strlen($number[0]); 

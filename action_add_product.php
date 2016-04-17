@@ -4,7 +4,7 @@
 
   $name = $_POST['name'];
   $price = $_POST['price'];
-  $unit = $_POST['unit'];
+  $stock = $_POST['stock'];
   $remark = $_POST['remark'];
   $product_id = $_POST['product_id'];
 
@@ -19,7 +19,7 @@
     $pic_path = "";
   }
 
-  $sql = "INSERT INTO $Products VALUES('$product_id', '$name','$unit','$price','$remark', '$pic_path' , '0')";
+  $sql = "INSERT INTO $Products VALUES('$product_id', '$name','ตัว','$price','$remark', '$pic_path' , '$stock')";
   // echo $sql;
   $result = mysql_db_query($db_name, $sql);
   if ($result) {

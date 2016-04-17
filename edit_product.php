@@ -59,8 +59,16 @@
        </div>
       </div>
       <div class="clearfix colelem" id="pu1364"><!-- group -->
-      <div class="grpelem" id="u1364" style="outline:0;height:40px;width: 80px; background-color: #FFF;color:#ccc;"><!-- custom html -->
-       <?php echo $row[0];?>
+      <div class="grpelem" id="u1364" ><!-- custom html -->
+      
+      <input class="product_id" type="text" name="product_id" readonly value="<?php echo $row[0];?>"> 
+        <style> 
+         .product_id { 
+            outline:0; 
+            height:40px; 
+            width: 80px; 
+          } 
+        </style> 
       </div>
        <div class="grpelem" id="u1375"><!-- custom html -->
         <input class="product_name_box" type="text" value="<?php echo $row[1];?>" name="name"> 
@@ -77,7 +85,7 @@
       </div>
       <div class="clearfix colelem" id="pu629-4"><!-- group -->
        <div class="clearfix grpelem" id="u629-4"><!-- content -->
-        <p>หน่วยนับ</p>
+        <p>สต๊อก</p>
        </div>
        <div class="clearfix grpelem" id="u638-4"><!-- content -->
         <p>ราคา</p>
@@ -90,13 +98,15 @@
          .textbox2 { 
             outline:0; 
             height:40px; 
-            width: 122px; 
+            width: 80px;
+            padding-left: 20px;
+            /*text-align: center; */
           } 
         </style> 
         <!-- <p id="u641">&nbsp;</p> -->
        </div>
        <div class="grpelem" id="u1385"><!-- custom html -->
-        <input class="textbox"type="text" value="<?php echo $row[2];?>" name="unit"> 
+        <input class="textbox"type="text" value="<?php echo $row[6];?>" name="stock"> 
 <style> 
  .textbox { 
     outline:0; 

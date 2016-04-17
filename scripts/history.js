@@ -52,13 +52,14 @@ $(function() {
       $(".mo_id").hide();
     }
     else if(db_ == 'so'){
-      $('.po_id').prop('disabled', 'disabled');
+      $('.po_id').prop('disabled', false);
       $(".po_id option:selected").prop("selected", false);
       $('.po_id').show();
       $('.customer_id').prop('disabled', false);
       $('.pdt').prop('disabled', false);
       $('.from').prop('disabled', false);
       $('.to').prop('disabled', false);
+      $('.datepicker').val('');
       $('.po_id').val('');
       $('.hd').text('ตัดสต๊อก');
       $('.head').text('รายงานตัดสต๊อก');
@@ -66,6 +67,7 @@ $(function() {
       $('.mo_id').prop('disabled', 'disabled');
       $(".mo_id option:selected").prop("selected", false);
       $(".mo_id").hide();
+      // $("#tg-0YX8L").remove();
     }
 
   $('.db').change(function() {
@@ -127,7 +129,7 @@ $(function() {
       $("#tg-0YX8L").remove();
     }
     else if(db == 'so'){
-      $('.po_id').prop('disabled', 'disabled');
+      $('.po_id').prop('disabled', false);
       $(".po_id option:selected").prop("selected", false);
       $('.po_id').show();
       $('.customer_id').prop('disabled', false);

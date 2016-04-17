@@ -4,7 +4,7 @@
 
   $name = $_POST['name'];
   $price = $_POST['price'];
-  $unit = $_POST['unit'];
+  $stock = $_POST['stock'];
   $remark = $_POST['remark'];
   $product_id = $_GET['pid'];
 
@@ -19,7 +19,7 @@
     $pic_path = "";
   }
 
-  $sql = "UPDATE $Products SET name='$name', price='$price', unit='$unit' , remark='$remark', pic='$pic_path' WHERE product_id='$product_id'";
+  $sql = "UPDATE $Products SET name='$name', price='$price', stock='$stock' , remark='$remark', pic='$pic_path' WHERE product_id='$product_id'";
   // echo $sql;
   $result = mysql_db_query($db_name, $sql);
   if ($result) {
