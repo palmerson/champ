@@ -123,8 +123,8 @@
     </div>
     <div class="clearfix colelem" id="pu4112-8"><!-- group -->
      <div class="clearfix grpelem" id="u4112-8"><!-- content -->
+      <p><?php echo $row[7]?></p>
       <p><?php echo $row[8]?></p>
-      <p><?php echo $row[9]?></p>
       <!-- <p>กทม. 10210</p> -->
      </div>
      <div class="clearfix grpelem" id="pu4142-4"><!-- column -->
@@ -144,8 +144,8 @@
       </div>
      </div>
      <div class="clearfix grpelem" id="u4537-8"><!-- content -->
+      <p><?php echo $row[7]?></p>
       <p><?php echo $row[8]?></p>
-      <p><?php echo $row[9]?></p>
      </div>
      <div class="clearfix grpelem" id="pu4570-4"><!-- column -->
       <div class="clearfix colelem" id="u4570-4"><!-- content -->

@@ -58,7 +58,7 @@
   <img class="block" id="u5435_img" src="images/printhistory_but.png" alt="พิมพ์รายงาน" width="180" height="55" title="พิมพ์รายงาน" onclick="printDiv()"/>
      </div>
     </div>
-    <div class="clearfix colelem" id="pu4994"><!-- group -->
+    <div class="clearfix colelem" id="pu4994" style="margin-bottom: -80px;"><!-- group -->
     <input class="product_id" type="text" name="id" placeholder="ค้นหารหัสสินค้า" value="<?php if(isset($id)) { echo $id; }?>"> 
         <style> 
          .product_id { 
